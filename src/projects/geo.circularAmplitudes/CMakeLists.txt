@@ -11,16 +11,18 @@ include(${C74_MIN_API_DIR}/script/min-pretarget.cmake)
 # MAX EXTERNAL
 #############################################################
 
-
-include_directories( 
+include_directories(
 	"${C74_INCLUDES}"
+	"${CMAKE_CURRENT_SOURCE_DIR}/../../geometry-cpp/src"
 )
 
 
-set( SOURCE_FILES
-	${PROJECT_NAME}.cpp
+file(GLOB_RECURSE GEOMETRY
+	"${CMAKE_CURRENT_SOURCE_DIR}/../../geometry-cpp/src/geometry.hpp"
 )
 
+
+set( SOURCE_FILES ${PROJECT_NAME}.cpp ${GEOMETRY})
 
 add_library( 
 	${PROJECT_NAME} 
