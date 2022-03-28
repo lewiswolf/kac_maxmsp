@@ -3,34 +3,50 @@
 ///	@copyright	Copyright 2018 The Min-DevKit Authors. All rights reserved.
 ///	@license	Use of this source code is governed by the MIT License found in the License.md file.
 
+// dependencies
 #include "c74_min.h"
 #include "geometry.hpp"
+
+// src
+#include "../types.hpp"
 
 using namespace c74::min;
 namespace g = geometry;
 
 
-class hello_world : public object<hello_world> {
+class circularModes : public object<circularModes> {
 public:
-    MIN_DESCRIPTION	{"Post to the Max Console."};
-    MIN_TAGS		{"utilities"};
-    MIN_AUTHOR		{"Cycling '74"};
-    MIN_RELATED		{"print, jit.print, dict.print"};
+    MIN_DESCRIPTION	{"Calculate the circular modes of vibration given a fundamental frequency."};
+    MIN_TAGS		{""};
+    MIN_AUTHOR		{"Lewis Wolf"};
+    MIN_RELATED		{""};
 
-    inlet<>  input	{ this, "(bang) post greeting to the max console" };
-    outlet<> output	{ this, "(anything) output the message which is posted to the max console" };
+    inlet<>  in		{ this, "(float) convert fundamental frequency to circular modes" };
+    outlet<> out	{ this, "(float) output the circular modes" };
 
 
     // define an optional argument for setting the message
-    argument<symbol> greeting_arg { this, "greeting", "Initial value for the greeting attribute.",
+    argument<int> set_N { this, "N", "Initial value for the greeting attribute.",
         MIN_ARGUMENT_FUNCTION {
-            greeting = arg;
+            N = arg;
+        }
+    };
+	 argument<int> set_M { this, "M", "Initial value for the greeting attribute.",
+        MIN_ARGUMENT_FUNCTION {
+            M = arg;
         }
     };
 
 
     // the actual attribute for the message
-    attribute<symbol> greeting { this, "greeting", "hello world",
+    attribute<int> N { this, "N", 10,
+        description {
+            "Greeting to be posted. "
+            "The greeting will be posted to the Max console when a bang is received."
+        }
+    };
+
+    attribute<int> M { this, "M", 10,
         description {
             "Greeting to be posted. "
             "The greeting will be posted to the Max console when a bang is received."
@@ -38,27 +54,21 @@ public:
     };
 
 
-    // respond to the bang message to do something
-    message<> bang { this, "bang", "Post the greeting.",
+    // respond to the number message to do something
+    message<> number { this, "number", "Post the greeting.",
         MIN_FUNCTION {
-            symbol the_greeting = greeting;    // fetch the symbol itself from the attribute named greeting
-			g::calculateLinearSeries(10);
-            cout << the_greeting << endl;    // post to the max console
-            output.send(the_greeting);       // send out our outlet
-            return {};
-        }
+			auto modes_old = g::calculateCircularModes(args[0], N, M);
+            atoms modes(N * M);
+			for (unsigned int i = 0; i < N; i++) {
+				for (unsigned int j = 0; j < M; j++) {
+					modes[i * M + j] = modes_old[i][j];
+				};	
+			}
+			out.send(modes);
+			return {};
+		}
     };
-
-
-    // post to max window == but only when the class is loaded the first time
-    message<> maxclass_setup { this, "maxclass_setup",
-        MIN_FUNCTION {
-            cout << "hello world" << endl;
-            return {};
-        }
-    };
-
 };
 
 
-MIN_EXTERNAL(hello_world);
+MIN_EXTERNAL(circularModes);
