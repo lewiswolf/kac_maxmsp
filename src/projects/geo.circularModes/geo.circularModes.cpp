@@ -4,10 +4,10 @@
 ///	@license	Use of this source code is governed by the MIT License found in the License.md file.
 
 #include "c74_min.h"
-
 #include "geometry.hpp"
 
 using namespace c74::min;
+namespace g = geometry;
 
 
 class hello_world : public object<hello_world> {
@@ -42,7 +42,7 @@ public:
     message<> bang { this, "bang", "Post the greeting.",
         MIN_FUNCTION {
             symbol the_greeting = greeting;    // fetch the symbol itself from the attribute named greeting
-
+			g::calculateLinearSeries(10);
             cout << the_greeting << endl;    // post to the max console
             output.send(the_greeting);       // send out our outlet
             return {};
