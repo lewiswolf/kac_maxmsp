@@ -56,11 +56,7 @@ public:
 				case 0:
 					r = c::from_atoms<std::vector<double>>(args)[0];
 					for (unsigned int n = 0; n < N; n++) {
-						if (n != 0) {
-							angular = M_SQRT2 * sin(n * theta + M_PI_4);
-						} else {
-							angular = 1.0;
-						} 
+						angular = n != 0 ? M_SQRT2 * sin(n * theta + M_PI_4) : 1.0;
 						for (unsigned int m = 0; m < M; m++) {
 							amplitudes[n * M + m] = g::besselJ(n, series[n][m] + r) * angular;
 						};	
