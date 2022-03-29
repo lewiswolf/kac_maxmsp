@@ -16,43 +16,28 @@ public:
     MIN_DESCRIPTION	{"Calculate the circular modes of vibration given a fundamental frequency."};
     MIN_TAGS		{""};
     MIN_AUTHOR		{"Lewis Wolf"};
-    MIN_RELATED		{""};
+    MIN_RELATED		{"geo.circularAmplitudes"};
 
-    inlet<>  in		{ this, "(float) convert fundamental frequency to circular modes" };
-    outlet<> out	{ this, "(float) output the circular modes" };
+    inlet<>  in		{ this, "(float) convert fundamental frequency to circular modes." };
+    outlet<> out	{ this, "(float) output the circular modes." };
 
 
-    // define an optional argument for setting the message
-    argument<int> set_N { this, "N", "Initial value for the greeting attribute.",
-        MIN_ARGUMENT_FUNCTION {
-            N = arg;
-        }
+    argument<int> set_N { this, "N", "Update the maximum Nth order of the modes.",
+        MIN_ARGUMENT_FUNCTION { N = arg; }
     };
-	 argument<int> set_M { this, "M", "Initial value for the greeting attribute.",
-        MIN_ARGUMENT_FUNCTION {
-            M = arg;
-        }
-    };
-
-
-    // the actual attribute for the message
     attribute<int> N { this, "N", 10,
-        description {
-            "Greeting to be posted. "
-            "The greeting will be posted to the Max console when a bang is received."
-        }
+        description {"The maximum Nth order of the modes."}
     };
 
+	argument<int> set_M { this, "M", "Update the amount of modes per order.",
+        MIN_ARGUMENT_FUNCTION { M = arg; }
+    };
     attribute<int> M { this, "M", 10,
-        description {
-            "Greeting to be posted. "
-            "The greeting will be posted to the Max console when a bang is received."
-        }
+        description {"The amount of modes per order."}
     };
 
 
-    // respond to the number message to do something
-    message<> number { this, "number", "Post the greeting.",
+    message<> number { this, "number", "Calculate the modal frequencies.",
         MIN_FUNCTION {
 			auto modes_old = g::calculateCircularModes(args[0], N, M);
             atoms modes(N * M);
@@ -60,12 +45,11 @@ public:
 				for (unsigned int j = 0; j < M; j++) {
 					modes[i * M + j] = modes_old[i][j];
 				};	
-			}
+			};
 			out.send(modes);
 			return {};
 		}
     };
 };
-
 
 MIN_EXTERNAL(circularModes);

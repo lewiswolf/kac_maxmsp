@@ -13,50 +13,40 @@
 using namespace c74::min;
 namespace g = geometry;
 
-
-class circularModes : public object<circularModes> {
+class circularAmplitudes : public object<circularAmplitudes> {
 public:
-    MIN_DESCRIPTION	{"Calculate the circular modes of vibration given a fundamental frequency."};
+    MIN_DESCRIPTION	{"Calculate the modal amplitudes relative to a strike location in polar coordinates."};
     MIN_TAGS		{""};
     MIN_AUTHOR		{"Lewis Wolf"};
-    MIN_RELATED		{""};
+    MIN_RELATED		{"geo.circularAmplitudes"};
 
-    inlet<>  in1	{ this, "(float) convert fundamental frequency to circular modes" };
-    inlet<>  in2	{ this, "(float) convert fundamental frequency to circular modes" };
-    outlet<> out	{ this, "(float) output the circular modes" };
+    inlet<>  in1	{ this, "(float) the radial component of the circular strike location" };
+    inlet<>  in2	{ this, "(float) the theta component of the circular strike location" };
+    outlet<> out	{ this, "(float) output the modal amplitudes" };
 
 
-    // define an optional argument for setting the message
-    argument<int> set_N { this, "N", "Initial value for the greeting attribute.",
-        MIN_ARGUMENT_FUNCTION {
-            N = arg;
-        }
+    argument<int> set_N { this, "N", "Update the maximum Nth order of the modes.",
+        MIN_ARGUMENT_FUNCTION { 
+			N = arg;
+			series = g::calculateCircularSeries(N, M);
+		}
     };
-	 argument<int> set_M { this, "M", "Initial value for the greeting attribute.",
-        MIN_ARGUMENT_FUNCTION {
-            M = arg;
-        }
-    };
-
-
-    // the actual attribute for the message
     attribute<int> N { this, "N", 10,
-        description {
-            "Greeting to be posted. "
-            "The greeting will be posted to the Max console when a bang is received."
-        }
+        description {"The maximum Nth order of the modes."}
     };
 
+	argument<int> set_M { this, "M", "Update the amount of modes per order.",
+        MIN_ARGUMENT_FUNCTION { 
+			M = arg;
+			series = g::calculateCircularSeries(N, M);
+		}
+    };
     attribute<int> M { this, "M", 10,
-        description {
-            "Greeting to be posted. "
-            "The greeting will be posted to the Max console when a bang is received."
-        }
+        description {"The amount of modes per order."}
     };
 
 
-    // respond to the number message to do something
-    message<> number { this, "number", "Post the greeting.",
+    message<> number { this, "number", "Calculate the modal amplitudes.",
         MIN_FUNCTION {
 			atoms amplitudes(N * M);
             switch (inlet) {
@@ -66,7 +56,7 @@ public:
 						for (unsigned int m = 0; m < M; m++) {
 							double a = g::besselJ(n, series[n][m] + r);
 							if (n != 0) {
-								amplitudes[n * M + m] = a * (cos(n * theta) + sin(n * theta));
+								amplitudes[n * M + m] = a * M_SQRT2 * sin(n * theta + M_PI_4);
 							} else {
 								amplitudes[n * M + m] = a;
 							}
@@ -84,11 +74,11 @@ public:
 		}
     };
 
+
 private:
 	std::vector<std::vector<double>> series = g::calculateCircularSeries(N, M);
 	double r;
 	double theta;
 };
 
-
-MIN_EXTERNAL(circularModes);
+MIN_EXTERNAL(circularAmplitudes);
