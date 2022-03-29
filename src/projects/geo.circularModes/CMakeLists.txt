@@ -16,11 +16,9 @@ include_directories(
 	"${CMAKE_CURRENT_SOURCE_DIR}/../../geometry-cpp/src"
 )
 
-
 file(GLOB_RECURSE GEOMETRY
 	"${CMAKE_CURRENT_SOURCE_DIR}/../../geometry-cpp/src/geometry.hpp"
 )
-
 
 set( SOURCE_FILES ${PROJECT_NAME}.cpp ${GEOMETRY})
 
@@ -29,7 +27,6 @@ add_library(
 	MODULE
 	${SOURCE_FILES}
 )
-
 
 include(${C74_MIN_API_DIR}/script/min-posttarget.cmake)
 
