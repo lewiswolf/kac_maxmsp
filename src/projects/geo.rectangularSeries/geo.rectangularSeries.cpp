@@ -11,15 +11,15 @@ namespace c = c74::min;
 namespace g = geometry;
 
 
-class circularModes : public c::object<circularModes> {
+class rectangularSeries : public c::object<rectangularSeries> {
 public:
-	MIN_DESCRIPTION	{"Calculate the circular modes of vibration given a fundamental frequency."};
+	MIN_DESCRIPTION	{"Calculate the eigenmodes of a rectangle."};
 	MIN_TAGS		{""};
 	MIN_AUTHOR		{"Lewis Wolf"};
-	MIN_RELATED		{"geo.circularAmplitudes"};
+	MIN_RELATED		{"geo.rectangularAmplitudes"};
 
-	c::inlet<>  in	{ this, "(float) convert fundamental frequency to circular modes." };
-	c::outlet<> out	{ this, "(float) output the circular modes." };
+	c::inlet<>  in	{ this, "(float) calculate the rectangular eigenmodes." };
+	c::outlet<> out	{ this, "(list) output the rectangular eigenmodes." };
 
 
 	c::argument<int> set_N { this, "N", "Update the maximum Nth order of the modes.",
@@ -36,20 +36,24 @@ public:
 		c::description {"The amount of modes per order."}
 	};
 
+	c::attribute<double> epsilon { this, "epsilon", 1.0,
+		c::description {"The aspect ratio of the rectangle."}
+	};
 
-	c::message<> number { this, "number", "Calculate the modal frequencies.",
+	c::message<> bang { this, "bang", "Calculate the the rectangular eigenmodes.",
 		MIN_FUNCTION {
-			auto modes_old = g::calculateCircularModes(args[0], N, M);
-			c::atoms modes(N * M);
-			for (unsigned int i = 0; i < N; i++) {
-				for (unsigned int j = 0; j < M; j++) {
-					modes[i * M + j] = modes_old[i][j];
+			// calculate rectangular eigenmodes
+			auto series_old = g::calculateRectangularSeries(N, M, epsilon);
+			c::atoms series(N * M);
+			for (unsigned int n = 0; n < N; n++) {
+				for (unsigned int m = 0; m < M; m++) {
+					series[n * M + m] = series_old[n][m];
 				};	
 			};
-			out.send(modes);
+			out.send(series);
 			return {};
 		}
 	};
 };
 
-MIN_EXTERNAL(circularModes);
+MIN_EXTERNAL(rectangularSeries);

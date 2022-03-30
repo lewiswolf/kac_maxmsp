@@ -15,59 +15,57 @@
 namespace c = c74::min;
 namespace g = geometry;
 
-class circularAmplitudes : public c::object<circularAmplitudes> {
+class rectangularAmplitudes : public c::object<rectangularAmplitudes> {
 public:
-	MIN_DESCRIPTION	{"Calculate the modal amplitudes of a circle relative to a strike location in polar coordinates."};
+	MIN_DESCRIPTION	{"Calculate the modal amplitudes of a rectangle relative to a strike location in cartesian coordinates."};
 	MIN_TAGS		{""};
 	MIN_AUTHOR		{"Lewis Wolf"};
-	MIN_RELATED		{"geo.circularSeries"};
+	MIN_RELATED		{"geo.rectangularSeries"};
 
-	c::inlet<>  in1	{ this, "(float) the radial component of the circular strike location." };
-	c::inlet<>  in2	{ this, "(float) the theta component of the circular strike location." };
+	c::inlet<>  in1	{ this, "(float) the x component of the rectangular strike location." };
+	c::inlet<>  in2	{ this, "(float) the y component of the rectangular strike location." };
 	c::outlet<> out	{ this, "(list) output the modal amplitudes." };
 
 
 	c::argument<int> set_N { this, "N", "Update the maximum Nth order of the modes.",
-		MIN_ARGUMENT_FUNCTION { 
-			N = arg;
-			series = g::calculateCircularSeries(N, M);
-		}
+		MIN_ARGUMENT_FUNCTION { N = arg; }
 	};
 	c::attribute<int> N { this, "N", 10,
 		c::description {"The maximum Nth order of the modes."}
 	};
 
 	c::argument<int> set_M { this, "M", "Update the amount of modes per order.",
-		MIN_ARGUMENT_FUNCTION { 
-			M = arg;
-			series = g::calculateCircularSeries(N, M);
-		}
+		MIN_ARGUMENT_FUNCTION { M = arg; }
 	};
 	c::attribute<int> M { this, "M", 10,
 		c::description {"The amount of modes per order."}
 	};
 
+	c::attribute<double> epsilon { this, "epsilon", 1.0,
+		c::description {"The aspect ratio of the rectangle."}
+	};
+
 
 	c::message<> number { this, "number", "Calculate the modal amplitudes.",
 		MIN_FUNCTION {
-			// update r and theta
+			// update x and y
 			switch (inlet) {
 				case 0:
-					r = c::from_atoms<std::vector<double>>(args)[0];
+					x = c::from_atoms<std::vector<double>>(args)[0];
 					break;
 				case 1:
-					theta = c::from_atoms<std::vector<double>>(args)[0];
+					y = c::from_atoms<std::vector<double>>(args)[0];
 					return {};
 				default:
 					return {};
 			}
 
-			// calculate amplitudes when r is updated
+			// calculate amplitudes when x is updated
 			c::atoms amplitudes(N * M);
+			std::vector<std::vector<double>> amplitudes_old = g::calculateRectangularAmplitudes(x, y, N, M, epsilon);
 			for (unsigned int n = 0; n < N; n++) {
-				double angular = n != 0 ? M_SQRT2 * sin(n * theta + M_PI_4) : 1.0;
 				for (unsigned int m = 0; m < M; m++) {
-					amplitudes[n * M + m] = g::besselJ(n, series[n][m] + r) * angular;
+					amplitudes[n * M + m] = amplitudes_old[n][m];
 				};	
 			}
 			out.send(amplitudes);
@@ -77,9 +75,8 @@ public:
 
 
 private:
-	std::vector<std::vector<double>> series = g::calculateCircularSeries(N, M);
-	double r;
-	double theta;
+	double x;
+	double y;
 };
 
-MIN_EXTERNAL(circularAmplitudes);
+MIN_EXTERNAL(rectangularAmplitudes);
