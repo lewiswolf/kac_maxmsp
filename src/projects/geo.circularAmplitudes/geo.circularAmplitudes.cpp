@@ -67,7 +67,7 @@ public:
 			for (unsigned int n = 0; n < N; n++) {
 				double angular = n != 0 ? M_SQRT2 * sin(n * theta + M_PI_4) : 1.0;
 				for (unsigned int m = 0; m < M; m++) {
-					amplitudes[n * M + m] = g::besselJ(n, series[n][m] + r) * angular;
+					amplitudes[n * M + m] = g::besselJ(n, series[n][m] * r) * angular;
 				};	
 			}
 			out.send(amplitudes);
