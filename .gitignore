@@ -5,7 +5,10 @@ sysbuild
 *.sln
 *.opensdf
 log.txt
+build
+docs
 extensions
+externals
 support
 build-*/
 tests
