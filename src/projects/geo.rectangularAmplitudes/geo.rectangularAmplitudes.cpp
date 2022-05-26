@@ -22,31 +22,21 @@ public:
 	MIN_AUTHOR		{"Lewis Wolf"};
 	MIN_RELATED		{"geo.rectangularSeries"};
 
-	c::inlet<>  in1	{ this, "(float) the x component of the rectangular strike location." };
-	c::inlet<>  in2	{ this, "(float) the y component of the rectangular strike location." };
-	c::outlet<> out	{ this, "(list) output the modal amplitudes." };
+	c::inlet<>  in1	{this, "(float) the x component of the rectangular strike location." };
+	c::inlet<>  in2	{this, "(float) the y component of the rectangular strike location." };
+	c::outlet<> out	{this, "(list) output the modal amplitudes." };
 
-
-	c::argument<int> set_N { this, "N", "Update the maximum Nth order of the modes.",
-		MIN_ARGUMENT_FUNCTION { N = arg; }
-	};
-	c::attribute<int> N { this, "N", 10,
+	c::attribute<int> N {this, "N", 10,
 		c::description {"The maximum Nth order of the modes."}
 	};
-
-	c::argument<int> set_M { this, "M", "Update the amount of modes per order.",
-		MIN_ARGUMENT_FUNCTION { M = arg; }
-	};
-	c::attribute<int> M { this, "M", 10,
+	c::attribute<int> M {this, "M", 10,
 		c::description {"The amount of modes per order."}
 	};
-
-	c::attribute<double> epsilon { this, "epsilon", 1.0,
+	c::attribute<double> epsilon {this, "epsilon", 1.0,
 		c::description {"The aspect ratio of the rectangle."}
 	};
 
-
-	c::message<> number { this, "number", "Calculate the modal amplitudes.",
+	c::message<> number {this, "number", "Calculate the modal amplitudes.",
 		MIN_FUNCTION {
 			// update x and y
 			switch (inlet) {

@@ -10,10 +10,19 @@
 
 // dependencies
 #include "c74_min.h"
-#include "geometry.hpp"
+#include "boost/math/special_functions/bessel.hpp"
 
 namespace c = c74::min;
-namespace g = geometry;
+
+std::vector<std::vector<double>> calculateCircularSeries(const int& N, const int& M) {
+	std::vector<std::vector<double>> series(N, std::vector<double>(M, 0));
+	for (unsigned int n = 0; n < N; n++) {
+		for (unsigned int m = 0; m < M; m++) {
+			series[n][m] = boost::math::cyl_bessel_j_zero((double)n, m + 1);
+		};	
+	};
+	return series;
+}
 
 class circularAmplitudes : public c::object<circularAmplitudes> {
 public:
@@ -30,7 +39,7 @@ public:
 	c::argument<int> set_N { this, "N", "Update the maximum Nth order of the modes.",
 		MIN_ARGUMENT_FUNCTION { 
 			N = arg;
-			series = g::calculateCircularSeries(N, M);
+			series = calculateCircularSeries(N, M);
 		}
 	};
 	c::attribute<int> N { this, "N", 10,
@@ -40,7 +49,7 @@ public:
 	c::argument<int> set_M { this, "M", "Update the amount of modes per order.",
 		MIN_ARGUMENT_FUNCTION { 
 			M = arg;
-			series = g::calculateCircularSeries(N, M);
+			series = calculateCircularSeries(N, M);
 		}
 	};
 	c::attribute<int> M { this, "M", 10,
@@ -67,7 +76,7 @@ public:
 			for (unsigned int n = 0; n < N; n++) {
 				double angular = n != 0 ? M_SQRT2 * sin(n * theta + M_PI_4) : 1.0;
 				for (unsigned int m = 0; m < M; m++) {
-					amplitudes[n * M + m] = g::besselJ(n, series[n][m] * r) * angular;
+					amplitudes[n * M + m] = boost::math::cyl_bessel_j(n, series[n][m] * r) * angular;
 				};	
 			}
 			out.send(amplitudes);
@@ -77,7 +86,7 @@ public:
 
 
 private:
-	std::vector<std::vector<double>> series = g::calculateCircularSeries(N, M);
+	std::vector<std::vector<double>> series = calculateCircularSeries(N, M);
 	double r;
 	double theta;
 };

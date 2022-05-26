@@ -18,29 +18,20 @@ public:
 	MIN_AUTHOR		{"Lewis Wolf"};
 	MIN_RELATED		{"geo.rectangularAmplitudes"};
 
-	c::inlet<>  in	{ this, "(float) calculate the rectangular eigenmodes." };
-	c::outlet<> out	{ this, "(list) output the rectangular eigenmodes." };
+	c::inlet<>  in	{this, "(bang) calculate the rectangular eigenmodes."};
+	c::outlet<> out	{this, "(list) output the rectangular eigenmodes."};
 
-
-	c::argument<int> set_N { this, "N", "Update the maximum Nth order of the modes.",
-		MIN_ARGUMENT_FUNCTION { N = arg; }
-	};
-	c::attribute<int> N { this, "N", 10,
+	c::attribute<int> N {this, "N", 10,
 		c::description {"The maximum Nth order of the modes."}
 	};
-
-	c::argument<int> set_M { this, "M", "Update the amount of modes per order.",
-		MIN_ARGUMENT_FUNCTION { M = arg; }
-	};
-	c::attribute<int> M { this, "M", 10,
+	c::attribute<int> M {this, "M", 10,
 		c::description {"The amount of modes per order."}
 	};
-
-	c::attribute<double> epsilon { this, "epsilon", 1.0,
+	c::attribute<double> epsilon {this, "epsilon", 1.0,
 		c::description {"The aspect ratio of the rectangle."}
 	};
 
-	c::message<> bang { this, "bang", "Calculate the the rectangular eigenmodes.",
+	c::message<> bang {this, "bang", "Calculate the the rectangular eigenmodes.",
 		MIN_FUNCTION {
 			// calculate rectangular eigenmodes
 			auto series_old = g::calculateRectangularSeries(N, M, epsilon);

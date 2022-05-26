@@ -13,14 +13,14 @@ include(${C74_MIN_API_DIR}/script/min-pretarget.cmake)
 
 include_directories(
 	"${C74_INCLUDES}"
-	"${CMAKE_CURRENT_SOURCE_DIR}/../../geometry-cpp/src"
 )
 
-file(GLOB_RECURSE GEOMETRY
-	"${CMAKE_CURRENT_SOURCE_DIR}/../../geometry-cpp/src/geometry.hpp"
-)
+# include boost.math
+FIND_PACKAGE(Boost COMPONENTS  math)
+INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIRS})
+LINK_DIRECTORIES(${Boost_LIBRARY_DIRS})
 
-set( SOURCE_FILES ${PROJECT_NAME}.cpp ${GEOMETRY})
+set( SOURCE_FILES ${PROJECT_NAME}.cpp)
 
 add_library( 
 	${PROJECT_NAME} 
