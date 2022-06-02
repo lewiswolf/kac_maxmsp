@@ -11,22 +11,18 @@ include(${C74_MIN_API_DIR}/script/min-pretarget.cmake)
 # MAX EXTERNAL
 #############################################################
 
-include_directories(
-	"${C74_INCLUDES}"
-	"${CMAKE_CURRENT_SOURCE_DIR}/../../geometry-cpp/src"
-)
+include_directories("${C74_INCLUDES}")
 
-file(GLOB_RECURSE GEOMETRY
-	"${CMAKE_CURRENT_SOURCE_DIR}/../../geometry-cpp/src/geometry.hpp"
-)
+set(SOURCE_FILES ${PROJECT_NAME}.cpp)
 
-set( SOURCE_FILES ${PROJECT_NAME}.cpp ${GEOMETRY})
-
-add_library( 
+add_library(
 	${PROJECT_NAME} 
 	MODULE
 	${SOURCE_FILES}
 )
+
+#include kac_core
+target_link_libraries(${PROJECT_NAME} PRIVATE kac_core)
 
 include(${C74_MIN_API_DIR}/script/min-posttarget.cmake)
 

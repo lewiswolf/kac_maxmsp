@@ -11,22 +11,18 @@ include(${C74_MIN_API_DIR}/script/min-pretarget.cmake)
 # MAX EXTERNAL
 #############################################################
 
-include_directories(
-	"${C74_INCLUDES}"
-)
+include_directories("${C74_INCLUDES}")
 
-# include boost.math
-FIND_PACKAGE(Boost COMPONENTS  math)
-INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIRS})
-LINK_DIRECTORIES(${Boost_LIBRARY_DIRS})
+set(SOURCE_FILES ${PROJECT_NAME}.cpp)
 
-set( SOURCE_FILES ${PROJECT_NAME}.cpp)
-
-add_library( 
+add_library(
 	${PROJECT_NAME} 
 	MODULE
 	${SOURCE_FILES}
 )
+
+#include kac_core
+target_link_libraries(${PROJECT_NAME} PRIVATE kac_core)
 
 include(${C74_MIN_API_DIR}/script/min-posttarget.cmake)
 

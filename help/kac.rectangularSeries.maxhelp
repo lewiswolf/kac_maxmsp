@@ -222,7 +222,7 @@
 					"filename" : "helpdetails.js",
 					"id" : "obj-2",
 					"ignoreclick" : 1,
-					"jsarguments" : [ "geo.rectangularSeries" ],
+					"jsarguments" : [ "kac.rectangularSeries" ],
 					"maxclass" : "jsui",
 					"numinlets" : 1,
 					"numoutlets" : 1,
@@ -239,8 +239,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 420.0, 348.0, 146.0, 23.0 ],
-					"text" : "geo.rectangularAmplitudes"
+					"patching_rect" : [ 420.0, 348.0, 144.0, 23.0 ],
+					"text" : "kac.rectangularAmplitudes"
 				}
 
 			}
@@ -251,8 +251,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 30.0, 348.0, 119.0, 23.0 ],
-					"text" : "geo.rectangularSeries"
+					"patching_rect" : [ 30.0, 348.0, 117.0, 23.0 ],
+					"text" : "kac.rectangularSeries"
 				}
 
 			}
@@ -502,7 +502,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 536.0, 173.0, 50.0, 23.0 ]
+					"patching_rect" : [ 534.0, 173.0, 50.0, 23.0 ]
 				}
 
 			}
@@ -525,7 +525,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 551.0, 143.0, 35.0, 21.0 ],
+					"patching_rect" : [ 549.0, 143.0, 35.0, 21.0 ],
 					"text" : "y"
 				}
 
@@ -537,7 +537,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "float" ],
-					"patching_rect" : [ 536.0, 203.0, 30.0, 23.0 ],
+					"patching_rect" : [ 534.0, 203.0, 30.0, 23.0 ],
 					"text" : "t b f"
 				}
 
@@ -651,7 +651,7 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-21",
-					"lastchannelcount" : 64,
+					"lastchannelcount" : 57,
 					"maxclass" : "mc.live.gain~",
 					"numinlets" : 1,
 					"numoutlets" : 4,
@@ -994,7 +994,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-13", 0 ],
-					"midpoints" : [ 545.5, 234.0, 429.5, 234.0 ],
+					"midpoints" : [ 543.5, 234.0, 429.5, 234.0 ],
 					"source" : [ "obj-33", 0 ]
 				}
 
@@ -1178,6 +1178,14 @@
 				"bootpath" : "C74:/help/resources",
 				"type" : "TEXT",
 				"implicit" : 1
+			}
+, 			{
+				"name" : "kac.rectangularAmplitudes.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "kac.rectangularSeries.mxo",
+				"type" : "iLaX"
 			}
  ],
 		"autosave" : 0,

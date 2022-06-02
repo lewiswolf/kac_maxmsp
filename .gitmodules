@@ -1,12 +1,9 @@
+[submodule "src/kac_core"]
+	path = src/kac_core
+	url = https://github.com/lewiswolf/kac_core.git
 [submodule "src/min-api"]
 	path = src/min-api
 	url = https://github.com/Cycling74/min-api.git
 [submodule "src/min-lib"]
 	path = src/min-lib
 	url = https://github.com/Cycling74/min-lib.git
-[submodule "src/geometry-cpp"]
-	path = src/geometry-cpp
-	url = https://github.com/lewiswolf/geometry-cpp.git
-[submodule "src/math"]
-	path = src/math
-	url = https://github.com/boostorg/math.git

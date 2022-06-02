@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 59.0, 130.0, 666.0, 454.0 ],
+		"rect" : [ 78.0, 105.0, 723.0, 726.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -44,7 +44,7 @@
 					"filename" : "helpdetails.js",
 					"id" : "obj-2",
 					"ignoreclick" : 1,
-					"jsarguments" : [ "geo.generateConvexPolygon" ],
+					"jsarguments" : [ "kac.generateConvexPolygon" ],
 					"maxclass" : "jsui",
 					"numinlets" : 1,
 					"numoutlets" : 1,
@@ -671,13 +671,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-86",
-					"linecount" : 11,
+					"linecount" : 6,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 261.0, 231.5, 127.0, 156.0 ],
-					"text" : "0.169985 0.298626 0.085138 0.290357 -0.29719 0.047834 -0.453695 -0.157699 -0.168642 -0.242617 0.115426 -0.298626 0.174417 -0.291299 0.293568 -0.21986 0.444058 -0.127389 0.453695 0.102525 0.270427 0.268216"
+					"patching_rect" : [ 261.0, 231.5, 127.0, 89.0 ],
+					"text" : "-0.256302 0.414826 -0.235478 0.271368 -0.023782 -0.364004 0.256302 -0.414826 0.228711 0.283632 0.097734 0.399848"
 				}
 
 			}
@@ -727,8 +727,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 29.0, 158.0, 163.0, 22.0 ],
-					"text" : "geo.generateConvexPolygon"
+					"patching_rect" : [ 29.0, 158.0, 162.0, 22.0 ],
+					"text" : "kac.generateConvexPolygon"
 				}
 
 			}
@@ -773,14 +773,14 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "geo.generateConvexPolygon.mxo",
-				"type" : "iLaX"
-			}
-, 			{
 				"name" : "helpdetails.js",
 				"bootpath" : "C74:/help/resources",
 				"type" : "TEXT",
 				"implicit" : 1
+			}
+, 			{
+				"name" : "kac.generateConvexPolygon.mxo",
+				"type" : "iLaX"
 			}
  ],
 		"autosave" : 0

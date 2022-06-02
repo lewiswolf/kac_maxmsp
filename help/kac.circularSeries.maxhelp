@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 25.0, 96.0, 1069.0, 522.0 ],
+		"rect" : [ 44.0, 61.0, 509.0, 804.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -69,8 +69,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 330.0, 295.0, 125.0, 23.0 ],
-					"text" : "geo.circularAmplitudes"
+					"patching_rect" : [ 330.0, 295.0, 123.0, 23.0 ],
+					"text" : "kac.circularAmplitudes"
 				}
 
 			}
@@ -273,7 +273,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 425.0, 160.0, 50.0, 23.0 ]
+					"patching_rect" : [ 423.0, 160.0, 50.0, 23.0 ]
 				}
 
 			}
@@ -296,7 +296,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 440.0, 130.0, 35.0, 21.0 ],
+					"patching_rect" : [ 438.0, 130.0, 35.0, 21.0 ],
 					"text" : "theta"
 				}
 
@@ -308,7 +308,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "float" ],
-					"patching_rect" : [ 425.0, 190.0, 30.0, 23.0 ],
+					"patching_rect" : [ 423.0, 190.0, 30.0, 23.0 ],
 					"text" : "t b f"
 				}
 
@@ -354,7 +354,7 @@
 					"filename" : "helpdetails.js",
 					"id" : "obj-2",
 					"ignoreclick" : 1,
-					"jsarguments" : [ "geo.circularSeries" ],
+					"jsarguments" : [ "kac.circularSeries" ],
 					"maxclass" : "jsui",
 					"numinlets" : 1,
 					"numoutlets" : 1,
@@ -551,8 +551,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 115.0, 295.0, 98.0, 23.0 ],
-					"text" : "geo.circularSeries"
+					"patching_rect" : [ 115.0, 295.0, 96.0, 23.0 ],
+					"text" : "kac.circularSeries"
 				}
 
 			}
@@ -922,7 +922,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-13", 0 ],
-					"midpoints" : [ 434.5, 221.0, 339.5, 221.0 ],
+					"midpoints" : [ 432.5, 221.0, 339.5, 221.0 ],
 					"source" : [ "obj-33", 0 ]
 				}
 
@@ -1129,6 +1129,14 @@
 				"bootpath" : "C74:/help/resources",
 				"type" : "TEXT",
 				"implicit" : 1
+			}
+, 			{
+				"name" : "kac.circularAmplitudes.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "kac.circularSeries.mxo",
+				"type" : "iLaX"
 			}
  ],
 		"autosave" : 0,

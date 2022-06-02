@@ -1,8 +1,3 @@
-/// @file
-///	@ingroup 	minexamples
-///	@copyright	Copyright 2018 The Min-DevKit Authors. All rights reserved.
-///	@license	Use of this source code is governed by the MIT License found in the License.md file.
-
 // core
 #define _USE_MATH_DEFINES
 #include <cmath>
@@ -10,20 +5,20 @@
 
 // dependencies
 #include "c74_min.h"
-#include "geometry.hpp"
+#include <kac_core.hpp>
 
 namespace c = c74::min;
 namespace g = geometry;
 
 class generateConvexPolygon : public c::object<generateConvexPolygon> {
 public:
-	MIN_DESCRIPTION	{"Randomly generate a convex polygon."};
-	MIN_TAGS		{""};
-	MIN_AUTHOR		{"Lewis Wolf"};
-	MIN_RELATED		{""};
+	MIN_DESCRIPTION {"Randomly generate a convex polygon."};
+	MIN_TAGS {""};
+	MIN_AUTHOR {"Lewis Wolf"};
+	MIN_RELATED {""};
 
-	c::inlet<>  in1	{this, "(int) the number of vertices." };
-	c::outlet<> out	{this, "(list) output the vertices of the polygon." };
+	c::inlet<> in1 {this, "(int) the number of vertices."};
+	c::outlet<> out {this, "(list) output the vertices of the polygon."};
 
 	c::message<> number {this, "number", "Generate a polygon with n vertices.",
 		MIN_FUNCTION {

@@ -1,15 +1,9 @@
-/// @file
-///	@ingroup 	minexamples
-///	@copyright	Copyright 2018 The Min-DevKit Authors. All rights reserved.
-///	@license	Use of this source code is governed by the MIT License found in the License.md file.
-
 // dependencies
 #include "c74_min.h"
-#include "geometry.hpp"
+#include <kac_core.hpp>
 
 namespace c = c74::min;
 namespace g = geometry;
-
 
 class rectangularSeries : public c::object<rectangularSeries> {
 public:

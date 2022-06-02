@@ -1,5 +1,13 @@
-cmake_minimum_required(VERSION 3.19)
-project(Min-DevKit)
+cmake_minimum_required(VERSION 3.22)
+project(
+	kac_maxmsp
+	VERSION 0.0.1
+	DESCRIPTION "Max MSP library for working with arbitrarily shaped drums."
+	LANGUAGES CXX
+)
+
+# add kac_core
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/src/kac_core)
 
 enable_testing()
 
