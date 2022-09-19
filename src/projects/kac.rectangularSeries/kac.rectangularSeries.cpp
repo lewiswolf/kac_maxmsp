@@ -3,7 +3,8 @@
 #include <kac_core.hpp>
 
 namespace c = c74::min;
-namespace g = geometry;
+namespace p = kac_core::physics;
+namespace T = kac_core::types;
 
 class rectangularSeries : public c::object<rectangularSeries> {
 public:
@@ -25,10 +26,10 @@ public:
 		c::description {"The aspect ratio of the rectangle."}
 	};
 
-	c::message<> bang {this, "bang", "Calculate the the rectangular eigenmodes.",
+	c::message<> bang {this, "bang", "Calculate the rectangular eigenmodes.",
 		MIN_FUNCTION {
 			// calculate rectangular eigenmodes
-			auto series_old = g::calculateRectangularSeries(N, M, epsilon);
+			T::Matrix_2D series_old = p::calculateRectangularSeries(N, M, epsilon);
 			c::atoms series(N * M);
 			for (unsigned int n = 0; n < N; n++) {
 				for (unsigned int m = 0; m < M; m++) {

@@ -8,17 +8,8 @@
 #include <kac_core.hpp>
 
 namespace c = c74::min;
-namespace g = geometry;
-
-std::vector<std::vector<double>> circularSeries(const int& N, const int& M) {
-	std::vector<std::vector<double>> series(N, std::vector<double>(M, 0));
-	for (unsigned int n = 0; n < N; n++) {
-		for (unsigned int m = 0; m < M; m++) {
-			series[n][m] = g::besselJZero((double)n, m + 1);
-		};	
-	};
-	return series;
-}
+namespace p = kac_core::physics;
+namespace T = kac_core::types;
 
 class circularAmplitudes : public c::object<circularAmplitudes> {
 public:
@@ -37,7 +28,7 @@ public:
 	c::argument<int> set_N {this, "N", "Update the maximum Nth order of the modes.",
 		MIN_ARGUMENT_FUNCTION {
 			N = arg;
-			series = circularSeries(N, M);
+			series = p::calculateCircularSeries(N, M);
 		}
 	};
 
@@ -47,7 +38,7 @@ public:
 	c::argument<int> set_M {this, "M", "Update the amount of modes per order.",
 		MIN_ARGUMENT_FUNCTION {
 			M = arg;
-			series = circularSeries(N, M);
+			series = p::calculateCircularSeries(N, M);
 		}
 	};
 
@@ -67,10 +58,10 @@ public:
 
 			// calculate amplitudes when r is updated
 			c::atoms amplitudes(N * M);
+			T::Matrix_2D amplitudes_old = p::calculateCircularAmplitudes(r, theta, series);
 			for (unsigned int n = 0; n < N; n++) {
-				double angular = n != 0 ? M_SQRT2 * sin(n * theta + M_PI_4) : 1.0;
 				for (unsigned int m = 0; m < M; m++) {
-					amplitudes[n * M + m] = g::besselJ(n, series[n][m] * r) * angular;
+					amplitudes[n * M + m] = amplitudes_old[n][m];
 				};	
 			}
 			out.send(amplitudes);
@@ -79,7 +70,7 @@ public:
 	};
 
 private:
-	std::vector<std::vector<double>> series = circularSeries(N, M);
+	T::Matrix_2D series = p::calculateCircularSeries(N, M);
 	double r;
 	double theta;
 };

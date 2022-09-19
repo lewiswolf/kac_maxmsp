@@ -3,7 +3,8 @@
 #include <kac_core.hpp>
 
 namespace c = c74::min;
-namespace g = geometry;
+namespace p = kac_core::physics;
+namespace T = kac_core::types;
 
 class circularSeries : public c::object<circularSeries> {
 public:
@@ -25,10 +26,11 @@ public:
 	c::message<> bang {this, "bang", "Calculate the circular eigenmodes.",
 		MIN_FUNCTION {
 			// calculate circular eigenmodes
+			T::Matrix_2D series_old = p::calculateCircularSeries(N, M);
 			c::atoms series(N * M);
 			for (unsigned int n = 0; n < N; n++) {
 				for (unsigned int m = 0; m < M; m++) {
-					series[n * M + m] = g::besselJZero((double)n, m + 1);
+					series[n * M + m] = series_old[n][m];
 				};	
 			};
 			out.send(series);

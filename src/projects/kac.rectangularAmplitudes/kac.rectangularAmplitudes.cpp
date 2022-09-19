@@ -8,7 +8,7 @@
 #include <kac_core.hpp>
 
 namespace c = c74::min;
-namespace g = geometry;
+namespace p = kac_core::physics;
 
 class rectangularAmplitudes : public c::object<rectangularAmplitudes> {
 public:
@@ -47,7 +47,7 @@ public:
 
 			// calculate amplitudes when x is updated
 			c::atoms amplitudes(N * M);
-			std::vector<std::vector<double>> amplitudes_old = g::calculateRectangularAmplitudes(x, y, N, M, epsilon);
+			T::Matrix_2D amplitudes_old = p::calculateRectangularAmplitudes(x, y, N, M, epsilon);
 			for (unsigned int n = 0; n < N; n++) {
 				for (unsigned int m = 0; m < M; m++) {
 					amplitudes[n * M + m] = amplitudes_old[n][m];

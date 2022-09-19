@@ -8,7 +8,8 @@
 #include <kac_core.hpp>
 
 namespace c = c74::min;
-namespace g = geometry;
+namespace g = kac_core::geometry;
+namespace T = kac_core::types;
 
 class generateConvexPolygon : public c::object<generateConvexPolygon> {
 public:
@@ -24,7 +25,7 @@ public:
 		MIN_FUNCTION {
 			int N = c::from_atoms<std::vector<double>>(args)[0];
 			if (N < 3) { return {}; }
-			g::Vertices polygon_old = g::generateConvexPolygon(N);
+			T::Vertices polygon_old = g::generateConvexPolygon(N);
 			c::atoms polygon(N * 2);
 			for (unsigned int i = 0; i < N; i++) {
 				polygon[2 * i] = polygon_old[i].x;
