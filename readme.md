@@ -1,4 +1,4 @@
-# kac_max
+# kac_maxmsp
 
 Max MSP library for working with arbitrarily shaped drums.
 
