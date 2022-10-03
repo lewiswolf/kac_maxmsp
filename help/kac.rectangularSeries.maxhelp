@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 25.0, 96.0, 708.0, 768.0 ],
+		"rect" : [ -956.0, 190.0, 623.0, 716.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -275,8 +275,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 30.0, 348.0, 454.0, 23.0 ],
-					"text" : "/Users/lewiswolstanholme/Desktop/kac_maxmsp/externals/kac.rectangularSeries.mxo"
+					"patching_rect" : [ 30.0, 348.0, 117.0, 23.0 ],
+					"text" : "kac.rectangularSeries"
 				}
 
 			}
@@ -1255,10 +1255,6 @@
 				"bootpath" : "C74:/help/resources",
 				"type" : "TEXT",
 				"implicit" : 1
-			}
-, 			{
-				"name" : "kac.rectangularAmplitudes.mxo",
-				"type" : "iLaX"
 			}
 , 			{
 				"name" : "kac.rectangularSeries.mxo",

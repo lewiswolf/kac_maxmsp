@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 25.0, 122.0, 623.0, 742.0 ],
+		"rect" : [ -956.0, 164.0, 623.0, 742.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -45,8 +45,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 30.0, 295.0, 121.0, 23.0 ],
-					"text" : "kac.circularSeries.mxo"
+					"patching_rect" : [ 30.0, 295.0, 96.0, 23.0 ],
+					"text" : "kac.circularSeries"
 				}
 
 			}
@@ -93,8 +93,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 330.0, 295.0, 148.0, 23.0 ],
-					"text" : "kac.circularAmplitudes.mxo"
+					"patching_rect" : [ 330.0, 295.0, 123.0, 23.0 ],
+					"text" : "kac.circularAmplitudes"
 				}
 
 			}
@@ -297,7 +297,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 448.0, 160.0, 50.0, 23.0 ]
+					"patching_rect" : [ 423.0, 160.0, 50.0, 23.0 ]
 				}
 
 			}
@@ -320,7 +320,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 455.5, 130.0, 35.0, 21.0 ],
+					"patching_rect" : [ 430.5, 130.0, 35.0, 21.0 ],
 					"text" : "theta"
 				}
 
@@ -332,7 +332,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "float" ],
-					"patching_rect" : [ 448.0, 190.0, 30.0, 23.0 ],
+					"patching_rect" : [ 423.0, 190.0, 30.0, 23.0 ],
 					"text" : "t b f"
 				}
 
@@ -858,7 +858,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-13", 0 ],
-					"midpoints" : [ 457.5, 221.0, 339.5, 221.0 ],
+					"midpoints" : [ 432.5, 221.0, 339.5, 221.0 ],
 					"source" : [ "obj-33", 0 ]
 				}
 
