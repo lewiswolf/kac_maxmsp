@@ -476,8 +476,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 210.0, 100.0, 67.0, 23.0 ],
-					"text" : "loadmess 3"
+					"patching_rect" : [ 210.0, 100.0, 74.0, 23.0 ],
+					"text" : "loadmess 10"
 				}
 
 			}
@@ -561,7 +561,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "float" ],
-					"patching_rect" : [ 560.0, 240.0, 30.0, 23.0 ],
+					"patching_rect" : [ 560.0, 235.0, 30.0, 23.0 ],
 					"text" : "t b f"
 				}
 
@@ -585,7 +585,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "float" ],
-					"patching_rect" : [ 420.0, 278.0, 29.5, 23.0 ],
+					"patching_rect" : [ 420.0, 273.10869574546814, 29.5, 23.0 ],
 					"text" : "f"
 				}
 
@@ -608,7 +608,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 315.0, 243.0, 62.0, 23.0 ],
+					"patching_rect" : [ 315.0, 273.10869574546814, 62.0, 23.0 ],
 					"text" : "epsilon $1"
 				}
 
@@ -824,7 +824,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 220.5, 243.0, 37.0, 23.0 ],
+					"patching_rect" : [ 220.5, 273.10869574546814, 37.0, 23.0 ],
 					"text" : "M $1"
 				}
 
@@ -873,7 +873,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 125.5, 243.0, 35.0, 23.0 ],
+					"patching_rect" : [ 125.5, 273.0, 35.0, 23.0 ],
 					"text" : "N $1"
 				}
 
@@ -918,7 +918,7 @@
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
 					"midpoints" : [ 313.5, 234.0, 39.5, 234.0 ],
-					"order" : 1,
+					"order" : 3,
 					"source" : [ "obj-22", 0 ]
 				}
 
@@ -926,8 +926,8 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-13", 0 ],
-					"midpoints" : [ 313.5, 234.0, 429.5, 234.0 ],
-					"order" : 0,
+					"midpoints" : [ 313.5, 265.491697937250137, 429.5, 265.491697937250137 ],
+					"order" : 1,
 					"source" : [ "obj-22", 0 ]
 				}
 
@@ -936,6 +936,24 @@
 				"patchline" : 				{
 					"destination" : [ "obj-26", 0 ],
 					"source" : [ "obj-22", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-43", 0 ],
+					"midpoints" : [ 313.5, 249.866896688938141, 406.0, 249.866896688938141, 406.0, 159.0, 429.5, 159.0 ],
+					"order" : 2,
+					"source" : [ "obj-22", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-45", 0 ],
+					"midpoints" : [ 313.5, 249.511251509189606, 406.754385948181152, 249.511251509189606, 406.754385948181152, 159.0, 569.5, 159.0 ],
+					"order" : 0,
+					"source" : [ "obj-22", 0 ]
 				}
 
 			}
@@ -1044,7 +1062,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-13", 0 ],
-					"midpoints" : [ 569.5, 270.0, 429.5, 270.0 ],
+					"midpoints" : [ 569.5, 265.05434787273407, 429.5, 265.05434787273407 ],
 					"source" : [ "obj-33", 0 ]
 				}
 
@@ -1149,7 +1167,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-13", 0 ],
-					"midpoints" : [ 219.5, 234.0, 429.5, 234.0 ],
+					"midpoints" : [ 219.5, 265.513437658548355, 429.5, 265.513437658548355 ],
 					"order" : 0,
 					"source" : [ "obj-6", 0 ]
 				}
@@ -1188,7 +1206,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-13", 0 ],
-					"midpoints" : [ 124.5, 234.0, 429.5, 234.0 ],
+					"midpoints" : [ 124.5, 265.358347937464714, 429.5, 265.358347937464714 ],
 					"order" : 0,
 					"source" : [ "obj-62", 0 ]
 				}
@@ -1255,6 +1273,10 @@
 				"bootpath" : "C74:/help/resources",
 				"type" : "TEXT",
 				"implicit" : 1
+			}
+, 			{
+				"name" : "kac.rectangularAmplitudes.mxo",
+				"type" : "iLaX"
 			}
 , 			{
 				"name" : "kac.rectangularSeries.mxo",
