@@ -15,7 +15,7 @@ public:
 	MIN_DESCRIPTION	{"Calculate the modal amplitudes of a rectangle relative to a strike location in cartesian coordinates."};
 	MIN_TAGS		{""};
 	MIN_AUTHOR		{"Lewis Wolf"};
-	MIN_RELATED		{"geo.rectangularSeries"};
+	MIN_RELATED		{"kac.rectangularSeries"};
 
 	c::inlet<>  in1	{this, "(float) the x component of the rectangular strike location." };
 	c::inlet<>  in2	{this, "(float) the y component of the rectangular strike location." };

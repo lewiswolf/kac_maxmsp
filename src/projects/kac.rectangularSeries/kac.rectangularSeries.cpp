@@ -11,7 +11,7 @@ public:
 	MIN_DESCRIPTION	{"Calculate the eigenmodes of a rectangle."};
 	MIN_TAGS		{""};
 	MIN_AUTHOR		{"Lewis Wolf"};
-	MIN_RELATED		{"geo.rectangularAmplitudes"};
+	MIN_RELATED		{"kac.rectangularAmplitudes"};
 
 	c::inlet<>  in	{this, "(bang) calculate the rectangular eigenmodes."};
 	c::outlet<> out	{this, "(list) output the rectangular eigenmodes."};
