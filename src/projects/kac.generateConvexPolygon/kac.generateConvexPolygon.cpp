@@ -25,7 +25,7 @@ public:
 		MIN_FUNCTION {
 			int N = c::from_atoms<std::vector<double>>(args)[0];
 			if (N < 3) { return {}; }
-			T::Vertices polygon_old = g::generateConvexPolygon(N);
+			T::Polygon polygon_old = g::generateConvexPolygon(N);
 			c::atoms polygon(N * 2);
 			for (unsigned int i = 0; i < N; i++) {
 				polygon[2 * i] = polygon_old[i].x;
