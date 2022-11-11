@@ -11,5 +11,6 @@ You will need [cmake](https://formulae.brew.sh/formula/cmake) installed. Then, t
 ```bash
 cd ~/Documents/Max\ 8/Packages
 git clone --recursive ...
-sh ./kac_maxmsp/bin/build.sh
+cd kac_maxmsp
+sh ./bin/build.sh
 ```
