@@ -10,7 +10,7 @@ class circularSeries : public c::object<circularSeries> {
 public:
 	MIN_DESCRIPTION {"Calculate the eigenmodes of a circle."};
 	MIN_TAGS {""};
-	MIN_AUTHOR {"Lewis Wolf"};
+	MIN_AUTHOR {"Lewis Wolstanholme"};
 	MIN_RELATED {"kac.circularAmplitudes"};
 
 	c::inlet<> in {this, "(bang) calculate the circular eigenmodes."};

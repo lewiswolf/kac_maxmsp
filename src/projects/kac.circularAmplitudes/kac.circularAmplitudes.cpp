@@ -15,7 +15,7 @@ class circularAmplitudes : public c::object<circularAmplitudes> {
 public:
 	MIN_DESCRIPTION {"Calculate the modal amplitudes of a circle relative to a strike location in polar coordinates."};
 	MIN_TAGS {""};
-	MIN_AUTHOR {"Lewis Wolf"};
+	MIN_AUTHOR {"Lewis Wolstanholme"};
 	MIN_RELATED {"kac.circularSeries"};
 
 	c::inlet<> in1 {this, "(float) the radial component of the circular strike location."};

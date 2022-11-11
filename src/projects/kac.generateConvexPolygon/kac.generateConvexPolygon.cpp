@@ -15,7 +15,7 @@ class generateConvexPolygon : public c::object<generateConvexPolygon> {
 public:
 	MIN_DESCRIPTION {"Randomly generate a convex polygon."};
 	MIN_TAGS {""};
-	MIN_AUTHOR {"Lewis Wolf"};
+	MIN_AUTHOR {"Lewis Wolstanholme"};
 	MIN_RELATED {""};
 
 	c::inlet<> in1 {this, "(int) the number of vertices."};

@@ -10,7 +10,7 @@ class rectangularSeries : public c::object<rectangularSeries> {
 public:
 	MIN_DESCRIPTION	{"Calculate the eigenmodes of a rectangle."};
 	MIN_TAGS		{""};
-	MIN_AUTHOR		{"Lewis Wolf"};
+	MIN_AUTHOR		{"Lewis Wolstanholme"};
 	MIN_RELATED		{"kac.rectangularAmplitudes"};
 
 	c::inlet<>  in	{this, "(bang) calculate the rectangular eigenmodes."};
