@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
+			"minor" : 5,
 			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 78.0, 105.0, 723.0, 726.0 ],
+		"rect" : [ 78.0, 105.0, 1321.0, 726.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,18 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-3",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 25.0, 65.0, 702.0, 47.0 ],
+					"text" : "Generate a random convex polygon with a specified number of vertices. \nparameters:\n    N: the number of vertices."
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"border" : 0,
 					"filename" : "helpdetails.js",
 					"id" : "obj-2",
@@ -50,7 +62,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 29.0, 13.0, 607.0, 53.0 ]
+					"patching_rect" : [ 26.0, 13.0, 607.0, 53.0 ]
 				}
 
 			}
@@ -65,7 +77,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
+							"minor" : 5,
 							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -656,7 +668,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 29.0, 196.0, 83.0, 22.0 ],
+					"patching_rect" : [ 29.0, 245.0, 83.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -676,7 +688,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 261.0, 231.5, 127.0, 89.0 ],
+					"patching_rect" : [ 261.0, 280.5, 127.0, 89.0 ],
 					"text" : "-0.256302 0.414826 -0.235478 0.271368 -0.023782 -0.364004 0.256302 -0.414826 0.228711 0.283632 0.097734 0.399848"
 				}
 
@@ -689,7 +701,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 29.0, 231.5, 200.0, 200.0 ],
+					"patching_rect" : [ 29.0, 280.5, 200.0, 200.0 ],
 					"srcrect" : [ 0, 0, 500, 500 ],
 					"sync" : 1
 				}
@@ -702,7 +714,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 29.0, 89.0, 70.0, 22.0 ],
+					"patching_rect" : [ 29.0, 138.0, 70.0, 22.0 ],
 					"text" : "loadmess 3"
 				}
 
@@ -716,7 +728,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 29.0, 123.0, 50.0, 22.0 ]
+					"patching_rect" : [ 29.0, 172.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -727,7 +739,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 29.0, 158.0, 162.0, 22.0 ],
+					"patching_rect" : [ 29.0, 207.0, 162.0, 22.0 ],
 					"text" : "kac.generateConvexPolygon"
 				}
 
@@ -736,7 +748,7 @@
 		"lines" : [ 			{
 				"patchline" : 				{
 					"destination" : [ "obj-86", 1 ],
-					"midpoints" : [ 38.5, 187.25, 378.5, 187.25 ],
+					"midpoints" : [ 38.5, 236.25, 378.5, 236.25 ],
 					"order" : 0,
 					"source" : [ "obj-1", 0 ]
 				}
@@ -777,10 +789,6 @@
 				"bootpath" : "C74:/help/resources",
 				"type" : "TEXT",
 				"implicit" : 1
-			}
-, 			{
-				"name" : "kac.generateConvexPolygon.mxo",
-				"type" : "iLaX"
 			}
  ],
 		"autosave" : 0
