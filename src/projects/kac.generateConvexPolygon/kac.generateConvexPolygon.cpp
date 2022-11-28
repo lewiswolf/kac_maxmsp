@@ -16,7 +16,7 @@ public:
 	MIN_DESCRIPTION {"Randomly generate a convex polygon."};
 	MIN_TAGS {""};
 	MIN_AUTHOR {"Lewis Wolstanholme"};
-	MIN_RELATED {""};
+	MIN_RELATED {"kac.normaliseConvexPolygon"};
 
 	c::inlet<> in1 {this, "(int) the number of vertices."};
 	c::outlet<> out {this, "(list) output the vertices of the polygon."};
