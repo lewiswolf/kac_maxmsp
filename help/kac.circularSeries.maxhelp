@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 1,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 78.0, 131.0, 1321.0, 700.0 ],
+		"rect" : [ 34.0, 171.0, 1709.0, 695.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -46,7 +46,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 25.0, 65.0, 690.0, 64.0 ],
-					"text" : "Calculate the modes and their respective amplitudes for a circular drum. \nparameters:\n    N, M: the number of modes - the output of each object will be a list of length N*M.\n    r, theta: The polar strike location of the drum, such that r = -1 or 1 always corresponds to a boundary, and thus produces silence. "
+					"text" : "Calculate the modes and their respective amplitudes for a circular drum. \nparameters:\n    N, M: The number of modes - the output of each object will be a list of length N*M.\n    r, theta: The polar strike location of the drum, such that r = -1 or 1 always corresponds to a boundary, and thus produces silence. "
 				}
 
 			}
@@ -122,7 +122,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 1,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -412,7 +412,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 1,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1075,6 +1075,14 @@
 				"bootpath" : "C74:/help/resources",
 				"type" : "TEXT",
 				"implicit" : 1
+			}
+, 			{
+				"name" : "kac.circularAmplitudes.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "kac.circularSeries.mxo",
+				"type" : "iLaX"
 			}
  ],
 		"autosave" : 0,

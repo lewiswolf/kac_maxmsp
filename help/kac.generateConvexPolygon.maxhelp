@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 1,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ -1886.0, 145.0, 1709.0, 721.0 ],
+		"rect" : [ 34.0, 145.0, 1709.0, 721.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -50,7 +50,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 1,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -316,7 +316,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 650.000010192394257, 350.699999988079071, 118.000001013278961, 49.0 ],
-					"text" : "0. 0.285596 0.503123 0.714404 1. 0.285596"
+					"text" : "0. 0.422226 0.746905 0.577774 1. 0.422226"
 				}
 
 			}
@@ -354,7 +354,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 25.0, 65.0, 702.0, 47.0 ],
-					"text" : "Generate a random convex polygon with a specified number of vertices. \nparameters:\n    N: the number of vertices."
+					"text" : "Generate a random convex polygon with a specified number of vertices. \nparameters:\n    N: The number of vertices."
 				}
 
 			}
@@ -386,7 +386,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 1,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -997,7 +997,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 259.719626247882843, 280.5, 127.0, 49.0 ],
-					"text" : "-0.347037 0.276907 -0.223261 -0.276907 0.347037 -0.238694"
+					"text" : "0.335678 0.073451 -0.335678 -0.073451 0.188611 -0.068157"
 				}
 
 			}

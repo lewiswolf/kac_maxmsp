@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 1,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 44.0, 97.0, 1089.0, 768.0 ],
+		"rect" : [ 34.0, 171.0, 1709.0, 695.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -26,7 +26,7 @@
 		"toptoolbarpinned" : 1,
 		"righttoolbarpinned" : 1,
 		"bottomtoolbarpinned" : 1,
-		"toolbars_unpinned_last_save" : 15,
+		"toolbars_unpinned_last_save" : 0,
 		"tallnewobj" : 0,
 		"boxanimatetime" : 200,
 		"enablehscroll" : 1,
@@ -46,7 +46,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 25.0, 70.0, 690.0, 64.0 ],
-					"text" : "Calculate the modes and their respective amplitudes for a 1-dimensional instrument. \nparameters:\n    N: the number of modes - the output of each object will be a list of length N.\n    x: The strike location, such that x = 0 or 1 always corresponds to a boundary, and thus produces silence. "
+					"text" : "Calculate the modes and their respective amplitudes for a 1-dimensional instrument. \nparameters:\n    N: The number of modes - the output of each object will be a list of length N.\n    x: The strike location, such that x = 0 or 1 always corresponds to a boundary, and thus produces silence. "
 				}
 
 			}
@@ -62,7 +62,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 1,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -312,7 +312,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 1,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -518,7 +518,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 1,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1156,6 +1156,10 @@
 				"bootpath" : "C74:/help/resources",
 				"type" : "TEXT",
 				"implicit" : 1
+			}
+, 			{
+				"name" : "kac.linearAmplitudes.mxo",
+				"type" : "iLaX"
 			}
  ],
 		"autosave" : 0,
