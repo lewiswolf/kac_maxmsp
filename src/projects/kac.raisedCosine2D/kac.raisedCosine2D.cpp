@@ -37,10 +37,10 @@ public:
 			// update x and y
 			switch (inlet) {
 				case 0:
-					x = c::from_atoms<std::vector<int>>(args)[0];
+					x = c::from_atoms<std::vector<double>>(args)[0];
 					break;
 				case 1:
-					y = c::from_atoms<std::vector<int>>(args)[0];
+					y = c::from_atoms<std::vector<double>>(args)[0];
 					return {};
 				default:
 					return {};
@@ -60,8 +60,8 @@ public:
 	};
 
 private:
-	int x;
-	int y;
+	double x;
+	double y;
 };
 
 MIN_EXTERNAL(raisedCosine2D);
