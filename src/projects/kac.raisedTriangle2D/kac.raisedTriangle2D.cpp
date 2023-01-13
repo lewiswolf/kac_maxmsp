@@ -11,12 +11,12 @@ namespace c = c74::min;
 namespace p = kac_core::physics;
 namespace T = kac_core::types;
 
-class raisedCosine2D : public c::object<raisedCosine2D> {
+class raisedTriangle2D : public c::object<raisedTriangle2D> {
 public:
-	MIN_DESCRIPTION {"Generate a 2-dimensional raised cosine distribution."};
+	MIN_DESCRIPTION {"Generate a 2-dimensional triangular distribution."};
 	MIN_TAGS {""};
 	MIN_AUTHOR {"Lewis Wolstanholme"};
-	MIN_RELATED {"kac.raisedTriangle2D"};
+	MIN_RELATED {"kac.raisedCosine2D"};
 
 	c::inlet<> in1 {this, "(float) the x component of the centre of the distribution."};
 	c::inlet<> in2 {this, "(float) the x component of the centre of the distribution."};
@@ -48,7 +48,9 @@ public:
 
 			// calculate amplitudes when r is updated
 			c::atoms distribution(N * M);
-			T::Matrix_2D distribution_old = p::raisedCosine2D(M, N, y, x, sigma);
+			T::Matrix_2D distribution_old = p::raisedTriangle2D(
+				M, N, y, x, y - sigma, y + sigma, x - sigma, x + sigma
+			);
 			for (unsigned int n = 0; n < N; n++) {
 				for (unsigned int m = 0; m < M; m++) {
 					distribution[n * M + m] = distribution_old[n][m];
@@ -64,4 +66,4 @@ private:
 	double y;
 };
 
-MIN_EXTERNAL(raisedCosine2D);
+MIN_EXTERNAL(raisedTriangle2D);

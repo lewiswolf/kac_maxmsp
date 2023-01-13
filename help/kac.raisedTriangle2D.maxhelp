@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 209.0, 1365.0, 657.0 ],
+		"rect" : [ 34.0, 183.0, 1365.0, 683.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -195,8 +195,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 30.0, 75.0, 625.0, 93.0 ],
-					"presentation_linecount" : 6,
-					"text" : "Calculate a 2-dimensional raised cosine distribution.\nparameters:\n    N, M: The size of the output matrix in the X and Y axes respectively - the output will be a list of length N*M.\n    sigma: The deviation of the distribution.\n    x, y: The centre of the raised cosine distribution\n    sigma: Deviation."
+					"text" : "Calculate a 2-dimensional triangular distribution.\nparameters:\n    N, M: The size of the output matrix in the X and Y axes respectively - the output will be a list of length N*M.\n    sigma: The deviation of the distribution.\n    x, y: The centre of the raised cosine distribution\n   sigma: Deviation."
 				}
 
 			}
@@ -206,7 +205,7 @@
 					"filename" : "helpdetails.js",
 					"id" : "obj-2",
 					"ignoreclick" : 1,
-					"jsarguments" : [ "kac.raisedCosine2D" ],
+					"jsarguments" : [ "kac.raisedTriangle2D" ],
 					"maxclass" : "jsui",
 					"numinlets" : 1,
 					"numoutlets" : 1,
@@ -223,8 +222,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 30.0, 428.0, 154.201680421829224, 23.0 ],
-					"text" : "kac.raisedCosine2D"
+					"patching_rect" : [ 30.0, 428.0, 154.0, 23.0 ],
+					"text" : "kac.raisedTriangle2D"
 				}
 
 			}
@@ -235,7 +234,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 565.0, 182.89130425453186, 56.0, 21.0 ],
-					"presentation_linecount" : 2,
 					"text" : "deviation"
 				}
 
@@ -688,7 +686,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "kac.raisedCosine2D.mxo",
+				"name" : "kac.raisedTriangle2D.mxo",
 				"type" : "iLaX"
 			}
  ],
