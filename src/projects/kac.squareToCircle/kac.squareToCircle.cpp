@@ -37,7 +37,6 @@ public:
 			}
 
 			// calculate coordinates when x is updated
-			c::atoms coordinates(2);
 			T::Point p = g::simpleElliptic_Square2Circle(T::Point(x, y));
 			out1.send(p.x);
 			out2.send(p.y);
