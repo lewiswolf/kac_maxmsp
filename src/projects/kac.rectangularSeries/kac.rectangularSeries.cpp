@@ -29,7 +29,7 @@ public:
 	c::message<> bang {this, "bang", "Calculate the rectangular eigenmodes.",
 		MIN_FUNCTION {
 			// calculate rectangular eigenmodes
-			T::Matrix_2D series_old = p::calculateRectangularSeries(N, M, epsilon);
+			T::Matrix_2D series_old = p::rectangularSeries(N, M, epsilon);
 			c::atoms series(N * M);
 			for (unsigned int n = 0; n < N; n++) {
 				for (unsigned int m = 0; m < M; m++) {

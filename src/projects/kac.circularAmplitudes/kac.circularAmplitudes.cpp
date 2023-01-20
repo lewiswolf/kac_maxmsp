@@ -28,7 +28,7 @@ public:
 	c::argument<int> set_N {this, "N", "Update the maximum Nth order of the modes.",
 		MIN_ARGUMENT_FUNCTION {
 			N = arg;
-			series = p::calculateCircularSeries(N, M);
+			series = p::circularSeries(N, M);
 		}
 	};
 
@@ -38,7 +38,7 @@ public:
 	c::argument<int> set_M {this, "M", "Update the amount of modes per order.",
 		MIN_ARGUMENT_FUNCTION {
 			M = arg;
-			series = p::calculateCircularSeries(N, M);
+			series = p::circularSeries(N, M);
 		}
 	};
 
@@ -58,7 +58,7 @@ public:
 
 			// calculate amplitudes when r is updated
 			c::atoms amplitudes(N * M);
-			T::Matrix_2D amplitudes_old = p::calculateCircularAmplitudes(r, theta, series);
+			T::Matrix_2D amplitudes_old = p::circularAmplitudes(r, theta, series);
 			for (unsigned int n = 0; n < N; n++) {
 				for (unsigned int m = 0; m < M; m++) {
 					amplitudes[n * M + m] = amplitudes_old[n][m];
@@ -70,7 +70,7 @@ public:
 	};
 
 private:
-	T::Matrix_2D series = p::calculateCircularSeries(N, M);
+	T::Matrix_2D series = p::circularSeries(N, M);
 	double r;
 	double theta;
 };

@@ -6,15 +6,15 @@ namespace c = c74::min;
 namespace p = kac_core::physics;
 namespace T = kac_core::types;
 
-class circularSeries : public c::object<circularSeries> {
+class equilateralTriangleSeries : public c::object<equilateralTriangleSeries> {
 public:
-	MIN_DESCRIPTION {"Calculate the eigenmodes of a circle."};
+	MIN_DESCRIPTION {"Calculate the eigenmodes of an equilateral triangle."};
 	MIN_TAGS {""};
 	MIN_AUTHOR {"Lewis Wolstanholme"};
-	MIN_RELATED {"kac.circularAmplitudes"};
+	MIN_RELATED {"kac.equilateralTriangleAmplitudes"};
 
-	c::inlet<> in {this, "(bang) calculate the circular eigenmodes."};
-	c::outlet<> out {this, "(list) output the circular eigenmodes."};
+	c::inlet<> in {this, "(bang) calculate the equilateral triangle eigenmodes."};
+	c::outlet<> out {this, "(list) output the equilateral triangle eigenmodes."};
 
 	c::attribute<int> N {this, "N", 10,
 		c::description {"The maximum Nth order of the modes."}
@@ -23,10 +23,9 @@ public:
 		c::description {"The amount of modes per order."}
 	};
 
-	c::message<> bang {this, "bang", "Calculate the circular eigenmodes.",
+	c::message<> bang {this, "bang", "Calculate the equilateral triangle eigenmodes.",
 		MIN_FUNCTION {
-			// calculate circular eigenmodes
-			T::Matrix_2D series_old = p::circularSeries(N, M);
+			T::Matrix_2D series_old = p::equilateralTriangleSeries(N, M);
 			c::atoms series(N * M);
 			for (unsigned int n = 0; n < N; n++) {
 				for (unsigned int m = 0; m < M; m++) {
@@ -39,4 +38,4 @@ public:
 	};
 };
 
-MIN_EXTERNAL(circularSeries);
+MIN_EXTERNAL(equilateralTriangleSeries);

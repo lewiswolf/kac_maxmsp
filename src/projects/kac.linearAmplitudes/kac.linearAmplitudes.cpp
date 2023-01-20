@@ -26,7 +26,7 @@ public:
 
 	c::message<> number {this, "number", "Calculate the modal amplitudes.",
 		MIN_FUNCTION {
-			out.send(c::to_atoms(p::calculateLinearAmplitudes(
+			out.send(c::to_atoms(p::linearAmplitudes(
 				c::from_atoms<std::vector<double>>(args)[0],
 				N
 			)));
