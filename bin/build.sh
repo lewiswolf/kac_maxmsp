@@ -1,12 +1,10 @@
-build() {
-	cmake -S ../ -B .
-	make
-}
+#!/bin/bash
 
+# build dir
 if [ ! -d ./build ]; then
   mkdir -p ./build
 fi
 
-cd "build"
-	build
-cd ../../
+# build
+cmake -S . -B build
+cmake --build build
