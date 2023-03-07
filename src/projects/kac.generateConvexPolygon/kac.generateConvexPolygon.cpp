@@ -1,8 +1,6 @@
 // core
 #define _USE_MATH_DEFINES
 #include <cmath>
-#include <random>
-#include <time.h>
 #include <vector>
 
 // dependencies
@@ -27,7 +25,7 @@ public:
 		MIN_FUNCTION {
 			int N = c::from_atoms<std::vector<double>>(args)[0];
 			if (N < 3) { return {}; }
-			T::Polygon polygon_old = g::generateConvexPolygon(N, random_engine);
+			T::Polygon polygon_old = g::generateConvexPolygon(N);
 			c::atoms polygon(N * 2);
 			for (unsigned int i = 0; i < N; i++) {
 				polygon[2 * i] = polygon_old[i].x;
@@ -37,8 +35,6 @@ public:
 			return {};
 		}
 	};
-private:
-	std::default_random_engine random_engine = std::default_random_engine(time(NULL));
 };
 
 MIN_EXTERNAL(generateConvexPolygon);
