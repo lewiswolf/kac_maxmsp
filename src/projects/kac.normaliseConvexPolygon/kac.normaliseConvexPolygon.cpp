@@ -30,7 +30,7 @@ public:
 			// convert args to T::Polygon
 			for (int i = 0; i < N; i++) { polygon_tmp[i] = T::Point(args[2 * i], args[2 * i + 1]); }
 			// normalise
-			polygon_tmp = g::convexNormalisation(polygon_tmp);
+			polygon_tmp = g::normaliseConvexPolygon(polygon_tmp);
 			// output as 1D atoms
 			for (unsigned int i = 0; i < N; i++) {
 				polygon[2 * i] = polygon_tmp[i].x;
