@@ -11,21 +11,21 @@ namespace c = c74::min;
 namespace g = kac_core::geometry;
 namespace T = kac_core::types;
 
-class generateConvexPolygon : public c::object<generateConvexPolygon> {
+class generatePolygon : public c::object<generatePolygon> {
 public:
-	MIN_DESCRIPTION {"Randomly generate a convex polygon."};
+	MIN_DESCRIPTION {"Randomly generate a polygon."};
 	MIN_TAGS {""};
 	MIN_AUTHOR {"Lewis Wolstanholme"};
-	MIN_RELATED {"kac.normaliseConvexPolygon, kac.normalisePolygon"};
+	MIN_RELATED {"kac.normalisePolygon"};
 
 	c::inlet<> in1 {this, "(int) the number of vertices."};
 	c::outlet<> out {this, "(list) output the vertices of the polygon."};
 
-	c::message<> number {this, "number", "Generate a convex polygon with n vertices.",
+	c::message<> number {this, "number", "Generate a polygon with n vertices.",
 		MIN_FUNCTION {
 			int N = c::from_atoms<std::vector<double>>(args)[0];
 			if (N < 3) { return {}; }
-			T::Polygon polygon_old = g::generateConvexPolygon(N);
+			T::Polygon polygon_old = g::generatePolygon(N);
 			c::atoms polygon(N * 2);
 			for (unsigned int i = 0; i < N; i++) {
 				polygon[2 * i] = polygon_old[i].x;
@@ -37,4 +37,4 @@ public:
 	};
 };
 
-MIN_EXTERNAL(generateConvexPolygon);
+MIN_EXTERNAL(generatePolygon);

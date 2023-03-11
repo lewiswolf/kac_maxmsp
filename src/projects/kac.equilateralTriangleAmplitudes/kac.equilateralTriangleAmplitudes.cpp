@@ -17,7 +17,7 @@ public:
 		" relative to a strike location in trilinear coordinates."};
 	MIN_TAGS {""};
 	MIN_AUTHOR {"Lewis Wolstanholme"};
-	MIN_RELATED {"kac.circularSeries"};
+	MIN_RELATED {"kac.equilateralTriangleSeries"};
 
 	c::inlet<> in1 {this, "(float) the x component of the trilinear strike location."};
 	c::inlet<> in2 {this, "(float) the y component of the trilinear strike location."};
