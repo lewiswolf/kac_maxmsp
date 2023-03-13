@@ -23,11 +23,11 @@ public:
 
 	c::message<> number {this, "number", "Generate a polygon with n vertices.",
 		MIN_FUNCTION {
-			int N = c::from_atoms<std::vector<double>>(args)[0];
+			long N = c::from_atoms<std::vector<long>>(args)[0];
 			if (N < 3) { return {}; }
 			T::Polygon polygon_old = g::generateIrregularStar(N);
 			c::atoms polygon(N * 2);
-			for (unsigned int i = 0; i < N; i++) {
+			for (unsigned long i = 0; i < N; i++) {
 				polygon[2 * i] = polygon_old[i].x;
 				polygon[2 * i + 1] = polygon_old[i].y;
 			}

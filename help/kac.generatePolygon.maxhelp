@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 111.0, 115.0, 1030.0, 744.0 ],
+		"rect" : [ 111.0, 143.0, 1030.0, 716.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -316,7 +316,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 650.000010192394257, 350.699999988079071, 118.000001013278961, 49.0 ],
-					"text" : "0. 0.254449 0.835824 0.745551 1. 0.254449"
+					"text" : "0. 0.17616 0.262967 0.82384 1. 0.17616"
 				}
 
 			}
@@ -354,7 +354,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 25.0, 65.0, 702.0, 47.0 ],
-					"text" : "Generate a random convex polygon with a specified number of vertices. \nparameters:\n    N: The number of vertices."
+					"text" : "Generate a random simple polygon with a specified number of vertices. (WARNING: This is slow for large numbers of vertices...)\nparameters:\n    N: The number of vertices."
 				}
 
 			}
@@ -997,7 +997,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 259.719626247882843, 280.5, 127.0, 49.0 ],
-					"text" : "0.14593 -0.307891 0.053787 -0.952413 0.385442 -0.89185"
+					"text" : "0.523987 0.623888 -0.556574 0.504813 0.182769 -0.863357"
 				}
 
 			}
