@@ -46,7 +46,7 @@ public:
 					return {};
 			}
 
-			// calculate amplitudes when r is updated
+			// calculate the distribution when x is updated
 			c::atoms distribution(N * M);
 			T::Matrix_2D distribution_old = p::raisedTriangle2D(
 				M, N, y, x, y - sigma, y + sigma, x - sigma, x + sigma

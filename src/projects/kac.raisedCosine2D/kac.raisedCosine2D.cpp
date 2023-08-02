@@ -19,7 +19,7 @@ public:
 	MIN_RELATED {"kac.raisedTriangle2D"};
 
 	c::inlet<> in1 {this, "(float) the x component of the centre of the distribution."};
-	c::inlet<> in2 {this, "(float) the x component of the centre of the distribution."};
+	c::inlet<> in2 {this, "(float) the y component of the centre of the distribution."};
 	c::outlet<> out {this, "(list) output the distribution."};
 
 	c::attribute<int> N {this, "N", 10,
@@ -46,7 +46,7 @@ public:
 					return {};
 			}
 
-			// calculate amplitudes when r is updated
+			// calculate the distribution when x is updated
 			c::atoms distribution(N * M);
 			T::Matrix_2D distribution_old = p::raisedCosine2D(M, N, y, x, sigma);
 			for (unsigned int n = 0; n < N; n++) {
