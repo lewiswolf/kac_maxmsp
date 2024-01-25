@@ -1,6 +1,6 @@
 # kac_maxmsp
 
-Max MSP library for working with arbitrarily shaped drums.
+Max library for working with arbitrarily shaped drums.
 
 This package was created using the Min-DevKit for Max, an API and supporting tools for writing externals in modern C++.
 
