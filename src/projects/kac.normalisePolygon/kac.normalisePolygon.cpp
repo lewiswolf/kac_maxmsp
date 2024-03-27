@@ -11,9 +11,9 @@ namespace c = c74::min;
 namespace g = kac_core::geometry;
 namespace T = kac_core::types;
 
-class normaliseConvexPolygon : public c::object<normaliseConvexPolygon> {
+class normalisePolygon : public c::object<normalisePolygon> {
 public:
-	MIN_DESCRIPTION {"Normalise a convex polygon, removing group theoretic transformations."};
+	MIN_DESCRIPTION {"Normalise a simple polygon."};
 	MIN_TAGS {""};
 	MIN_AUTHOR {"Lewis Wolstanholme"};
 	MIN_RELATED {"kac.generatePolygon"};
@@ -42,4 +42,4 @@ public:
 	};
 };
 
-MIN_EXTERNAL(normaliseConvexPolygon);
+MIN_EXTERNAL(normalisePolygon);

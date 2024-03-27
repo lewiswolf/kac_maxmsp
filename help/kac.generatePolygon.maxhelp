@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 4,
+			"minor" : 6,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ -1829.0, -53.0, 1795.0, 903.0 ],
+		"rect" : [ 66.0, 243.0, 1297.0, 559.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -49,8 +49,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 4,
+							"minor" : 6,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -235,7 +235,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 650.000010192394257, 350.699999988079071, 118.000001013278961, 49.0 ],
-					"text" : "0. 0.235333 0.670227 0.764667 1. 0.235333"
+					"text" : "0. 0.419628 0.348185 0.580372 1. 0.419628"
 				}
 
 			}
@@ -260,8 +260,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 417.439252495765686, 280.5, 167.0, 22.0 ],
-					"text" : "kac.normaliseConvexPolygon"
+					"patching_rect" : [ 417.439252495765686, 280.5, 126.0, 22.0 ],
+					"text" : "kac.normalisePolygon"
 				}
 
 			}
@@ -276,8 +276,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 4,
+							"minor" : 6,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -807,7 +807,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 259.719626247882843, 280.5, 127.0, 49.0 ],
-					"text" : "0.610649 -0.245442 0.141158 0.459254 -0.419831 -0.777189"
+					"text" : "-0.817038 -0.878178 0.654174 -0.285352 -0.400077 -0.435278"
 				}
 
 			}
@@ -974,7 +974,7 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "kac.normaliseConvexPolygon.mxo",
+				"name" : "kac.normalisePolygon.mxo",
 				"type" : "iLaX"
 			}
  ],

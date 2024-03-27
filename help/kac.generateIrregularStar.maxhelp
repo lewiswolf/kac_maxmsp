@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 4,
+			"minor" : 6,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ -1829.0, -53.0, 1795.0, 903.0 ],
+		"rect" : [ 66.0, 243.0, 1297.0, 559.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -49,8 +49,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 4,
+							"minor" : 6,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -234,8 +234,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 650.000010192394257, 350.699999988079071, 118.000001013278961, 49.0 ],
-					"text" : "0. 0.260559 0.536527 0.739441 1. 0.260559"
+					"patching_rect" : [ 650.0, 351.0, 118.000001013278961, 49.0 ],
+					"text" : "0. 0.675018 1. 0.675018 0.781422 0.324982"
 				}
 
 			}
@@ -260,8 +260,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 417.439252495765686, 280.5, 167.0, 22.0 ],
-					"text" : "kac.normaliseConvexPolygon"
+					"patching_rect" : [ 417.439252495765686, 280.5, 126.0, 22.0 ],
+					"text" : "kac.normalisePolygon"
 				}
 
 			}
@@ -276,8 +276,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 4,
+							"minor" : 6,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -807,7 +807,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 259.719626247882843, 280.5, 127.0, 49.0 ],
-					"text" : "-0.522069 -0.425475 0.522069 0.331703 -0.400738 0.425475"
+					"text" : "0.742786 -0.694251 -0.029032 0.694251 -0.742786 0.417182"
 				}
 
 			}
@@ -927,7 +927,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-12", 1 ],
-					"midpoints" : [ 426.939252495765686, 309.299999743700027, 758.500011205673218, 309.299999743700027 ],
+					"midpoints" : [ 426.939252495765686, 309.299999743700027, 758.500001013278961, 309.299999743700027 ],
 					"order" : 0,
 					"source" : [ "obj-4", 0 ]
 				}
@@ -974,7 +974,7 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "kac.normaliseConvexPolygon.mxo",
+				"name" : "kac.normalisePolygon.mxo",
 				"type" : "iLaX"
 			}
  ],
