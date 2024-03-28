@@ -18,7 +18,7 @@ public:
 	MIN_AUTHOR {"Lewis Wolstanholme"};
 	MIN_RELATED {"kac.circularSeries"};
 
-	c::inlet<> in1 {this, "(float) the radial component of the circular strike location. [0., 1.]"};
+	c::inlet<> in1 {this, "(float) the radial component of the circular strike location. [0, 1]"};
 	c::inlet<> in2 {this, "(float) the theta component of the circular strike location. [-π, π]"};
 	c::outlet<> out {this, "(list) output the modal amplitudes."};
 
