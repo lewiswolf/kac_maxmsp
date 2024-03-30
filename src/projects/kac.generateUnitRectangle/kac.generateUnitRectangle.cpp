@@ -11,8 +11,8 @@ namespace c = c74::min;
 namespace g = kac_core::geometry;
 namespace T = kac_core::types;
 
-class generateUnitRectangle : public c::object<generateUnitRectangle> {
-public:
+class generateUnitRectangle: public c::object<generateUnitRectangle> {
+	public:
 	MIN_DESCRIPTION {"Generate a unit rectangle."};
 	MIN_TAGS {""};
 	MIN_AUTHOR {"Lewis Wolstanholme"};
@@ -21,8 +21,11 @@ public:
 	c::inlet<> in1 {this, "(float) the aspect ratio for the rectangle."};
 	c::outlet<> out {this, "(list) output the vertices of the rectangle."};
 
-	c::message<> number {this, "number", "Generate a unit rectangle.",
-		MIN_FUNCTION {
+	c::message<> number {
+		this,
+		"number",
+		"Generate a unit rectangle.",
+		[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
 			double epsilon = c::from_atoms<std::vector<double>>(args)[0];
 			T::Polygon polygon_old = g::generateUnitRectangle(epsilon);
 			c::atoms polygon(8);

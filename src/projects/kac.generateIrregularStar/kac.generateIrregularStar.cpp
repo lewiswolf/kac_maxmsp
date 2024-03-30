@@ -11,8 +11,8 @@ namespace c = c74::min;
 namespace g = kac_core::geometry;
 namespace T = kac_core::types;
 
-class generateIrregularStar : public c::object<generateIrregularStar> {
-public:
+class generateIrregularStar: public c::object<generateIrregularStar> {
+	public:
 	MIN_DESCRIPTION {"Randomly generate a polygon."};
 	MIN_TAGS {""};
 	MIN_AUTHOR {"Lewis Wolstanholme"};
@@ -21,10 +21,15 @@ public:
 	c::inlet<> in1 {this, "(int) the number of vertices."};
 	c::outlet<> out {this, "(list) output the vertices of the polygon."};
 
-	c::message<> number {this, "number", "Generate a polygon with n vertices.",
-		MIN_FUNCTION {
+	c::message<> number {
+		this,
+		"number",
+		"Generate a polygon with n vertices.",
+		[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
 			long N = c::from_atoms<std::vector<long>>(args)[0];
-			if (N < 3) { return {}; }
+			if (N < 3) {
+				return {};
+			}
 			T::Polygon polygon_old = g::generateIrregularStar(N);
 			c::atoms polygon(N * 2);
 			for (unsigned long i = 0; i < N; i++) {
