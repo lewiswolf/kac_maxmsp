@@ -29,7 +29,7 @@ class generateUnitRectangle: public c::object<generateUnitRectangle> {
 			double epsilon = c::from_atoms<std::vector<double>>(args)[0];
 			T::Polygon polygon_old = g::generateUnitRectangle(epsilon);
 			c::atoms polygon(8);
-			for (unsigned int i = 0; i < 4; i++) {
+			for (unsigned short i = 0; i < 4; i++) {
 				polygon[2 * i] = polygon_old[i].x;
 				polygon[2 * i + 1] = polygon_old[i].y;
 			}

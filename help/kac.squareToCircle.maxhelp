@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
+			"minor" : 6,
 			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 201.0, 158.0, 741.0, 602.0 ],
+		"rect" : [ 34.0, 187.0, 799.0, 676.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -62,7 +62,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 30.0, 175.0, 100.0, 100.0 ],
 					"pointcolor" : [ 0.929411764705882, 0.929411764705882, 0.352941176470588, 1.0 ],
-					"xplace" : [ 0.45 ],
+					"xplace" : [ 0.5 ],
 					"yplace" : [ 0.5 ]
 				}
 
@@ -127,8 +127,8 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 92.0, 500.0, 100.0, 100.0 ],
 					"pointcolor" : [ 0.929411764705882, 0.929411764705882, 0.352941176470588, 1.0 ],
-					"xplace" : [ 0.45 ],
-					"yplace" : [ 0.50997496867163 ]
+					"xplace" : [ 0.5 ],
+					"yplace" : [ 0.5 ]
 				}
 
 			}
@@ -158,13 +158,14 @@
 			}
 , 			{
 				"box" : 				{
+					"fontname" : "Arial",
 					"id" : "obj-19",
 					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 30.0, 75.0, 625.0, 50.0 ],
-					"text" : "Map coordinates from a square to a circle.\nparameters:\n    x, y: The cartesian point located in a square . "
+					"patching_rect" : [ 30.0, 75.0, 651.0, 47.0 ],
+					"text" : "Map coordinates from a square to a circle.\nparameters:\n    x, y: The cartesian point located in a square."
 				}
 
 			}

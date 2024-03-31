@@ -18,18 +18,30 @@ class raisedCosine2D: public c::object<raisedCosine2D> {
 	MIN_AUTHOR {"Lewis Wolstanholme"};
 	MIN_RELATED {"kac.raisedTriangle2D"};
 
-	c::inlet<> in1 {this, "(float) the x component of the centre of the distribution."};
-	c::inlet<> in2 {this, "(float) the y component of the centre of the distribution."};
+	c::inlet<> in1 {this, "(float) the x component of the centre of the distribution. [0, N)"};
+	c::inlet<> in2 {this, "(float) the y component of the centre of the distribution. [0, M)]"};
 	c::outlet<> out {this, "(list) output the distribution."};
 
 	c::attribute<int> N {
-		this, "N", 10, c::description {"The size of the distribution across the x-axis."}
+		this,
+		"N",
+		10,
+		c::title {"Horizontal Dimension"},
+		c::description {"The size of the distribution across the x-axis. (0, ∞]"}
 	};
 	c::attribute<int> M {
-		this, "M", 10, c::description {"The size of the distribution across the y-axis."}
+		this,
+		"M",
+		10,
+		c::title {"Vertical Dimension"},
+		c::description {"The size of the distribution across the y-axis. (0, ∞]"}
 	};
 	c::attribute<double> sigma {
-		this, "sigma", 1.0, c::description {"The deviation of the distribution."}
+		this,
+		"sigma",
+		1.0,
+		c::title {"Sigma"},
+		c::description {"The deviation of the distribution."}
 	};
 
 	c::message<> number {
@@ -37,7 +49,7 @@ class raisedCosine2D: public c::object<raisedCosine2D> {
 		"number",
 		"Calculate the raised cosine distribution.",
 		[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
-			// update x and y
+			// update cartesian coordinate
 			switch (inlet) {
 				case 0:
 					x = c::from_atoms<std::vector<double>>(args)[0];
@@ -48,7 +60,6 @@ class raisedCosine2D: public c::object<raisedCosine2D> {
 				default:
 					return {};
 			}
-
 			// calculate the distribution when x is updated
 			c::atoms distribution(N * M);
 			T::Matrix_2D distribution_old = p::raisedCosine2D(M, N, y, x, sigma);

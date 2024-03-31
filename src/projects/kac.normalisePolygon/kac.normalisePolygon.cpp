@@ -24,7 +24,7 @@ class normalisePolygon: public c::object<normalisePolygon> {
 	c::message<> list {
 		this,
 		"list",
-		"Normalise a polygon.",
+		"Normalise a simple polygon.",
 		[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
 			// init variables
 			unsigned int N = floor(args.size() / 2);

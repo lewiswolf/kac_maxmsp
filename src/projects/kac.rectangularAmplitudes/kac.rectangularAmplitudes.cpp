@@ -20,14 +20,32 @@ class rectangularAmplitudes: public c::object<rectangularAmplitudes> {
 	MIN_AUTHOR {"Lewis Wolstanholme"};
 	MIN_RELATED {"kac.rectangularSeries"};
 
-	c::inlet<> in1 {this, "(float) the x component of the rectangular strike location."};
-	c::inlet<> in2 {this, "(float) the y component of the rectangular strike location."};
+	c::inlet<> in1 {this, "(float) the x component of the rectangular strike location. [0, √Є)]"};
+	c::inlet<> in2 {
+		this, "(float) the y component of the rectangular strike location. [0, 1 / √Є]"
+	};
 	c::outlet<> out {this, "(list) output the modal amplitudes."};
 
-	c::attribute<int> N {this, "N", 10, c::description {"The maximum Nth order of the modes."}};
-	c::attribute<int> M {this, "M", 10, c::description {"The amount of modes per order."}};
+	c::attribute<long> N {
+		this,
+		"N",
+		10,
+		c::title {"Nth Order"},
+		c::description {"The maximum Nth order of the modes. (0, ∞]"}
+	};
+	c::attribute<long> M {
+		this,
+		"M",
+		10,
+		c::title {"Modes per Order"},
+		c::description {"The maximum amount of modes per order. (0, ∞]"}
+	};
 	c::attribute<double> epsilon {
-		this, "epsilon", 1.0, c::description {"The aspect ratio of the rectangle."}
+		this,
+		"epsilon",
+		1.0,
+		c::title {"Aspect Ratio"},
+		c::description {"The aspect ratio of the rectangle."}
 	};
 
 	c::message<> number {
@@ -35,7 +53,7 @@ class rectangularAmplitudes: public c::object<rectangularAmplitudes> {
 		"number",
 		"Calculate the modal amplitudes.",
 		[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
-			// update x and y
+			// update the cartesian coordinate
 			switch (inlet) {
 				case 0:
 					x = c::from_atoms<std::vector<double>>(args)[0];
@@ -46,12 +64,11 @@ class rectangularAmplitudes: public c::object<rectangularAmplitudes> {
 				default:
 					return {};
 			}
-
 			// calculate amplitudes when x is updated
 			c::atoms amplitudes(N * M);
 			T::Matrix_2D amplitudes_old = p::rectangularAmplitudes(x, y, N, M, epsilon);
-			for (unsigned int n = 0; n < N; n++) {
-				for (unsigned int m = 0; m < M; m++) {
+			for (unsigned long n = 0; n < N; n++) {
+				for (unsigned long m = 0; m < M; m++) {
 					amplitudes[n * M + m] = amplitudes_old[n][m];
 				};
 			}

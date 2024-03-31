@@ -17,10 +17,16 @@ class linearAmplitudes: public c::object<linearAmplitudes> {
 	MIN_AUTHOR {"Lewis Wolstanholme"};
 	MIN_RELATED {""};
 
-	c::inlet<> in1 {this, "(float) the linear strike location."};
+	c::inlet<> in1 {this, "(float) the linear strike location. [0, 1]"};
 	c::outlet<> out {this, "(list) output the modal amplitudes."};
 
-	c::attribute<int> N {this, "N", 10, c::description {"The maximum number of the modes."}};
+	c::attribute<int> N {
+		this,
+		"N",
+		10,
+		c::title {"Number of Modes"},
+		c::description {"The maximum amount of modes. (0, ∞]"}
+	};
 
 	c::message<> number {
 		this,

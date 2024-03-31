@@ -13,18 +13,18 @@ namespace T = kac_core::types;
 
 class generatePolygon: public c::object<generatePolygon> {
 	public:
-	MIN_DESCRIPTION {"Randomly generate a polygon."};
+	MIN_DESCRIPTION {"Randomly generate a simple polygon."};
 	MIN_TAGS {""};
 	MIN_AUTHOR {"Lewis Wolstanholme"};
 	MIN_RELATED {"kac.normalisePolygon"};
 
-	c::inlet<> in1 {this, "(int) the number of vertices."};
+	c::inlet<> in1 {this, "(int) the number of vertices. [3, ∞]"};
 	c::outlet<> out {this, "(list) output the vertices of the polygon."};
 
 	c::message<> number {
 		this,
 		"number",
-		"Generate a polygon with n vertices.",
+		"Generate a simple polygon with n vertices.",
 		[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
 			long N = c::from_atoms<std::vector<long>>(args)[0];
 			if (N < 3) {

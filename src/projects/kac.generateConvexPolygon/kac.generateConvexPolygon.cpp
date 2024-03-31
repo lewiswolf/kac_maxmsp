@@ -18,7 +18,7 @@ class generateConvexPolygon: public c::object<generateConvexPolygon> {
 	MIN_AUTHOR {"Lewis Wolstanholme"};
 	MIN_RELATED {"kac.normaliseConvexPolygon, kac.normalisePolygon"};
 
-	c::inlet<> in1 {this, "(int) the number of vertices."};
+	c::inlet<> in1 {this, "(int) the number of vertices. [3, ∞]"};
 	c::outlet<> out {this, "(list) output the vertices of the polygon."};
 
 	c::message<> number {
