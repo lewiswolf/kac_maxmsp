@@ -1,5 +1,6 @@
 // core
 #define _USE_MATH_DEFINES
+#include <algorithm>
 #include <cmath>
 #include <vector>
 
@@ -30,33 +31,24 @@ class circularAmplitudes: public c::object<circularAmplitudes> {
 		"N",
 		10,
 		c::title {"Nth Order"},
-		c::description {"The maximum Nth order of the modes. (0, ∞]"}
+		c::description {"The maximum Nth order of the modes. [1, ∞]"},
+		c::setter {[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
+			long _N = std::max((long)args[0], (long)1);
+			series = p::circularSeries(_N, M);
+			return {_N};
+		}}
 	};
 	c::attribute<long> M {
 		this,
 		"M",
 		10,
 		c::title {"Modes per Order"},
-		c::description {"The maximum amount of modes per order. (0, ∞]"}
-	};
-
-	c::argument<long> set_N {
-		this,
-		"N",
-		"Update the maximum Nth order of the modes.",
-		[this](const c74::min::atom& arg) {
-			N = arg;
-			series = p::circularSeries(N, M);
-		}
-	};
-	c::argument<long> set_M {
-		this,
-		"M",
-		"Update the amount of modes per order.",
-		[this](const c74::min::atom& arg) {
-			M = arg;
-			series = p::circularSeries(N, M);
-		}
+		c::description {"The maximum amount of modes per order. [1, ∞]"},
+		c::setter {[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
+			long _M = std::max((long)args[0], (long)1);
+			series = p::circularSeries(N, _M);
+			return {_M};
+		}}
 	};
 
 	c::message<> number {

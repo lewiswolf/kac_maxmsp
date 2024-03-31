@@ -1,5 +1,6 @@
 // core
 #define _USE_MATH_DEFINES
+#include <algorithm>
 #include <cmath>
 #include <vector>
 
@@ -27,14 +28,20 @@ class raisedCosine2D: public c::object<raisedCosine2D> {
 		"N",
 		10,
 		c::title {"Horizontal Dimension"},
-		c::description {"The size of the distribution across the x-axis. (0, ∞]"}
+		c::description {"The size of the distribution across the x-axis. [1, ∞]"},
+		c::setter {[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
+			return {std::max((long)args[0], (long)1)};
+		}}
 	};
 	c::attribute<int> M {
 		this,
 		"M",
 		10,
 		c::title {"Vertical Dimension"},
-		c::description {"The size of the distribution across the y-axis. (0, ∞]"}
+		c::description {"The size of the distribution across the y-axis. [1, ∞]"},
+		c::setter {[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
+			return {std::max((long)args[0], (long)1)};
+		}}
 	};
 	c::attribute<double> sigma {
 		this,

@@ -1,5 +1,6 @@
 // core
 #define _USE_MATH_DEFINES
+#include <algorithm>
 #include <cmath>
 #include <vector>
 
@@ -25,7 +26,10 @@ class linearAmplitudes: public c::object<linearAmplitudes> {
 		"N",
 		10,
 		c::title {"Number of Modes"},
-		c::description {"The maximum amount of modes. (0, ∞]"}
+		c::description {"The maximum amount of modes. [1, ∞]"},
+		c::setter {[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
+			return {std::max((long)args[0], (long)1)};
+		}}
 	};
 
 	c::message<> number {

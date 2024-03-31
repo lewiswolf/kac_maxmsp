@@ -1,5 +1,6 @@
 // core
 #define _USE_MATH_DEFINES
+#include <algorithm>
 #include <cmath>
 #include <vector>
 
@@ -31,14 +32,20 @@ class rectangularAmplitudes: public c::object<rectangularAmplitudes> {
 		"N",
 		10,
 		c::title {"Nth Order"},
-		c::description {"The maximum Nth order of the modes. (0, ∞]"}
+		c::description {"The maximum Nth order of the modes. [1, ∞]"},
+		c::setter {[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
+			return {std::max((long)args[0], (long)1)};
+		}}
 	};
 	c::attribute<long> M {
 		this,
 		"M",
 		10,
 		c::title {"Modes per Order"},
-		c::description {"The maximum amount of modes per order. (0, ∞]"}
+		c::description {"The maximum amount of modes per order. [1, ∞]"},
+		c::setter {[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
+			return {std::max((long)args[0], (long)1)};
+		}}
 	};
 	c::attribute<double> epsilon {
 		this,
