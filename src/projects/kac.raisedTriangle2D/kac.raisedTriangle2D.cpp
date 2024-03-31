@@ -1,5 +1,6 @@
 // core
 #define _USE_MATH_DEFINES
+#include <algorithm>
 #include <cmath>
 #include <vector>
 
