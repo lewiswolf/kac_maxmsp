@@ -69,7 +69,7 @@ class raisedCosine2D: public c::object<raisedCosine2D> {
 			}
 			// calculate the distribution when x is updated
 			c::atoms distribution(N * M);
-			T::Matrix_2D distribution_old = p::raisedCosine2D(M, N, y, x, sigma);
+			T::Matrix_2D distribution_old = p::raisedCosine2D(M, N, T::Point(y, x), sigma);
 			for (unsigned int n = 0; n < N; n++) {
 				for (unsigned int m = 0; m < M; m++) {
 					distribution[n * M + m] = distribution_old[n][m];
