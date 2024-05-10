@@ -14,9 +14,9 @@ jobs:
                 os: [macos-latest, windows-latest]
 
         steps:
-            - uses: actions/checkout@latest
+            - uses: actions/checkout@v4
               with:
-                submodules: 'recursive'
+                  submodules: recursive
             - uses: lukka/get-cmake@latest
 
             - name: Test installation
