@@ -1,0 +1,22 @@
+name: Tests
+
+on:
+    push:
+        branches: [master]
+    pull_request:
+        branches: [master]
+
+jobs:
+    installation:
+        runs-on: ${{ matrix.os }}
+        strategy:
+            matrix:
+                os: [macos-latest, windows-latest]
+
+        steps:
+            - uses: actions/checkout@master
+            - uses: actions/checkout@master
+            - uses: lukka/get-cmake@latest
+
+            - name: Test installation
+              run: sh ./bin/build.sh
