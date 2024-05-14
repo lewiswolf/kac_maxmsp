@@ -9,4 +9,5 @@ build
 docs
 extensions
 externals
+package-info.json
 unused
