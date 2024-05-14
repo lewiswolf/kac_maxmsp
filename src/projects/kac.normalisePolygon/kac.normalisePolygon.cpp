@@ -1,6 +1,3 @@
-// core
-#include <vector>
-
 // dependencies
 #include "c74_min.h"
 #include <kac_core.hpp>
