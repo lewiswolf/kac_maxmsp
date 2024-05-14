@@ -1,7 +1,5 @@
 // core
-#define _USE_MATH_DEFINES
 #include <algorithm>
-#include <cmath>
 #include <vector>
 
 // dependencies
@@ -70,8 +68,8 @@ class circularAmplitudes: public c::object<circularAmplitudes> {
 			// calculate amplitudes when r is updated
 			c::atoms amplitudes(N * M);
 			T::Matrix_2D amplitudes_old = p::circularAmplitudes(r, theta, series);
-			for (unsigned int n = 0; n < N; n++) {
-				for (unsigned int m = 0; m < M; m++) {
+			for (unsigned long n = 0; n < N; n++) {
+				for (unsigned long m = 0; m < M; m++) {
 					amplitudes[n * M + m] = amplitudes_old[n][m];
 				}
 			}

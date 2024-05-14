@@ -1,7 +1,5 @@
 // core
-#define _USE_MATH_DEFINES
 #include <algorithm>
-#include <cmath>
 #include <vector>
 
 // dependencies
@@ -23,7 +21,7 @@ class raisedCosine2D: public c::object<raisedCosine2D> {
 	c::inlet<> in2 {this, "(float) the y component of the centre of the distribution. [0, M)]"};
 	c::outlet<> out {this, "(list) output the distribution."};
 
-	c::attribute<int> N {
+	c::attribute<long> N {
 		this,
 		"N",
 		10,
@@ -33,7 +31,7 @@ class raisedCosine2D: public c::object<raisedCosine2D> {
 			return {std::max((long)args[0], (long)1)};
 		}}
 	};
-	c::attribute<int> M {
+	c::attribute<long> M {
 		this,
 		"M",
 		10,
@@ -70,8 +68,8 @@ class raisedCosine2D: public c::object<raisedCosine2D> {
 			// calculate the distribution when x is updated
 			c::atoms distribution(N * M);
 			T::Matrix_2D distribution_old = p::raisedCosine2D(M, N, T::Point(y, x), sigma);
-			for (unsigned int n = 0; n < N; n++) {
-				for (unsigned int m = 0; m < M; m++) {
+			for (unsigned long n = 0; n < N; n++) {
+				for (unsigned long m = 0; m < M; m++) {
 					distribution[n * M + m] = distribution_old[n][m];
 				};
 			}

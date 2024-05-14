@@ -1,8 +1,3 @@
-// core
-#define _USE_MATH_DEFINES
-#include <cmath>
-#include <vector>
-
 // dependencies
 #include "c74_min.h"
 #include <kac_core.hpp>
@@ -27,15 +22,17 @@ class normaliseConvexPolygon: public c::object<normaliseConvexPolygon> {
 		"Normalise a convex polygon.",
 		[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
 			// init variables
-			unsigned int N = floor(args.size() / 2);
+			unsigned long N = floor(args.size() / 2);
 			c::atoms polygon(args.size());
 			T::Polygon polygon_tmp(N);
 			// convert args to T::Polygon
-			for (int i = 0; i < N; i++) { polygon_tmp[i] = T::Point(args[2 * i], args[2 * i + 1]); }
+			for (unsigned long i = 0; i < N; i++) {
+				polygon_tmp[i] = T::Point(args[2 * i], args[2 * i + 1]);
+			}
 			// normalise
 			polygon_tmp = g::normaliseConvexPolygon(polygon_tmp);
 			// output as 1D atoms
-			for (unsigned int i = 0; i < N; i++) {
+			for (unsigned long i = 0; i < N; i++) {
 				polygon[2 * i] = polygon_tmp[i].x;
 				polygon[2 * i + 1] = polygon_tmp[i].y;
 			}
