@@ -7,7 +7,7 @@ fi
 
 # build
 cmake -S . -B build
-cmake --build build -j4
+cmake --build build --config Release -j4
 
 # codesign
 if [[ "$OSTYPE" == "darwin"* ]]; then
