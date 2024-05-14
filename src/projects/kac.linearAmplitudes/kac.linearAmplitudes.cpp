@@ -1,7 +1,5 @@
 // core
-#define _USE_MATH_DEFINES
 #include <algorithm>
-#include <cmath>
 #include <vector>
 
 // dependencies
@@ -21,7 +19,7 @@ class linearAmplitudes: public c::object<linearAmplitudes> {
 	c::inlet<> in1 {this, "(float) the linear strike location. [0, 1]"};
 	c::outlet<> out {this, "(list) output the modal amplitudes."};
 
-	c::attribute<int> N {
+	c::attribute<long> N {
 		this,
 		"N",
 		10,
