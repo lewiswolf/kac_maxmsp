@@ -2,7 +2,7 @@
 
 # build dir
 if [ ! -d ./build ]; then
-  mkdir -p ./build
+	mkdir -p ./build
 fi
 
 # build
