@@ -11,10 +11,8 @@ cmake --build build --config Release -j4
 
 # codesign
 if [[ "$OSTYPE" == "darwin"* ]]; then
-	cd externals
-		for f in *
-		do 
-			codesign --force --deep -s - $f
-		done
-	cd ../
+	for f in ./externals/*
+	do 
+		codesign --force --deep -s - $f
+	done
 fi
