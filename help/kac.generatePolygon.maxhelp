@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 2,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 115.0, 1372.0, 751.0 ],
+		"rect" : [ -1717.0, 111.0, 1372.0, 723.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -50,7 +50,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 2,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -583,7 +583,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 2,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -768,7 +768,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 650.000010192394257, 350.699999988079071, 118.000001013278961, 49.0 ],
-					"text" : "0. 0.34064 0.103823 0.65936 1. 0.34064"
+					"text" : "0. 0.307752 0.733526 0.692248 1. 0.307752"
 				}
 
 			}
@@ -793,8 +793,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 417.439252495765686, 280.5, 126.0, 22.0 ],
-					"text" : "kac.normalisePolygon"
+					"patching_rect" : [ 417.439252495765686, 280.5, 221.0, 22.0 ],
+					"text" : "kac.normalisePolygon @signed_norm 0"
 				}
 
 			}
@@ -807,7 +807,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 259.719626247882843, 280.5, 127.0, 49.0 ],
-					"text" : "-0.449269 0.558006 -0.72442 0.245887 0.415163 -0.246194"
+					"text" : "0.543213 -0.918166 -0.83936 0.189573 -0.896862 -0.637205"
 				}
 
 			}

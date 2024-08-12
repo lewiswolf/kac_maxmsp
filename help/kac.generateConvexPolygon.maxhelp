@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 2,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 115.0, 1372.0, 751.0 ],
+		"rect" : [ -1717.0, 83.0, 1372.0, 751.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -50,7 +50,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 2,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -583,7 +583,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 2,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -768,7 +768,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 650.000010192394257, 350.699999988079071, 118.000001013278961, 49.0 ],
-					"text" : "0. 0.418394 0.868474 0.581606 1. 0.418394"
+					"text" : "0. 0.316361 0.855909 0.683639 1. 0.316361"
 				}
 
 			}
@@ -793,8 +793,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 417.439252495765686, 280.5, 167.0, 22.0 ],
-					"text" : "kac.normaliseConvexPolygon"
+					"patching_rect" : [ 417.439252495765686, 280.5, 261.0, 22.0 ],
+					"text" : "kac.normaliseConvexPolygon @signed_norm 0"
 				}
 
 			}
@@ -835,7 +835,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 259.719626247882843, 280.5, 127.0, 49.0 ],
-					"text" : "0.550198 0.238181 -0.483216 0.004071 -0.550198 -0.238181"
+					"text" : "-0.662519 0.251008 -0.51074 -0.251008 0.662519 0.144419"
 				}
 
 			}
