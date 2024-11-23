@@ -38,8 +38,8 @@ class circleToSquare: public c::object<circleToSquare> {
 			}
 			// calculate new coordinate when x is updated
 			T::Point p = g::simpleElliptic_Circle2Square(T::Point(x, y));
-			out1.send(p.x);
 			out2.send(p.y);
+			out1.send(p.x);
 			return {};
 		}
 	};
