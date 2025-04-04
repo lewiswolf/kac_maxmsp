@@ -1,0 +1,40 @@
+{
+	"name": "kac-maxmsp",
+	"version": "0.2.0",
+	"author": "Lewis Wolstanholme",
+	"license": "CC BY-NC-SA 4.0",
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"devDependencies": {
+		"prettier": "^3.5.3"
+	},
+	"scripts": {
+		"format": "prettier --write ./help"
+	},
+	"prettier": {
+		"arrowParens": "always",
+		"bracketSpacing": true,
+		"bracketSameLine": false,
+		"endOfLine": "lf",
+		"htmlWhitespaceSensitivity": "strict",
+		"jsxSingleQuote": true,
+		"overrides": [
+			{
+				"files": [
+					"*.maxhelp"
+				],
+				"options": {
+					"parser": "json"
+				}
+			}
+		],
+		"printWidth": 110,
+		"quoteProps": "as-needed",
+		"semi": false,
+		"singleQuote": true,
+		"tabWidth": 4,
+		"trailingComma": "all",
+		"useTabs": true
+	}
+}

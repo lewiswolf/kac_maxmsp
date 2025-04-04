@@ -6,14 +6,15 @@ AlignConsecutiveBitFields: None
 AlignConsecutiveDeclarations: None
 AlignConsecutiveMacros: AcrossEmptyLinesAndComments
 AlignConsecutiveShortCaseStatements:
-  Enabled: false
+    Enabled: false
 AlignOperands: AlignAfterOperator
 AlignTrailingComments:
-  Kind: Always
-  OverEmptyLines: 2
+    Kind: Always
+    OverEmptyLines: 2
 AllowAllArgumentsOnNextLine: true
 AllowShortBlocksOnASingleLine: Always
 AllowShortLoopsOnASingleLine: true
+AllowShortNamespacesOnASingleLine: true
 AlwaysBreakBeforeMultilineStrings: true
 BinPackArguments: false
 BinPackParameters: false
@@ -32,6 +33,7 @@ IncludeBlocks: Preserve
 IndentAccessModifiers: false
 IndentCaseBlocks: false
 IndentCaseLabels: true
+IndentExportBlock: true
 IndentExternBlock: Indent
 IndentGotoLabels: true
 IndentPPDirectives: BeforeHash
@@ -54,6 +56,7 @@ PointerAlignment: Left
 QualifierAlignment: Left
 ReferenceAlignment: Pointer
 ReflowComments: true
+RemoveEmptyLinesInUnwrappedLines: true
 RemoveParentheses: ReturnStatement
 RemoveSemicolon: true
 RequiresExpressionIndentation: OuterScope
@@ -85,3 +88,4 @@ Standard: c++20
 TabWidth: 4
 UseCRLF: false
 UseTab: Always
+WrapNamespaceBodyWithEmptyLines: Always

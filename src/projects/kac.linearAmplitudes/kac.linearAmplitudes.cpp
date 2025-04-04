@@ -35,8 +35,9 @@ class linearAmplitudes: public c::object<linearAmplitudes> {
 		"number",
 		"Calculate the modal amplitudes.",
 		[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
-			out.send(c::to_atoms(p::linearAmplitudes(c::from_atoms<std::vector<double>>(args)[0], N)
-			));
+			out.send(
+				c::to_atoms(p::linearAmplitudes(c::from_atoms<std::vector<double>>(args)[0], N))
+			);
 			return {};
 		}
 	};

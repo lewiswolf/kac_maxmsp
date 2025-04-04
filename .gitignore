@@ -9,5 +9,6 @@ build
 docs
 extensions
 externals
+node_modules
 package-info.json
 unused
