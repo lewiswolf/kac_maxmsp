@@ -11,4 +11,5 @@ extensions
 externals
 node_modules
 package-info.json
+package-lock.json
 unused
