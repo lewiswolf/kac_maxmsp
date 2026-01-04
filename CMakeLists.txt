@@ -1,4 +1,21 @@
 cmake_minimum_required(VERSION 3.24)
+
+if (APPLE)
+	# force Apple clang++ to be the default compiler on macos so as to not create library conflicts with Max
+	execute_process(
+		COMMAND xcrun --find clang
+		OUTPUT_VARIABLE APPLE_CLANG
+		OUTPUT_STRIP_TRAILING_WHITESPACE
+		RESULT_VARIABLE XCRUN_RESULT
+	)
+	if(NOT XCRUN_RESULT EQUAL 0)
+		message(FATAL_ERROR "Apple clang not found - xcode-select may be misconfigured.")
+	endif()
+	set(CMAKE_C_COMPILER "${APPLE_CLANG}")
+	get_filename_component(APPLE_CLANG_DIR "${APPLE_CLANG}" DIRECTORY)
+	set(CMAKE_CXX_COMPILER "${APPLE_CLANG_DIR}/clang++")
+endif()
+
 project(
 	kac_maxmsp
 	VERSION 0.1.0
