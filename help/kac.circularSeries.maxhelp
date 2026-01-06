@@ -2,41 +2,25 @@
 	"patcher": {
 		"fileversion": 1,
 		"appversion": {
-			"major": 8,
-			"minor": 6,
+			"major": 9,
+			"minor": 1,
 			"revision": 2,
 			"architecture": "x64",
 			"modernui": 1
 		},
 		"classnamespace": "box",
 		"rect": [34.0, 215.0, 799.0, 648.0],
-		"bglocked": 0,
 		"openinpresentation": 1,
-		"default_fontsize": 12.0,
-		"default_fontface": 0,
 		"default_fontname": "Lato Light",
-		"gridonopen": 1,
 		"gridsize": [5.0, 5.0],
 		"gridsnaponopen": 2,
 		"objectsnaponopen": 0,
-		"statusbarvisible": 2,
-		"toolbarvisible": 1,
 		"lefttoolbarpinned": 1,
 		"toptoolbarpinned": 1,
 		"righttoolbarpinned": 1,
 		"bottomtoolbarpinned": 1,
-		"toolbars_unpinned_last_save": 0,
-		"tallnewobj": 0,
-		"boxanimatetime": 200,
-		"enablehscroll": 1,
-		"enablevscroll": 1,
-		"devicewidth": 0.0,
-		"description": "",
-		"digest": "",
-		"tags": "",
 		"style": "tap",
 		"subpatcher_template": "tap.template",
-		"assistshowspatchername": 0,
 		"boxes": [
 			{
 				"box": {
@@ -48,41 +32,15 @@
 					"patcher": {
 						"fileversion": 1,
 						"appversion": {
-							"major": 8,
-							"minor": 6,
+							"major": 9,
+							"minor": 1,
 							"revision": 2,
 							"architecture": "x64",
 							"modernui": 1
 						},
 						"classnamespace": "box",
 						"rect": [-1539.0, 88.0, 1498.0, 776.0],
-						"bglocked": 0,
-						"openinpresentation": 0,
-						"default_fontsize": 12.0,
-						"default_fontface": 0,
-						"default_fontname": "Arial",
-						"gridonopen": 1,
-						"gridsize": [15.0, 15.0],
-						"gridsnaponopen": 1,
-						"objectsnaponopen": 1,
-						"statusbarvisible": 2,
-						"toolbarvisible": 1,
-						"lefttoolbarpinned": 0,
-						"toptoolbarpinned": 0,
-						"righttoolbarpinned": 0,
-						"bottomtoolbarpinned": 0,
-						"toolbars_unpinned_last_save": 0,
-						"tallnewobj": 0,
-						"boxanimatetime": 200,
-						"enablehscroll": 1,
-						"enablevscroll": 1,
-						"devicewidth": 0.0,
-						"description": "",
-						"digest": "",
-						"tags": "",
-						"style": "",
 						"subpatcher_template": "tap.template",
-						"assistshowspatchername": 0,
 						"boxes": [
 							{
 								"box": {
@@ -193,12 +151,6 @@
 						]
 					},
 					"patching_rect": [330.5, 550.0, 96.0, 23.0],
-					"saved_object_attributes": {
-						"description": "",
-						"digest": "",
-						"globalpatchername": "",
-						"tags": ""
-					},
 					"text": "p set mc with list"
 				}
 			},
@@ -212,41 +164,15 @@
 					"patcher": {
 						"fileversion": 1,
 						"appversion": {
-							"major": 8,
-							"minor": 6,
+							"major": 9,
+							"minor": 1,
 							"revision": 2,
 							"architecture": "x64",
 							"modernui": 1
 						},
 						"classnamespace": "box",
 						"rect": [-1539.0, 88.0, 1498.0, 776.0],
-						"bglocked": 0,
-						"openinpresentation": 0,
-						"default_fontsize": 12.0,
-						"default_fontface": 0,
-						"default_fontname": "Arial",
-						"gridonopen": 1,
-						"gridsize": [15.0, 15.0],
-						"gridsnaponopen": 1,
-						"objectsnaponopen": 1,
-						"statusbarvisible": 2,
-						"toolbarvisible": 1,
-						"lefttoolbarpinned": 0,
-						"toptoolbarpinned": 0,
-						"righttoolbarpinned": 0,
-						"bottomtoolbarpinned": 0,
-						"toolbars_unpinned_last_save": 0,
-						"tallnewobj": 0,
-						"boxanimatetime": 200,
-						"enablehscroll": 1,
-						"enablevscroll": 1,
-						"devicewidth": 0.0,
-						"description": "",
-						"digest": "",
-						"tags": "",
-						"style": "",
 						"subpatcher_template": "tap.template",
-						"assistshowspatchername": 0,
 						"boxes": [
 							{
 								"box": {
@@ -356,13 +282,7 @@
 							}
 						]
 					},
-					"patching_rect": [30.5, 585.018928901200411, 96.0, 23.0],
-					"saved_object_attributes": {
-						"description": "",
-						"digest": "",
-						"globalpatchername": "",
-						"tags": ""
-					},
+					"patching_rect": [30.5, 585.0189289012004, 96.0, 23.0],
 					"text": "p set mc with list"
 				}
 			},
@@ -445,7 +365,7 @@
 					"patching_rect": [330.5, 140.0, 100.0, 100.0],
 					"pointcolor": [1.0, 1.0, 1.0, 1.0],
 					"presentation": 1,
-					"presentation_rect": [355.0, 147.799999177455902, 100.0, 100.0],
+					"presentation_rect": [355.0, 147.7999991774559, 100.0, 100.0],
 					"xplace": [0.465],
 					"yplace": [0.76]
 				}
@@ -462,7 +382,7 @@
 					"presentation": 1,
 					"presentation_linecount": 4,
 					"presentation_rect": [25.0, 65.0, 709.0, 60.0],
-					"text": "Calculate the modes and their respective amplitudes for a circular drum. \nparameters:\n    N, M: The number of modes - the output of each object will be a list of length N*M.\n    r, theta: The polar strike location of the drum, such that r = -1 or 1 always corresponds to a boundary, and thus produces silence. "
+					"text": "Calculate the modes and their respective amplitudes for a circular drum. \nparameters:\n    r, theta: The polar strike location of the drum, such that r = -1 or 1 always corresponds to a boundary, and thus produces silence. \n    N, M: The number of modes - the output of each object will be a list of length N*M."
 				}
 			},
 			{
@@ -527,7 +447,7 @@
 					"numinlets": 1,
 					"numoutlets": 2,
 					"outlettype": ["", "float"],
-					"patching_rect": [330.5, 585.018928901200525, 65.0, 23.0],
+					"patching_rect": [330.5, 585.0189289012005, 65.0, 23.0],
 					"text": "t l 2."
 				}
 			},
@@ -538,19 +458,8 @@
 					"numinlets": 2,
 					"numoutlets": 3,
 					"outlettype": ["multichannelsignal", "", ""],
-					"patching_rect": [330.5, 620.037857802400822, 65.0, 23.0],
+					"patching_rect": [330.5, 620.0378578024008, 65.0, 23.0],
 					"text": "mc.line~ 0."
-				}
-			},
-			{
-				"box": {
-					"id": "obj-13",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": ["float"],
-					"patching_rect": [330.5, 440.0, 29.5, 23.0],
-					"text": "f"
 				}
 			},
 			{
@@ -577,7 +486,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"outlettype": ["multichannelsignal"],
-					"patching_rect": [30.5, 802.094644506002055, 158.0, 23.0],
+					"patching_rect": [30.5, 802.094644506002, 158.0, 23.0],
 					"text": "mc.mixdown~ 2 @autogain 1"
 				}
 			},
@@ -588,7 +497,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"outlettype": ["multichannelsignal"],
-					"patching_rect": [30.5, 620.037857802400822, 60.0, 23.0],
+					"patching_rect": [30.5, 620.0378578024008, 60.0, 23.0],
 					"text": "mc.cycle~"
 				}
 			},
@@ -621,7 +530,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"outlettype": ["multichannelsignal"],
-					"patching_rect": [30.5, 655.056786703601233, 319.0, 23.0],
+					"patching_rect": [30.5, 655.0567867036012, 319.0, 23.0],
 					"text": "mc.*~"
 				}
 			},
@@ -633,7 +542,7 @@
 					"numoutlets": 0,
 					"patching_rect": [45.5, 187.0, 20.0, 21.0],
 					"presentation": 1,
-					"presentation_rect": [156.525000616908073, 175.0, 20.0, 21.0],
+					"presentation_rect": [156.52500061690807, 175.0, 20.0, 21.0],
 					"text": "f0"
 				}
 			},
@@ -648,7 +557,7 @@
 					"parameter_enable": 0,
 					"patching_rect": [30.5, 217.0, 50.0, 23.0],
 					"presentation": 1,
-					"presentation_rect": [141.525000616908073, 205.0, 50.0, 23.0]
+					"presentation_rect": [141.52500061690807, 205.0, 50.0, 23.0]
 				}
 			},
 			{
@@ -662,7 +571,7 @@
 					"parameter_enable": 0,
 					"patching_rect": [210.5, 217.0, 57.5, 23.0],
 					"presentation": 1,
-					"presentation_rect": [281.175000205636024, 205.0, 57.5, 23.0]
+					"presentation_rect": [281.175000205636, 205.0, 57.5, 23.0]
 				}
 			},
 			{
@@ -673,7 +582,7 @@
 					"numoutlets": 0,
 					"patching_rect": [229.75, 187.0, 19.0, 21.0],
 					"presentation": 1,
-					"presentation_rect": [300.425000205636024, 175.0, 19.0, 21.0],
+					"presentation_rect": [300.425000205636, 175.0, 19.0, 21.0],
 					"text": "M"
 				}
 			},
@@ -685,7 +594,7 @@
 					"numoutlets": 0,
 					"patching_rect": [134.5, 187.0, 19.0, 21.0],
 					"presentation": 1,
-					"presentation_rect": [226.850000411272049, 175.0, 19.0, 21.0],
+					"presentation_rect": [226.85000041127205, 175.0, 19.0, 21.0],
 					"text": "N"
 				}
 			},
@@ -733,7 +642,7 @@
 					"parameter_enable": 0,
 					"patching_rect": [115.5, 217.0, 57.0, 23.0],
 					"presentation": 1,
-					"presentation_rect": [207.850000411272049, 205.0, 57.0, 23.0]
+					"presentation_rect": [207.85000041127205, 205.0, 57.0, 23.0]
 				}
 			},
 			{
@@ -753,21 +662,21 @@
 					"maxclass": "mc.ezdac~",
 					"numinlets": 1,
 					"numoutlets": 0,
-					"patching_rect": [30.5, 837.113573407202466, 45.0, 45.0],
+					"patching_rect": [30.5, 837.1135734072025, 45.0, 45.0],
 					"presentation": 1,
-					"presentation_rect": [25.0, 147.799999177455902, 100.200000822544098, 100.200000822544098]
+					"presentation_rect": [25.0, 147.7999991774559, 100.2000008225441, 100.2000008225441]
 				}
 			},
 			{
 				"box": {
 					"id": "obj-21",
-					"lastchannelcount": 64,
+					"lastchannelcount": 100,
 					"maxclass": "mc.live.gain~",
 					"numinlets": 1,
 					"numoutlets": 4,
 					"outlettype": ["multichannelsignal", "", "float", "list"],
 					"parameter_enable": 1,
-					"patching_rect": [30.5, 690.075715604801644, 415.0, 100.0],
+					"patching_rect": [30.5, 690.0757156048016, 415.0, 100.0],
 					"presentation": 1,
 					"presentation_rect": [25.0, 250.0, 430.0, 100.0],
 					"saved_attribute_attributes": {
@@ -790,12 +699,6 @@
 				"patchline": {
 					"destination": ["obj-15", 0],
 					"source": ["obj-11", 0]
-				}
-			},
-			{
-				"patchline": {
-					"destination": ["obj-61", 0],
-					"source": ["obj-13", 0]
 				}
 			},
 			{
@@ -830,14 +733,14 @@
 			},
 			{
 				"patchline": {
-					"destination": ["obj-13", 0],
-					"source": ["obj-18", 0]
+					"destination": ["obj-61", 1],
+					"source": ["obj-18", 1]
 				}
 			},
 			{
 				"patchline": {
-					"destination": ["obj-61", 1],
-					"source": ["obj-18", 1]
+					"destination": ["obj-61", 0],
+					"source": ["obj-18", 0]
 				}
 			},
 			{
@@ -905,7 +808,7 @@
 				"patchline": {
 					"destination": ["obj-9", 1],
 					"midpoints": [
-						51.0, 471.458098888397217, 25.5, 471.458098888397217, 25.5, 538.0, 191.0, 538.0
+						51.0, 471.4580988883972, 25.5, 471.4580988883972, 25.5, 538.0, 191.0, 538.0
 					],
 					"source": ["obj-35", 1]
 				}
@@ -971,17 +874,17 @@
 			},
 			{
 				"patchline": {
-					"destination": ["obj-13", 0],
-					"midpoints": [220.0, 431.0, 340.0, 431.0],
-					"order": 0,
+					"destination": ["obj-60", 0],
+					"midpoints": [220.0, 431.3497707992792, 40.0, 431.3497707992792],
+					"order": 1,
 					"source": ["obj-6", 0]
 				}
 			},
 			{
 				"patchline": {
-					"destination": ["obj-60", 0],
-					"midpoints": [220.0, 431.349770799279213, 40.0, 431.349770799279213],
-					"order": 1,
+					"destination": ["obj-61", 0],
+					"midpoints": [220.0, 431.0, 340.0, 431.0],
+					"order": 0,
 					"source": ["obj-6", 0]
 				}
 			},
@@ -1005,14 +908,6 @@
 			},
 			{
 				"patchline": {
-					"destination": ["obj-13", 0],
-					"midpoints": [125.0, 431.0, 340.0, 431.0],
-					"order": 0,
-					"source": ["obj-62", 0]
-				}
-			},
-			{
-				"patchline": {
 					"destination": ["obj-57", 0],
 					"source": ["obj-62", 1]
 				}
@@ -1020,8 +915,16 @@
 			{
 				"patchline": {
 					"destination": ["obj-60", 0],
-					"midpoints": [125.0, 431.292631208896637, 40.0, 431.292631208896637],
+					"midpoints": [125.0, 431.29263120889664, 40.0, 431.29263120889664],
 					"order": 1,
+					"source": ["obj-62", 0]
+				}
+			},
+			{
+				"patchline": {
+					"destination": ["obj-61", 0],
+					"midpoints": [125.0, 431.0, 340.0, 431.0],
+					"order": 0,
 					"source": ["obj-62", 0]
 				}
 			},
@@ -1056,29 +959,8 @@
 		],
 		"parameters": {
 			"obj-21": ["mc.live.gain~", "mc.live.gain~", 0],
-			"parameterbanks": {},
 			"inherited_shortname": 1
 		},
-		"dependency_cache": [
-			{
-				"name": "helpdetails.js",
-				"bootpath": "C74:/help/resources",
-				"type": "TEXT",
-				"implicit": 1
-			},
-			{
-				"name": "kac.circularAmplitudes.mxo",
-				"type": "iLaX"
-			},
-			{
-				"name": "kac.circularSeries.mxo",
-				"type": "iLaX"
-			},
-			{
-				"name": "kac.squareToCircle.mxo",
-				"type": "iLaX"
-			}
-		],
 		"autosave": 0,
 		"styles": [
 			{

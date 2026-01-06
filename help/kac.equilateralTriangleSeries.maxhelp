@@ -2,41 +2,24 @@
 	"patcher": {
 		"fileversion": 1,
 		"appversion": {
-			"major": 8,
-			"minor": 6,
+			"major": 9,
+			"minor": 1,
 			"revision": 2,
 			"architecture": "x64",
 			"modernui": 1
 		},
 		"classnamespace": "box",
-		"rect": [34.0, 215.0, 799.0, 648.0],
-		"bglocked": 0,
-		"openinpresentation": 0,
-		"default_fontsize": 12.0,
-		"default_fontface": 0,
+		"rect": [34.0, 243.0, 799.0, 620.0],
 		"default_fontname": "Lato Light",
-		"gridonopen": 1,
 		"gridsize": [5.0, 5.0],
 		"gridsnaponopen": 2,
 		"objectsnaponopen": 0,
-		"statusbarvisible": 2,
-		"toolbarvisible": 1,
 		"lefttoolbarpinned": 1,
 		"toptoolbarpinned": 1,
 		"righttoolbarpinned": 1,
 		"bottomtoolbarpinned": 1,
-		"toolbars_unpinned_last_save": 0,
-		"tallnewobj": 0,
-		"boxanimatetime": 200,
-		"enablehscroll": 1,
-		"enablevscroll": 1,
-		"devicewidth": 0.0,
-		"description": "",
-		"digest": "",
-		"tags": "",
 		"style": "tap",
 		"subpatcher_template": "tap.template",
-		"assistshowspatchername": 0,
 		"boxes": [
 			{
 				"box": {
@@ -48,41 +31,15 @@
 					"patcher": {
 						"fileversion": 1,
 						"appversion": {
-							"major": 8,
-							"minor": 6,
+							"major": 9,
+							"minor": 1,
 							"revision": 2,
 							"architecture": "x64",
 							"modernui": 1
 						},
 						"classnamespace": "box",
 						"rect": [381.0, 116.0, 925.0, 748.0],
-						"bglocked": 0,
-						"openinpresentation": 0,
-						"default_fontsize": 12.0,
-						"default_fontface": 0,
-						"default_fontname": "Arial",
-						"gridonopen": 1,
-						"gridsize": [15.0, 15.0],
-						"gridsnaponopen": 1,
-						"objectsnaponopen": 1,
-						"statusbarvisible": 2,
-						"toolbarvisible": 1,
-						"lefttoolbarpinned": 0,
-						"toptoolbarpinned": 0,
-						"righttoolbarpinned": 0,
-						"bottomtoolbarpinned": 0,
-						"toolbars_unpinned_last_save": 0,
-						"tallnewobj": 0,
-						"boxanimatetime": 200,
-						"enablehscroll": 1,
-						"enablevscroll": 1,
-						"devicewidth": 0.0,
-						"description": "",
-						"digest": "",
-						"tags": "",
-						"style": "",
 						"subpatcher_template": "tap.template",
-						"assistshowspatchername": 0,
 						"boxes": [
 							{
 								"box": {
@@ -193,12 +150,6 @@
 						]
 					},
 					"patching_rect": [330.0, 445.0, 96.0, 23.0],
-					"saved_object_attributes": {
-						"description": "",
-						"digest": "",
-						"globalpatchername": "",
-						"tags": ""
-					},
 					"text": "p set mc with list"
 				}
 			},
@@ -212,41 +163,15 @@
 					"patcher": {
 						"fileversion": 1,
 						"appversion": {
-							"major": 8,
-							"minor": 6,
+							"major": 9,
+							"minor": 1,
 							"revision": 2,
 							"architecture": "x64",
 							"modernui": 1
 						},
 						"classnamespace": "box",
 						"rect": [381.0, 116.0, 925.0, 748.0],
-						"bglocked": 0,
-						"openinpresentation": 0,
-						"default_fontsize": 12.0,
-						"default_fontface": 0,
-						"default_fontname": "Arial",
-						"gridonopen": 1,
-						"gridsize": [15.0, 15.0],
-						"gridsnaponopen": 1,
-						"objectsnaponopen": 1,
-						"statusbarvisible": 2,
-						"toolbarvisible": 1,
-						"lefttoolbarpinned": 0,
-						"toptoolbarpinned": 0,
-						"righttoolbarpinned": 0,
-						"bottomtoolbarpinned": 0,
-						"toolbars_unpinned_last_save": 0,
-						"tallnewobj": 0,
-						"boxanimatetime": 200,
-						"enablehscroll": 1,
-						"enablevscroll": 1,
-						"devicewidth": 0.0,
-						"description": "",
-						"digest": "",
-						"tags": "",
-						"style": "",
 						"subpatcher_template": "tap.template",
-						"assistshowspatchername": 0,
 						"boxes": [
 							{
 								"box": {
@@ -357,12 +282,6 @@
 						]
 					},
 					"patching_rect": [30.0, 481.0, 96.0, 23.0],
-					"saved_object_attributes": {
-						"description": "",
-						"digest": "",
-						"globalpatchername": "",
-						"tags": ""
-					},
 					"text": "p set mc with list"
 				}
 			},
@@ -467,7 +386,7 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [25.0, 65.0, 701.0, 60.0],
-					"text": "Calculate the modes and their respective amplitudes for an equilateral triangle drum. \nparameters:\n    N, M: The number of modes - the output of each object will be a list of length N*M.\n    u, v, w: The trilinear strike location of the drum."
+					"text": "Calculate the modes and their respective amplitudes for an equilateral triangle drum. \nparameters:\n    u, v, w: The trilinear strike location of the drum.\n    N, M: The number of modes - the output of each object will be a list of length N*M."
 				}
 			},
 			{
@@ -533,17 +452,6 @@
 					"numoutlets": 0,
 					"patching_rect": [417.5, 190.0, 19.0, 21.0],
 					"text": "v"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-13",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": ["float"],
-					"patching_rect": [330.0, 335.0, 29.5, 23.0],
-					"text": "f"
 				}
 			},
 			{
@@ -726,7 +634,7 @@
 			{
 				"box": {
 					"id": "obj-21",
-					"lastchannelcount": 64,
+					"lastchannelcount": 100,
 					"maxclass": "mc.live.gain~",
 					"numinlets": 1,
 					"numoutlets": 4,
@@ -749,12 +657,6 @@
 			}
 		],
 		"lines": [
-			{
-				"patchline": {
-					"destination": ["obj-61", 0],
-					"source": ["obj-13", 0]
-				}
-			},
 			{
 				"patchline": {
 					"destination": ["obj-6", 0],
@@ -805,12 +707,6 @@
 			},
 			{
 				"patchline": {
-					"destination": ["obj-13", 0],
-					"source": ["obj-26", 0]
-				}
-			},
-			{
-				"patchline": {
 					"destination": ["obj-61", 2],
 					"source": ["obj-26", 2]
 				}
@@ -819,6 +715,12 @@
 				"patchline": {
 					"destination": ["obj-61", 1],
 					"source": ["obj-26", 1]
+				}
+			},
+			{
+				"patchline": {
+					"destination": ["obj-61", 0],
+					"source": ["obj-26", 0]
 				}
 			},
 			{
@@ -861,7 +763,7 @@
 				"patchline": {
 					"destination": ["obj-9", 1],
 					"midpoints": [
-						50.5, 366.458098888397217, 25.0, 366.458098888397217, 25.0, 433.0, 190.5, 433.0
+						50.5, 366.4580988883972, 25.0, 366.4580988883972, 25.0, 433.0, 190.5, 433.0
 					],
 					"source": ["obj-35", 1]
 				}
@@ -902,17 +804,17 @@
 			},
 			{
 				"patchline": {
-					"destination": ["obj-13", 0],
-					"midpoints": [219.5, 326.0, 339.5, 326.0],
-					"order": 0,
+					"destination": ["obj-60", 0],
+					"midpoints": [219.5, 326.3497707992792, 39.5, 326.3497707992792],
+					"order": 1,
 					"source": ["obj-6", 0]
 				}
 			},
 			{
 				"patchline": {
-					"destination": ["obj-60", 0],
-					"midpoints": [219.5, 326.349770799279213, 39.5, 326.349770799279213],
-					"order": 1,
+					"destination": ["obj-61", 0],
+					"midpoints": [219.5, 326.0, 339.5, 326.0],
+					"order": 0,
 					"source": ["obj-6", 0]
 				}
 			},
@@ -936,14 +838,6 @@
 			},
 			{
 				"patchline": {
-					"destination": ["obj-13", 0],
-					"midpoints": [124.5, 326.0, 339.5, 326.0],
-					"order": 0,
-					"source": ["obj-62", 0]
-				}
-			},
-			{
-				"patchline": {
 					"destination": ["obj-57", 0],
 					"source": ["obj-62", 1]
 				}
@@ -951,8 +845,16 @@
 			{
 				"patchline": {
 					"destination": ["obj-60", 0],
-					"midpoints": [124.5, 326.292631208896637, 39.5, 326.292631208896637],
+					"midpoints": [124.5, 326.29263120889664, 39.5, 326.29263120889664],
 					"order": 1,
+					"source": ["obj-62", 0]
+				}
+			},
+			{
+				"patchline": {
+					"destination": ["obj-61", 0],
+					"midpoints": [124.5, 326.0, 339.5, 326.0],
+					"order": 0,
 					"source": ["obj-62", 0]
 				}
 			},
@@ -987,25 +889,16 @@
 		],
 		"parameters": {
 			"obj-21": ["mc.live.gain~", "mc.live.gain~", 0],
-			"parameterbanks": {},
+			"parameterbanks": {
+				"0": {
+					"index": 0,
+					"name": "",
+					"parameters": ["-", "-", "-", "-", "-", "-", "-", "-"],
+					"buttons": ["-", "-", "-", "-", "-", "-", "-", "-"]
+				}
+			},
 			"inherited_shortname": 1
 		},
-		"dependency_cache": [
-			{
-				"name": "helpdetails.js",
-				"bootpath": "C74:/help/resources",
-				"type": "TEXT",
-				"implicit": 1
-			},
-			{
-				"name": "kac.equilateralTriangleAmplitudes.mxo",
-				"type": "iLaX"
-			},
-			{
-				"name": "kac.equilateralTriangleSeries.mxo",
-				"type": "iLaX"
-			}
-		],
 		"autosave": 0,
 		"styles": [
 			{

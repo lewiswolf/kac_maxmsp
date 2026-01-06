@@ -30,15 +30,40 @@ class linearAmplitudes: public c::object<linearAmplitudes> {
 		}}
 	};
 
+	c::message<> bang {
+		this,
+		"bang",
+		"Calculate the modal amplitudes.",
+		[this](const c::atoms& args, const int inlet) -> c::atoms {
+			if (inlet == 0) {
+				_logic();
+			}
+			return {};
+		}
+	};
+
 	c::message<> number {
 		this,
 		"number",
 		"Calculate the modal amplitudes.",
 		[this](const c::atoms& args, const int inlet) -> c::atoms {
-			out.send(c::to_atoms(p::linearAmplitudes(c::from_atoms<double>(args), N)));
-			return {};
+			// update cartesian coordinate
+			switch (inlet) {
+				case 0:
+					x = c::from_atoms<double>(args);
+					_logic();
+					return {};
+				default:
+					return {};
+			}
 		}
 	};
+
+	private:
+	// variables
+	double x = 0.;
+	// methods
+	void _logic() { out.send(c::to_atoms(p::linearAmplitudes(x, N))); }
 };
 
 MIN_EXTERNAL(linearAmplitudes);

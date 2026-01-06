@@ -29,7 +29,7 @@ class raisedCosine2D: public c::object<raisedCosine2D> {
 		10,
 		c::title {"Horizontal Dimension"},
 		c::description {"The size of the distribution across the x-axis. [1, ∞]"},
-		c::setter {[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
+		c::setter {[this](const c::atoms& args, const int inlet) -> c::atoms {
 			return {std::max(c::from_atoms<long>(args), (long)1)};
 		}}
 	};
@@ -39,7 +39,7 @@ class raisedCosine2D: public c::object<raisedCosine2D> {
 		10,
 		c::title {"Vertical Dimension"},
 		c::description {"The size of the distribution across the y-axis. [1, ∞]"},
-		c::setter {[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
+		c::setter {[this](const c::atoms& args, const int inlet) -> c::atoms {
 			return {std::max(c::from_atoms<long>(args), (long)1)};
 		}}
 	};
@@ -55,7 +55,7 @@ class raisedCosine2D: public c::object<raisedCosine2D> {
 		this,
 		"bang",
 		"Calculate the raised cosine distribution.",
-		[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
+		[this](const c::atoms& args, const int inlet) -> c::atoms {
 			if (inlet == 0) {
 				_logic();
 			}
@@ -67,7 +67,7 @@ class raisedCosine2D: public c::object<raisedCosine2D> {
 		this,
 		"number",
 		"Calculate the raised cosine distribution.",
-		[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
+		[this](const c::atoms& args, const int inlet) -> c::atoms {
 			// update cartesian coordinate
 			switch (inlet) {
 				case 0:
