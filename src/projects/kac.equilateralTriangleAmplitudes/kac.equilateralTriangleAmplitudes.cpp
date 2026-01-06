@@ -31,8 +31,8 @@ class equilateralTriangleAmplitudes: public c::object<equilateralTriangleAmplitu
 		10,
 		c::title {"Nth Order"},
 		c::description {"The maximum Nth order of the modes. [1, ∞]"},
-		c::setter {[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
-			return {std::max((long)args[0], (long)1)};
+		c::setter {[this](const c::atoms& args, const int inlet) -> c::atoms {
+			return {std::max(c::from_atoms<long>(args), (long)1)};
 		}}
 	};
 	c::attribute<long> M {
@@ -41,47 +41,61 @@ class equilateralTriangleAmplitudes: public c::object<equilateralTriangleAmplitu
 		10,
 		c::title {"Modes per Order"},
 		c::description {"The maximum amount of modes per order. [1, ∞]"},
-		c::setter {[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
-			return {std::max((long)args[0], (long)1)};
+		c::setter {[this](const c::atoms& args, const int inlet) -> c::atoms {
+			return {std::max(c::from_atoms<long>(args), (long)1)};
 		}}
+	};
+
+	c::message<> bang {
+		this,
+		"bang",
+		"Calculate the modal amplitudes of an equilateral triangle for a trilinear coordinate.",
+		[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
+			if (inlet == 0) {
+				_logic();
+			}
+			return {};
+		}
 	};
 
 	c::message<> number {
 		this,
 		"number",
 		"Calculate the modal amplitudes of an equilateral triangle for a trilinear coordinate.",
-		[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
+		[this](const c::atoms& args, const int inlet) -> c::atoms {
 			// update trilinear coordinate
 			switch (inlet) {
 				case 0:
-					u = c::from_atoms<std::vector<double>>(args)[0];
-					break;
+					u = c::from_atoms<double>(args);
+					_logic();
+					return {};
 				case 1:
-					v = c::from_atoms<std::vector<double>>(args)[0];
+					v = c::from_atoms<double>(args);
 					return {};
 				case 2:
-					w = c::from_atoms<std::vector<double>>(args)[0];
+					w = c::from_atoms<double>(args);
 					return {};
 				default:
 					return {};
 			}
-			// calculate amplitudes when u is updated
-			c::atoms amplitudes(N * M);
-			T::Matrix_2D amplitudes_old = p::equilateralTriangleAmplitudes(u, v, w, N, M);
-			for (unsigned long n = 0; n < N; n++) {
-				for (unsigned long m = 0; m < M; m++) {
-					amplitudes[n * M + m] = amplitudes_old[n][m];
-				};
-			}
-			out.send(amplitudes);
-			return {};
 		}
 	};
 
 	private:
-	double u;
-	double v;
-	double w;
+	// variables
+	double u = 0.;
+	double v = 0.;
+	double w = 0.;
+	// methods
+	void _logic() {
+		// calculate amplitudes
+		c::atoms amplitudes(N * M);
+		T::Matrix_2D amplitudes_old = p::equilateralTriangleAmplitudes(u, v, w, N, M);
+		for (long n = 0; n < N; n++) {
+			for (long m = 0; m < M; m++) { amplitudes[n * M + m] = amplitudes_old[n][m]; };
+		}
+		out.send(amplitudes);
+	}
 };
 
 MIN_EXTERNAL(equilateralTriangleAmplitudes);

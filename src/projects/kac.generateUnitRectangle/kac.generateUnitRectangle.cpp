@@ -23,8 +23,8 @@ class generateUnitRectangle: public c::object<generateUnitRectangle> {
 		this,
 		"number",
 		"Generate a unit rectangle.",
-		[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
-			double epsilon = c::from_atoms<std::vector<double>>(args)[0];
+		[this](const c::atoms& args, const int inlet) -> c::atoms {
+			double epsilon = c::from_atoms<double>(args);
 			T::Polygon polygon_old = g::generateUnitRectangle(epsilon);
 			c::atoms polygon(8);
 			for (unsigned short i = 0; i < 4; i++) {

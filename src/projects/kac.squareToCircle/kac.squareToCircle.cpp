@@ -20,33 +20,48 @@ class squareToCircle: public c::object<squareToCircle> {
 	c::outlet<> out1 {this, "(float) the x component output the mapped coordinates."};
 	c::outlet<> out2 {this, "(float) the y component output the mapped coordinates."};
 
-	c::message<> number {
+	c::message<> bang {
 		this,
-		"number",
+		"bang",
 		"Map coordinates from a square to a circle.",
 		[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
-			// update the cartesian coordinate
-			switch (inlet) {
-				case 0:
-					x = c::from_atoms<std::vector<double>>(args)[0];
-					break;
-				case 1:
-					y = c::from_atoms<std::vector<double>>(args)[0];
-					return {};
-				default:
-					return {};
+			if (inlet == 0) {
+				_logic();
 			}
-			// calculate new coordinate when x is updated
-			T::Point p = g::simpleElliptic_Square2Circle(T::Point(x, y));
-			out2.send(p.y);
-			out1.send(p.x);
 			return {};
 		}
 	};
 
+	c::message<> number {
+		this,
+		"number",
+		"Map coordinates from a square to a circle.",
+		[this](const c::atoms& args, const int inlet) -> c::atoms {
+			// update the cartesian coordinate
+			switch (inlet) {
+				case 0:
+					p.x = c::from_atoms<double>(args);
+					_logic();
+					return {};
+				case 1:
+					p.y = c::from_atoms<double>(args);
+					return {};
+				default:
+					return {};
+			}
+		}
+	};
+
 	private:
-	double x;
-	double y;
+	// variables
+	T::Point p = T::Point(0., 0.);
+	// methods
+	void _logic() {
+		// calculate new coordinate when x is updated
+		T::Point p_prime = g::simpleElliptic_Square2Circle(p);
+		out2.send(p_prime.y);
+		out1.send(p_prime.x);
+	}
 };
 
 MIN_EXTERNAL(squareToCircle);

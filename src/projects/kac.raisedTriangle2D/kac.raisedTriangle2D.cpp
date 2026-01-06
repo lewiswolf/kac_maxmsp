@@ -17,8 +17,8 @@ class raisedTriangle2D: public c::object<raisedTriangle2D> {
 	MIN_AUTHOR {"Lewis Wolstanholme"};
 	MIN_RELATED {"kac.raisedCosine2D"};
 
-	c::inlet<> in1 {this, "(float) the x component of the centre of the distribution. [0, N)"};
-	c::inlet<> in2 {this, "(float) the y component of the centre of the distribution. [0, M)]"};
+	c::inlet<> in1 {this, "(float) the x component of the centre of the distribution. [0, 1]"};
+	c::inlet<> in2 {this, "(float) the y component of the centre of the distribution. [0, 1]"};
 	c::outlet<> out {this, "(list) output the distribution."};
 
 	c::attribute<long> N {
@@ -28,7 +28,7 @@ class raisedTriangle2D: public c::object<raisedTriangle2D> {
 		c::title {"Horizontal Dimension"},
 		c::description {"The size of the distribution across the x-axis. [1, ∞]"},
 		c::setter {[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
-			return {std::max((long)args[0], (long)1)};
+			return {std::max(c::from_atoms<long>(args), (long)1)};
 		}}
 	};
 	c::attribute<long> M {
@@ -38,15 +38,27 @@ class raisedTriangle2D: public c::object<raisedTriangle2D> {
 		c::title {"Vertical Dimension"},
 		c::description {"The size of the distribution across the y-axis. [1, ∞]"},
 		c::setter {[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
-			return {std::max((long)args[0], (long)1)};
+			return {std::max(c::from_atoms<long>(args), (long)1)};
 		}}
 	};
 	c::attribute<double> sigma {
 		this,
 		"sigma",
-		1.0,
+		0.1,
 		c::title {"Sigma"},
 		c::description {"The deviation of the distribution."}
+	};
+
+	c::message<> bang {
+		this,
+		"bang",
+		"Calculate the raised triangle distribution.",
+		[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
+			if (inlet == 0) {
+				_logic();
+			}
+			return {};
+		}
 	};
 
 	c::message<> number {
@@ -57,32 +69,32 @@ class raisedTriangle2D: public c::object<raisedTriangle2D> {
 			// update cartesian coordinate
 			switch (inlet) {
 				case 0:
-					x = c::from_atoms<std::vector<double>>(args)[0];
-					break;
+					p.x = c::from_atoms<double>(args);
+					_logic();
+					return {};
 				case 1:
-					y = c::from_atoms<std::vector<double>>(args)[0];
+					p.y = c::from_atoms<double>(args);
 					return {};
 				default:
 					return {};
 			}
-			// calculate the distribution when x is updated
-			c::atoms distribution(N * M);
-			T::Matrix_2D distribution_old = p::raisedTriangle2D(
-				M, N, T::Point(y, x), y - sigma, y + sigma, x - sigma, x + sigma
-			);
-			for (unsigned long n = 0; n < N; n++) {
-				for (unsigned long m = 0; m < M; m++) {
-					distribution[n * M + m] = distribution_old[n][m];
-				};
-			}
-			out.send(distribution);
-			return {};
 		}
 	};
 
 	private:
-	double x;
-	double y;
+	T::Point p = T::Point(0., 0.);
+	// methods
+	void _logic() {
+		c::atoms distribution(N * M);
+		T::Matrix_2D distribution_old = p::raisedTriangle2D(p, sigma, sigma, sigma, sigma, N, M);
+		for (long n = 0; n < N; n++) {
+			for (long m = 0; m < M; m++) {
+				// flip distribution axes
+				distribution[(M - 1 - m) * N + n] = distribution_old[n][m];
+			};
+		}
+		out.send(distribution);
+	}
 };
 
 MIN_EXTERNAL(raisedTriangle2D);

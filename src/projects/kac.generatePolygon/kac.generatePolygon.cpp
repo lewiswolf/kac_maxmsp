@@ -23,14 +23,14 @@ class generatePolygon: public c::object<generatePolygon> {
 		this,
 		"number",
 		"Generate a simple polygon with n vertices.",
-		[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
-			long N = c::from_atoms<std::vector<long>>(args)[0];
+		[this](const c::atoms& args, const int inlet) -> c::atoms {
+			long N = c::from_atoms<long>(args);
 			if (N < 3) {
 				return {};
 			}
 			T::Polygon polygon_old = g::generatePolygon(N);
 			c::atoms polygon(N * 2);
-			for (unsigned long i = 0; i < N; i++) {
+			for (long i = 0; i < N; i++) {
 				polygon[2 * i] = polygon_old[i].x;
 				polygon[2 * i + 1] = polygon_old[i].y;
 			}

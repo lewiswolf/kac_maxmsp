@@ -2,41 +2,24 @@
 	"patcher": {
 		"fileversion": 1,
 		"appversion": {
-			"major": 8,
-			"minor": 6,
+			"major": 9,
+			"minor": 1,
 			"revision": 2,
 			"architecture": "x64",
 			"modernui": 1
 		},
 		"classnamespace": "box",
-		"rect": [34.0, 187.0, 799.0, 676.0],
-		"bglocked": 0,
-		"openinpresentation": 0,
-		"default_fontsize": 12.0,
-		"default_fontface": 0,
+		"rect": [59.0, 246.0, 1000.0, 560.0],
 		"default_fontname": "Lato Light",
-		"gridonopen": 1,
 		"gridsize": [5.0, 5.0],
 		"gridsnaponopen": 2,
 		"objectsnaponopen": 0,
-		"statusbarvisible": 2,
-		"toolbarvisible": 1,
 		"lefttoolbarpinned": 1,
 		"toptoolbarpinned": 1,
 		"righttoolbarpinned": 1,
 		"bottomtoolbarpinned": 1,
-		"toolbars_unpinned_last_save": 0,
-		"tallnewobj": 0,
-		"boxanimatetime": 200,
-		"enablehscroll": 1,
-		"enablevscroll": 1,
-		"devicewidth": 0.0,
-		"description": "",
-		"digest": "",
-		"tags": "",
 		"style": "tap",
 		"subpatcher_template": "tap.template",
-		"assistshowspatchername": 0,
 		"boxes": [
 			{
 				"box": {
@@ -61,8 +44,8 @@
 					"parameter_enable": 0,
 					"patching_rect": [30.0, 175.0, 100.0, 100.0],
 					"pointcolor": [0.929411764705882, 0.929411764705882, 0.352941176470588, 1.0],
-					"xplace": [0.5],
-					"yplace": [0.5]
+					"xplace": [0.0],
+					"yplace": [1.0]
 				}
 			},
 			{
@@ -94,8 +77,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [92.0, 440.0, 191.0, 23.0],
-					"text": "vexpr ($f1 + 1.) / 2. @scalarmode 1"
+					"patching_rect": [92.0, 440.0, 109.0, 23.0],
+					"text": "vexpr ($f1 + 1.) / 2."
 				}
 			},
 			{
@@ -122,7 +105,7 @@
 					"patching_rect": [92.0, 500.0, 100.0, 100.0],
 					"pointcolor": [0.929411764705882, 0.929411764705882, 0.352941176470588, 1.0],
 					"xplace": [0.5],
-					"yplace": [0.5]
+					"yplace": [1.0]
 				}
 			},
 			{
@@ -132,8 +115,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [70.5, 313.10869574546814, 188.0, 23.0],
-					"text": "vexpr ($f1 * 2.) - 1. @scalarmode 1"
+					"patching_rect": [70.5, 313.10869574546814, 107.0, 23.0],
+					"text": "vexpr ($f1 * 2.) - 1."
 				}
 			},
 			{
@@ -253,18 +236,6 @@
 					"destination": ["obj-23", 0],
 					"source": ["obj-61", 0]
 				}
-			}
-		],
-		"dependency_cache": [
-			{
-				"name": "helpdetails.js",
-				"bootpath": "C74:/help/resources",
-				"type": "TEXT",
-				"implicit": 1
-			},
-			{
-				"name": "kac.squareToCircle.mxo",
-				"type": "iLaX"
 			}
 		],
 		"autosave": 0,

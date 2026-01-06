@@ -25,8 +25,8 @@ class circularSeries: public c::object<circularSeries> {
 		10,
 		c::title {"Nth Order"},
 		c::description {"The maximum Nth order of the modes. [1, ∞]"},
-		c::setter {[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
-			return {std::max((long)args[0], (long)1)};
+		c::setter {[this](const c::atoms& args, const int inlet) -> c::atoms {
+			return {std::max(c::from_atoms<long>(args), (long)1)};
 		}}
 	};
 	c::attribute<long> M {
@@ -35,8 +35,8 @@ class circularSeries: public c::object<circularSeries> {
 		10,
 		c::title {"Modes per Order"},
 		c::description {"The maximum amount of modes per order. [1, ∞]"},
-		c::setter {[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
-			return {std::max((long)args[0], (long)1)};
+		c::setter {[this](const c::atoms& args, const int inlet) -> c::atoms {
+			return {std::max(c::from_atoms<long>(args), (long)1)};
 		}}
 	};
 
@@ -44,12 +44,12 @@ class circularSeries: public c::object<circularSeries> {
 		this,
 		"bang",
 		"Calculate the eigenmodes of a circle.",
-		[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
+		[this](const c::atoms& args, const int inlet) -> c::atoms {
 			// calculate circular eigenmodes
 			T::Matrix_2D series_old = p::circularSeries(N, M);
 			c::atoms series(N * M);
-			for (unsigned long n = 0; n < N; n++) {
-				for (unsigned long m = 0; m < M; m++) { series[n * M + m] = series_old[n][m]; };
+			for (long n = 0; n < N; n++) {
+				for (long m = 0; m < M; m++) { series[n * M + m] = series_old[n][m]; };
 			};
 			out.send(series);
 			return {};

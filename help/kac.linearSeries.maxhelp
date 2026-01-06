@@ -2,42 +2,36 @@
 	"patcher": {
 		"fileversion": 1,
 		"appversion": {
-			"major": 8,
-			"minor": 6,
+			"major": 9,
+			"minor": 1,
 			"revision": 2,
 			"architecture": "x64",
 			"modernui": 1
 		},
 		"classnamespace": "box",
 		"rect": [34.0, 215.0, 799.0, 648.0],
-		"bglocked": 0,
-		"openinpresentation": 0,
-		"default_fontsize": 12.0,
-		"default_fontface": 0,
 		"default_fontname": "Lato Light",
-		"gridonopen": 1,
 		"gridsize": [5.0, 5.0],
 		"gridsnaponopen": 2,
 		"objectsnaponopen": 0,
-		"statusbarvisible": 2,
-		"toolbarvisible": 1,
 		"lefttoolbarpinned": 1,
 		"toptoolbarpinned": 1,
 		"righttoolbarpinned": 1,
 		"bottomtoolbarpinned": 1,
-		"toolbars_unpinned_last_save": 0,
-		"tallnewobj": 0,
-		"boxanimatetime": 200,
-		"enablehscroll": 1,
-		"enablevscroll": 1,
-		"devicewidth": 0.0,
-		"description": "",
-		"digest": "",
-		"tags": "",
 		"style": "tap",
 		"subpatcher_template": "tap.template",
-		"assistshowspatchername": 0,
 		"boxes": [
+			{
+				"box": {
+					"id": "obj-7",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"outlettype": [""],
+					"patching_rect": [235.0, 145.0, 104.0, 23.0],
+					"text": "loadmess 0.12345"
+				}
+			},
 			{
 				"box": {
 					"id": "obj-17",
@@ -48,41 +42,15 @@
 					"patcher": {
 						"fileversion": 1,
 						"appversion": {
-							"major": 8,
-							"minor": 6,
+							"major": 9,
+							"minor": 1,
 							"revision": 2,
 							"architecture": "x64",
 							"modernui": 1
 						},
 						"classnamespace": "box",
-						"rect": [-1539.0, 88.0, 1498.0, 776.0],
-						"bglocked": 0,
-						"openinpresentation": 0,
-						"default_fontsize": 12.0,
-						"default_fontface": 0,
-						"default_fontname": "Arial",
-						"gridonopen": 1,
-						"gridsize": [15.0, 15.0],
-						"gridsnaponopen": 1,
-						"objectsnaponopen": 1,
-						"statusbarvisible": 2,
-						"toolbarvisible": 1,
-						"lefttoolbarpinned": 0,
-						"toptoolbarpinned": 0,
-						"righttoolbarpinned": 0,
-						"bottomtoolbarpinned": 0,
-						"toolbars_unpinned_last_save": 0,
-						"tallnewobj": 0,
-						"boxanimatetime": 200,
-						"enablehscroll": 1,
-						"enablevscroll": 1,
-						"devicewidth": 0.0,
-						"description": "",
-						"digest": "",
-						"tags": "",
-						"style": "",
+						"rect": [34.0, 243.0, 799.0, 620.0],
 						"subpatcher_template": "tap.template",
-						"assistshowspatchername": 0,
 						"boxes": [
 							{
 								"box": {
@@ -193,12 +161,6 @@
 						]
 					},
 					"patching_rect": [235.0, 410.0, 96.0, 23.0],
-					"saved_object_attributes": {
-						"description": "",
-						"digest": "",
-						"globalpatchername": "",
-						"tags": ""
-					},
 					"text": "p set mc with list"
 				}
 			},
@@ -212,41 +174,15 @@
 					"patcher": {
 						"fileversion": 1,
 						"appversion": {
-							"major": 8,
-							"minor": 6,
+							"major": 9,
+							"minor": 1,
 							"revision": 2,
 							"architecture": "x64",
 							"modernui": 1
 						},
 						"classnamespace": "box",
-						"rect": [-1539.0, 88.0, 1498.0, 776.0],
-						"bglocked": 0,
-						"openinpresentation": 0,
-						"default_fontsize": 12.0,
-						"default_fontface": 0,
-						"default_fontname": "Arial",
-						"gridonopen": 1,
-						"gridsize": [15.0, 15.0],
-						"gridsnaponopen": 1,
-						"objectsnaponopen": 1,
-						"statusbarvisible": 2,
-						"toolbarvisible": 1,
-						"lefttoolbarpinned": 0,
-						"toptoolbarpinned": 0,
-						"righttoolbarpinned": 0,
-						"bottomtoolbarpinned": 0,
-						"toolbars_unpinned_last_save": 0,
-						"tallnewobj": 0,
-						"boxanimatetime": 200,
-						"enablehscroll": 1,
-						"enablevscroll": 1,
-						"devicewidth": 0.0,
-						"description": "",
-						"digest": "",
-						"tags": "",
-						"style": "",
+						"rect": [34.0, 243.0, 799.0, 620.0],
 						"subpatcher_template": "tap.template",
-						"assistshowspatchername": 0,
 						"boxes": [
 							{
 								"box": {
@@ -356,13 +292,7 @@
 							}
 						]
 					},
-					"patching_rect": [30.0, 443.666666666666686, 96.0, 23.0],
-					"saved_object_attributes": {
-						"description": "",
-						"digest": "",
-						"globalpatchername": "",
-						"tags": ""
-					},
+					"patching_rect": [30.0, 443.6666666666667, 96.0, 23.0],
 					"text": "p set mc with list"
 				}
 			},
@@ -401,41 +331,15 @@
 					"patcher": {
 						"fileversion": 1,
 						"appversion": {
-							"major": 8,
-							"minor": 6,
+							"major": 9,
+							"minor": 1,
 							"revision": 2,
 							"architecture": "x64",
 							"modernui": 1
 						},
 						"classnamespace": "box",
 						"rect": [-1624.0, 398.0, 858.0, 648.0],
-						"bglocked": 0,
-						"openinpresentation": 0,
-						"default_fontsize": 12.0,
-						"default_fontface": 0,
-						"default_fontname": "Arial",
-						"gridonopen": 1,
-						"gridsize": [15.0, 15.0],
-						"gridsnaponopen": 1,
-						"objectsnaponopen": 1,
-						"statusbarvisible": 2,
-						"toolbarvisible": 1,
-						"lefttoolbarpinned": 0,
-						"toptoolbarpinned": 0,
-						"righttoolbarpinned": 0,
-						"bottomtoolbarpinned": 0,
-						"toolbars_unpinned_last_save": 0,
-						"tallnewobj": 0,
-						"boxanimatetime": 200,
-						"enablehscroll": 1,
-						"enablevscroll": 1,
-						"devicewidth": 0.0,
-						"description": "",
-						"digest": "",
-						"tags": "",
-						"style": "",
 						"subpatcher_template": "tap.template",
-						"assistshowspatchername": 0,
 						"boxes": [
 							{
 								"box": {
@@ -443,7 +347,7 @@
 									"maxclass": "newobj",
 									"numinlets": 1,
 									"numoutlets": 6,
-									"outlettype": ["signal", "bang", "int", "float", "", "list"],
+									"outlettype": ["signal", "bang", "int", "float", "", ""],
 									"patching_rect": [178.25, 84.0, 71.5, 22.0],
 									"text": "typeroute~"
 								}
@@ -610,12 +514,6 @@
 						]
 					},
 					"patching_rect": [30.0, 370.0, 97.0, 23.0],
-					"saved_object_attributes": {
-						"description": "",
-						"digest": "",
-						"globalpatchername": "",
-						"tags": ""
-					},
 					"text": "p kac.linearSeries"
 				}
 			},
@@ -652,7 +550,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"outlettype": ["multichannelsignal"],
-					"patching_rect": [30.0, 511.000000000000057, 224.0, 23.0],
+					"patching_rect": [30.0, 511.00000000000006, 224.0, 23.0],
 					"text": "mc.*~"
 				}
 			},
@@ -695,7 +593,7 @@
 					"maxclass": "comment",
 					"numinlets": 1,
 					"numoutlets": 0,
-					"patching_rect": [235.0, 180.0, 19.0, 21.0],
+					"patching_rect": [255.0, 180.0, 19.0, 21.0],
 					"text": "x"
 				}
 			},
@@ -715,7 +613,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"outlettype": ["multichannelsignal"],
-					"patching_rect": [30.0, 655.333333333333371, 158.0, 23.0],
+					"patching_rect": [30.0, 655.3333333333334, 158.0, 23.0],
 					"text": "mc.mixdown~ 2 @autogain 1"
 				}
 			},
@@ -726,20 +624,20 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"outlettype": ["multichannelsignal"],
-					"patching_rect": [30.0, 477.333333333333371, 60.0, 23.0],
+					"patching_rect": [30.0, 477.33333333333337, 60.0, 23.0],
 					"text": "mc.cycle~"
 				}
 			},
 			{
 				"box": {
 					"id": "obj-21",
-					"lastchannelcount": 64,
+					"lastchannelcount": 100,
 					"maxclass": "mc.live.gain~",
 					"numinlets": 1,
 					"numoutlets": 4,
 					"outlettype": ["multichannelsignal", "", "float", "list"],
 					"parameter_enable": 1,
-					"patching_rect": [30.0, 544.666666666666742, 340.0, 100.0],
+					"patching_rect": [30.0, 544.6666666666667, 340.0, 100.0],
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "mc.live.gain~",
@@ -1019,7 +917,7 @@
 			{
 				"patchline": {
 					"destination": ["obj-13", 0],
-					"midpoints": [124.5, 279.358347937464714, 244.5, 279.358347937464714],
+					"midpoints": [124.5, 279.3583479374647, 244.5, 279.3583479374647],
 					"order": 0,
 					"source": ["obj-62", 0]
 				}
@@ -1028,6 +926,12 @@
 				"patchline": {
 					"destination": ["obj-57", 0],
 					"source": ["obj-62", 1]
+				}
+			},
+			{
+				"patchline": {
+					"destination": ["obj-6", 0],
+					"source": ["obj-7", 0]
 				}
 			},
 			{
@@ -1045,21 +949,8 @@
 		],
 		"parameters": {
 			"obj-21": ["mc.live.gain~", "mc.live.gain~", 0],
-			"parameterbanks": {},
 			"inherited_shortname": 1
 		},
-		"dependency_cache": [
-			{
-				"name": "helpdetails.js",
-				"bootpath": "C74:/help/resources",
-				"type": "TEXT",
-				"implicit": 1
-			},
-			{
-				"name": "kac.linearAmplitudes.mxo",
-				"type": "iLaX"
-			}
-		],
 		"autosave": 0,
 		"styles": [
 			{

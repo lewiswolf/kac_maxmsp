@@ -25,8 +25,8 @@ class linearAmplitudes: public c::object<linearAmplitudes> {
 		10,
 		c::title {"Number of Modes"},
 		c::description {"The maximum amount of modes. [1, ∞]"},
-		c::setter {[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
-			return {std::max((long)args[0], (long)1)};
+		c::setter {[this](const c::atoms& args, const int inlet) -> c::atoms {
+			return {std::max(c::from_atoms<long>(args), (long)1)};
 		}}
 	};
 
@@ -34,10 +34,8 @@ class linearAmplitudes: public c::object<linearAmplitudes> {
 		this,
 		"number",
 		"Calculate the modal amplitudes.",
-		[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
-			out.send(
-				c::to_atoms(p::linearAmplitudes(c::from_atoms<std::vector<double>>(args)[0], N))
-			);
+		[this](const c::atoms& args, const int inlet) -> c::atoms {
+			out.send(c::to_atoms(p::linearAmplitudes(c::from_atoms<double>(args), N)));
 			return {};
 		}
 	};

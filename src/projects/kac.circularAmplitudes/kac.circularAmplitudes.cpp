@@ -30,8 +30,8 @@ class circularAmplitudes: public c::object<circularAmplitudes> {
 		10,
 		c::title {"Nth Order"},
 		c::description {"The maximum Nth order of the modes. [1, ∞]"},
-		c::setter {[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
-			long _N = std::max((long)args[0], (long)1);
+		c::setter {[this](const c::atoms& args, const int inlet) -> c::atoms {
+			long _N = std::max(c::from_atoms<long>(args), (long)1);
 			series = p::circularSeries(_N, M);
 			return {_N};
 		}}
@@ -42,46 +42,60 @@ class circularAmplitudes: public c::object<circularAmplitudes> {
 		10,
 		c::title {"Modes per Order"},
 		c::description {"The maximum amount of modes per order. [1, ∞]"},
-		c::setter {[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
-			long _M = std::max((long)args[0], (long)1);
+		c::setter {[this](const c::atoms& args, const int inlet) -> c::atoms {
+			long _M = std::max(c::from_atoms<long>(args), (long)1);
 			series = p::circularSeries(N, _M);
 			return {_M};
 		}}
+	};
+
+	c::message<> bang {
+		this,
+		"bang",
+		"Calculate the modal amplitudes of a circle for a given polar coordinate {r, θ}.",
+		[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
+			if (inlet == 0) {
+				_logic();
+			}
+			return {};
+		}
 	};
 
 	c::message<> number {
 		this,
 		"number",
 		"Calculate the modal amplitudes of a circle for a given polar coordinate {r, θ}.",
-		[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
+		[this](const c::atoms& args, const int inlet) -> c::atoms {
 			// update the polar coordinate
 			switch (inlet) {
 				case 0:
-					r = c::from_atoms<std::vector<double>>(args)[0];
-					break;
+					r = c::from_atoms<double>(args);
+					_logic();
+					return {};
 				case 1:
-					theta = c::from_atoms<std::vector<double>>(args)[0];
+					theta = c::from_atoms<double>(args);
 					return {};
 				default:
 					return {};
 			}
-			// calculate amplitudes when r is updated
-			c::atoms amplitudes(N * M);
-			T::Matrix_2D amplitudes_old = p::circularAmplitudes(r, theta, series);
-			for (unsigned long n = 0; n < N; n++) {
-				for (unsigned long m = 0; m < M; m++) {
-					amplitudes[n * M + m] = amplitudes_old[n][m];
-				}
-			}
-			out.send(amplitudes);
-			return {};
 		}
 	};
 
 	private:
+	// variables
 	T::Matrix_2D series = p::circularSeries(N, M);
-	double r;
-	double theta;
+	double r = 0.;
+	double theta = 0.;
+	// methods
+	void _logic() {
+		// calculate amplitudes when r is updated
+		c::atoms amplitudes(N * M);
+		T::Matrix_2D amplitudes_old = p::circularAmplitudes(r, theta, series);
+		for (long n = 0; n < N; n++) {
+			for (long m = 0; m < M; m++) { amplitudes[n * M + m] = amplitudes_old[n][m]; }
+		}
+		out.send(amplitudes);
+	}
 };
 
 MIN_EXTERNAL(circularAmplitudes);

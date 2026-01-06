@@ -2,53 +2,25 @@
 	"patcher": {
 		"fileversion": 1,
 		"appversion": {
-			"major": 8,
-			"minor": 6,
+			"major": 9,
+			"minor": 1,
 			"revision": 2,
 			"architecture": "x64",
 			"modernui": 1
 		},
 		"classnamespace": "box",
-		"rect": [34.0, 243.0, 799.0, 620.0],
-		"bglocked": 0,
-		"openinpresentation": 0,
-		"default_fontsize": 12.0,
-		"default_fontface": 0,
+		"rect": [179.0, 139.0, 857.0, 727.0],
 		"default_fontname": "Lato Light",
-		"gridonopen": 1,
 		"gridsize": [5.0, 5.0],
 		"gridsnaponopen": 2,
 		"objectsnaponopen": 0,
-		"statusbarvisible": 2,
-		"toolbarvisible": 1,
 		"lefttoolbarpinned": 1,
 		"toptoolbarpinned": 1,
 		"righttoolbarpinned": 1,
 		"bottomtoolbarpinned": 1,
-		"toolbars_unpinned_last_save": 0,
-		"tallnewobj": 0,
-		"boxanimatetime": 200,
-		"enablehscroll": 1,
-		"enablevscroll": 1,
-		"devicewidth": 0.0,
-		"description": "",
-		"digest": "",
-		"tags": "",
 		"style": "tap",
 		"subpatcher_template": "tap.template",
-		"assistshowspatchername": 0,
 		"boxes": [
-			{
-				"box": {
-					"id": "obj-43",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 2,
-					"outlettype": ["", ""],
-					"patching_rect": [300.0, 440.0, 42.0, 23.0],
-					"text": "list.rev"
-				}
-			},
 			{
 				"box": {
 					"id": "obj-29",
@@ -56,7 +28,7 @@
 					"numinlets": 1,
 					"numoutlets": 2,
 					"outlettype": ["bang", "float"],
-					"patching_rect": [154.0, 310.0, 30.0, 23.0],
+					"patching_rect": [115.0, 240.0, 30.0, 23.0],
 					"text": "t b f"
 				}
 			},
@@ -71,29 +43,7 @@
 					"numoutlets": 2,
 					"outlettype": ["", "bang"],
 					"parameter_enable": 0,
-					"patching_rect": [30.0, 285.0, 50.0, 23.0]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-23",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [""],
-					"patching_rect": [30.0, 357.0, 110.0, 23.0],
-					"text": "expr $f1 * ($i2 - 1)"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-21",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [""],
-					"patching_rect": [165.0, 357.0, 104.0, 23.0],
-					"text": "expr $f1 * ($i2 - 1)"
+					"patching_rect": [30.0, 205.0, 50.0, 23.0]
 				}
 			},
 			{
@@ -107,7 +57,7 @@
 					"numoutlets": 2,
 					"outlettype": ["", "bang"],
 					"parameter_enable": 0,
-					"patching_rect": [154.0, 285.0, 50.0, 23.0]
+					"patching_rect": [115.0, 205.0, 50.0, 23.0]
 				}
 			},
 			{
@@ -117,7 +67,7 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [300.0, 470.0, 74.0, 23.0],
+					"patching_rect": [260.0, 377.0, 74.0, 23.0],
 					"text": "prepend dim"
 				}
 			},
@@ -128,7 +78,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [300.0, 410.0, 129.0, 23.0],
+					"patching_rect": [260.0, 345.0, 129.0, 23.0],
 					"text": "pak 0 0"
 				}
 			},
@@ -139,7 +89,7 @@
 					"numinlets": 1,
 					"numoutlets": 2,
 					"outlettype": ["jit_matrix", ""],
-					"patching_rect": [30.0, 535.0, 280.0, 175.0],
+					"patching_rect": [30.0, 442.0, 280.0, 175.0],
 					"sync": 1
 				}
 			},
@@ -150,8 +100,8 @@
 					"numinlets": 1,
 					"numoutlets": 2,
 					"outlettype": ["", ""],
-					"patching_rect": [30.0, 470.0, 61.0, 23.0],
-					"text": "jit.fill dis 0"
+					"patching_rect": [30.0, 377.0, 121.0, 23.0],
+					"text": "jit.fill raised_triangle 0"
 				}
 			},
 			{
@@ -161,8 +111,8 @@
 					"numinlets": 1,
 					"numoutlets": 2,
 					"outlettype": ["jit_matrix", ""],
-					"patching_rect": [30.0, 505.0, 121.0, 23.0],
-					"text": "jit.matrix dis 1 float32"
+					"patching_rect": [30.0, 412.0, 181.0, 23.0],
+					"text": "jit.matrix raised_triangle 1 float32"
 				}
 			},
 			{
@@ -177,39 +127,12 @@
 			},
 			{
 				"box": {
-					"fontname": "Arial",
-					"id": "obj-19",
-					"linecount": 5,
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [30.0, 75.0, 635.0, 74.0],
-					"text": "Calculate a 2-dimensional triangular distribution.\nparameters:\n    N, M: The size of the output matrix in the X and Y axes respectively - the output will be a list of length N*M.\n    x, y: The centre of the raised triangle distribution.\n   sigma: The deviation of the distribution."
-				}
-			},
-			{
-				"box": {
-					"border": 0,
-					"filename": "helpdetails.js",
-					"id": "obj-2",
-					"ignoreclick": 1,
-					"jsarguments": ["kac.raisedTriangle2D"],
-					"maxclass": "jsui",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"outlettype": [""],
-					"parameter_enable": 0,
-					"patching_rect": [30.0, 25.0, 625.0, 55.0]
-				}
-			},
-			{
-				"box": {
 					"id": "obj-60",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [30.0, 413.0, 154.0, 23.0],
+					"patching_rect": [30.0, 345.0, 115.0, 23.0],
 					"text": "kac.raisedTriangle2D"
 				}
 			},
@@ -219,7 +142,7 @@
 					"maxclass": "comment",
 					"numinlets": 1,
 					"numoutlets": 0,
-					"patching_rect": [565.0, 168.0, 56.0, 21.0],
+					"patching_rect": [497.0, 168.0, 56.0, 21.0],
 					"text": "deviation"
 				}
 			},
@@ -230,8 +153,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [390.0, 167.0, 74.0, 23.0],
-					"text": "loadmess 10"
+					"patching_rect": [308.0, 167.0, 81.0, 23.0],
+					"text": "loadmess 100"
 				}
 			},
 			{
@@ -241,8 +164,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [494.0, 167.0, 69.0, 23.0],
-					"text": "loadmess 2."
+					"patching_rect": [412.0, 167.0, 83.0, 23.0],
+					"text": "loadmess 0.25"
 				}
 			},
 			{
@@ -252,7 +175,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [505.0, 357.0, 55.0, 23.0],
+					"patching_rect": [423.0, 285.0, 55.0, 23.0],
 					"text": "sigma $1"
 				}
 			},
@@ -265,7 +188,7 @@
 					"numoutlets": 2,
 					"outlettype": ["", "bang"],
 					"parameter_enable": 0,
-					"patching_rect": [494.0, 202.0, 50.0, 23.0]
+					"patching_rect": [412.0, 205.0, 50.0, 23.0]
 				}
 			},
 			{
@@ -275,7 +198,7 @@
 					"numinlets": 1,
 					"numoutlets": 2,
 					"outlettype": ["bang", "float"],
-					"patching_rect": [494.0, 240.0, 30.0, 23.0],
+					"patching_rect": [412.0, 240.0, 30.0, 23.0],
 					"text": "t b f"
 				}
 			},
@@ -297,8 +220,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [280.0, 167.0, 74.0, 23.0],
-					"text": "loadmess 10"
+					"patching_rect": [198.0, 167.0, 81.0, 23.0],
+					"text": "loadmess 100"
 				}
 			},
 			{
@@ -310,7 +233,7 @@
 					"numoutlets": 2,
 					"outlettype": ["", "bang"],
 					"parameter_enable": 0,
-					"patching_rect": [390.0, 202.0, 57.5, 23.0]
+					"patching_rect": [308.0, 205.0, 57.5, 23.0]
 				}
 			},
 			{
@@ -319,7 +242,7 @@
 					"maxclass": "comment",
 					"numinlets": 1,
 					"numoutlets": 0,
-					"patching_rect": [466.0, 167.0, 19.0, 21.0],
+					"patching_rect": [389.0, 167.0, 19.0, 21.0],
 					"text": "M"
 				}
 			},
@@ -329,7 +252,7 @@
 					"maxclass": "comment",
 					"numinlets": 1,
 					"numoutlets": 0,
-					"patching_rect": [360.0, 168.0, 19.0, 21.0],
+					"patching_rect": [283.0, 168.0, 19.0, 21.0],
 					"text": "N"
 				}
 			},
@@ -340,7 +263,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [401.0, 357.0, 37.0, 23.0],
+					"patching_rect": [339.0, 285.0, 37.0, 23.0],
 					"text": "M $1"
 				}
 			},
@@ -351,7 +274,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"outlettype": ["bang", "int", "int"],
-					"patching_rect": [390.0, 240.0, 40.0, 23.0],
+					"patching_rect": [308.0, 240.0, 81.0, 23.0],
 					"text": "t b i i"
 				}
 			},
@@ -362,7 +285,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"outlettype": ["bang", "int", "int"],
-					"patching_rect": [280.0, 240.0, 40.0, 23.0],
+					"patching_rect": [198.0, 240.0, 81.0, 23.0],
 					"text": "t b i i"
 				}
 			},
@@ -375,7 +298,7 @@
 					"numoutlets": 2,
 					"outlettype": ["", "bang"],
 					"parameter_enable": 0,
-					"patching_rect": [280.0, 202.0, 57.0, 23.0]
+					"patching_rect": [198.0, 205.0, 57.0, 23.0]
 				}
 			},
 			{
@@ -385,15 +308,42 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [291.0, 357.0, 35.0, 23.0],
+					"patching_rect": [229.0, 285.0, 35.0, 23.0],
 					"text": "N $1"
+				}
+			},
+			{
+				"box": {
+					"fontname": "Arial",
+					"id": "obj-19",
+					"linecount": 5,
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [30.0, 70.0, 635.0, 74.0],
+					"text": "Calculate a 2-dimensional triangular distribution.\nparameters:\n    x, y: The centre of the raised triangle distribution.\n    sigma: The deviation of the distribution.\n    N, M: The size of the output matrix in the X and Y axes respectively - the output will be a list of length N*M."
+				}
+			},
+			{
+				"box": {
+					"border": 0,
+					"filename": "helpdetails.js",
+					"id": "obj-2",
+					"ignoreclick": 1,
+					"jsarguments": ["kac.raisedTriangle2D"],
+					"maxclass": "jsui",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"outlettype": [""],
+					"parameter_enable": 0,
+					"patching_rect": [30.0, 25.0, 625.0, 55.0]
 				}
 			}
 		],
 		"lines": [
 			{
 				"patchline": {
-					"destination": ["obj-43", 0],
+					"destination": ["obj-9", 0],
 					"source": ["obj-1", 0]
 				}
 			},
@@ -423,28 +373,6 @@
 			},
 			{
 				"patchline": {
-					"destination": ["obj-60", 1],
-					"source": ["obj-21", 0]
-				}
-			},
-			{
-				"patchline": {
-					"destination": ["obj-20", 0],
-					"midpoints": [503.5, 273.44565212726593, 163.5, 273.44565212726593],
-					"order": 0,
-					"source": ["obj-22", 0]
-				}
-			},
-			{
-				"patchline": {
-					"destination": ["obj-25", 0],
-					"midpoints": [503.5, 273.44565212726593, 39.5, 273.44565212726593],
-					"order": 1,
-					"source": ["obj-22", 0]
-				}
-			},
-			{
-				"patchline": {
 					"destination": ["obj-26", 0],
 					"source": ["obj-22", 1]
 				}
@@ -452,7 +380,8 @@
 			{
 				"patchline": {
 					"destination": ["obj-60", 0],
-					"source": ["obj-23", 0]
+					"midpoints": [421.5, 273.30279529094696, 39.5, 273.30279529094696],
+					"source": ["obj-22", 0]
 				}
 			},
 			{
@@ -463,27 +392,27 @@
 			},
 			{
 				"patchline": {
-					"destination": ["obj-23", 0],
+					"destination": ["obj-60", 0],
 					"source": ["obj-25", 0]
 				}
 			},
 			{
 				"patchline": {
 					"destination": ["obj-60", 0],
-					"midpoints": [514.5, 405.0, 39.5, 405.0],
+					"midpoints": [432.5, 334.87519251261256, 39.5, 334.87519251261256],
 					"source": ["obj-26", 0]
 				}
 			},
 			{
 				"patchline": {
-					"destination": ["obj-21", 0],
+					"destination": ["obj-60", 1],
 					"source": ["obj-29", 1]
 				}
 			},
 			{
 				"patchline": {
-					"destination": ["obj-23", 0],
-					"midpoints": [163.5, 350.160377621650696, 39.5, 350.160377621650696],
+					"destination": ["obj-60", 0],
+					"midpoints": [124.5, 273.2624776363373, 39.5, 273.2624776363373],
 					"source": ["obj-29", 0]
 				}
 			},
@@ -496,7 +425,7 @@
 			{
 				"patchline": {
 					"destination": ["obj-20", 0],
-					"midpoints": [39.5, 236.0, 163.5, 236.0],
+					"midpoints": [39.5, 196.84276938438416, 124.5, 196.84276938438416],
 					"order": 0,
 					"source": ["obj-31", 0]
 				}
@@ -516,12 +445,6 @@
 			},
 			{
 				"patchline": {
-					"destination": ["obj-9", 0],
-					"source": ["obj-43", 0]
-				}
-			},
-			{
-				"patchline": {
 					"destination": ["obj-14", 0],
 					"source": ["obj-52", 0]
 				}
@@ -529,7 +452,7 @@
 			{
 				"patchline": {
 					"destination": ["obj-60", 0],
-					"midpoints": [300.5, 386.0, 39.5, 386.0],
+					"midpoints": [238.5, 316.61391350631493, 39.5, 316.61391350631493],
 					"source": ["obj-57", 0]
 				}
 			},
@@ -547,23 +470,14 @@
 			},
 			{
 				"patchline": {
-					"destination": ["obj-20", 0],
-					"midpoints": [399.5, 273.44565212726593, 163.5, 273.44565212726593],
+					"destination": ["obj-60", 0],
+					"midpoints": [317.5, 273.30279529094696, 39.5, 273.30279529094696],
 					"source": ["obj-6", 0]
 				}
 			},
 			{
 				"patchline": {
-					"destination": ["obj-21", 1],
-					"midpoints": [410.0, 349.068295478820801, 259.5, 349.068295478820801],
-					"order": 1,
-					"source": ["obj-6", 1]
-				}
-			},
-			{
-				"patchline": {
 					"destination": ["obj-7", 0],
-					"order": 0,
 					"source": ["obj-6", 1]
 				}
 			},
@@ -581,51 +495,30 @@
 			},
 			{
 				"patchline": {
-					"destination": ["obj-23", 1],
-					"midpoints": [300.0, 339.688680648803711, 130.5, 339.688680648803711],
-					"order": 1,
-					"source": ["obj-62", 1]
-				}
-			},
-			{
-				"patchline": {
-					"destination": ["obj-25", 0],
-					"midpoints": [289.5, 273.5, 39.5, 273.5],
-					"source": ["obj-62", 0]
-				}
-			},
-			{
-				"patchline": {
 					"destination": ["obj-57", 0],
-					"order": 0,
 					"source": ["obj-62", 1]
 				}
 			},
 			{
 				"patchline": {
 					"destination": ["obj-60", 0],
-					"midpoints": [410.5, 396.0, 39.5, 396.0],
+					"midpoints": [207.5, 273.35714316368103, 39.5, 273.35714316368103],
+					"source": ["obj-62", 0]
+				}
+			},
+			{
+				"patchline": {
+					"destination": ["obj-60", 0],
+					"midpoints": [348.5, 326.00296670456737, 39.5, 326.00296670456737],
 					"source": ["obj-7", 0]
 				}
 			},
 			{
 				"patchline": {
 					"destination": ["obj-16", 0],
-					"midpoints": [309.5, 498.5, 39.5, 498.5],
+					"midpoints": [269.5, 405.3809517621994, 39.5, 405.3809517621994],
 					"source": ["obj-9", 0]
 				}
-			}
-		],
-		"dependency_cache": [
-			{
-				"name": "helpdetails.js",
-				"bootpath": "C74:/help/resources",
-				"type": "TEXT",
-				"implicit": 1
-			},
-			{
-				"name": "kac.raisedTriangle2D.mxo",
-				"type": "iLaX"
 			}
 		],
 		"autosave": 0,
