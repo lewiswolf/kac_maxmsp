@@ -14,7 +14,7 @@ class generateUnitRectangle: public c::object<generateUnitRectangle> {
 	MIN_DESCRIPTION {"Generate a unit rectangle."};
 	MIN_TAGS {""};
 	MIN_AUTHOR {"Lewis Wolstanholme"};
-	MIN_RELATED {""};
+	MIN_RELATED {"kac.generateUnitTriangle"};
 
 	c::inlet<> in1 {this, "(float) the aspect ratio for the rectangle."};
 	c::outlet<> out {this, "(list) output the vertices of the rectangle."};
@@ -27,7 +27,7 @@ class generateUnitRectangle: public c::object<generateUnitRectangle> {
 			double epsilon = c::from_atoms<double>(args);
 			T::Polygon polygon_old = g::generateUnitRectangle(epsilon);
 			c::atoms polygon(8);
-			for (unsigned short i = 0; i < 4; i++) {
+			for (unsigned short i = 0; i < 4; i += 1) {
 				polygon[2 * i] = polygon_old[i].x;
 				polygon[2 * i + 1] = polygon_old[i].y;
 			}
