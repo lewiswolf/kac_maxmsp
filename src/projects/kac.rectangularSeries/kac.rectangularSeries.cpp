@@ -11,13 +11,13 @@ namespace T = kac_core::types;
 
 class rectangularSeries: public c::object<rectangularSeries> {
 	public:
-	MIN_DESCRIPTION {"Calculate the eigenmodes of a rectangle."};
+	MIN_DESCRIPTION {"Calculate the eigenvalues of a rectangle."};
 	MIN_TAGS {""};
 	MIN_AUTHOR {"Lewis Wolstanholme"};
 	MIN_RELATED {"kac.rectangularAmplitudes"};
 
-	c::inlet<> in {this, "(bang) calculate the rectangular eigenmodes."};
-	c::outlet<> out {this, "(list) output the rectangular eigenmodes."};
+	c::inlet<> in {this, "(bang) calculate the rectangular eigenvalues."};
+	c::outlet<> out {this, "(list) output the rectangular eigenvalues."};
 
 	c::attribute<long> N {
 		this,
@@ -46,20 +46,19 @@ class rectangularSeries: public c::object<rectangularSeries> {
 		c::title {"Aspect Ratio"},
 		c::description {"The aspect ratio of the rectangle."},
 		c::setter {[this](const c::atoms& args, const int inlet) -> c::atoms {
-			return {std::max(c::from_atoms<long>(args), (long)0.)};
+			return {std::max(c::from_atoms<double>(args), (double)0.)};
 		}}
 	};
 
 	c::message<> bang {
 		this,
 		"bang",
-		"Calculate the rectangular eigenmodes.",
+		"Calculate the rectangular eigenvalues.",
 		[this](const c::atoms& args, const int inlet) -> c::atoms {
-			// calculate rectangular eigenmodes
-			T::Matrix_2D series_old = p::rectangularSeries(N, M, epsilon);
-			c::atoms series(N * M);
-			for (long n = 0; n < N; n++) {
-				for (long m = 0; m < M; m++) { series[n * M + m] = series_old[n][m]; };
+			T::Matrix_2D series_old = p::rectangularSeries(M, N, epsilon);
+			c::atoms series(M * N);
+			for (std::size_t m = 0; m < M; m++) {
+				for (std::size_t n = 0; n < N; n++) { series[m * N + n] = series_old[m][n]; };
 			};
 			out.send(series);
 			return {};

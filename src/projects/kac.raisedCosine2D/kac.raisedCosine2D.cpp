@@ -23,22 +23,22 @@ class raisedCosine2D: public c::object<raisedCosine2D> {
 	c::inlet<> in2 {this, "(float) the y component of the centre of the distribution. [0, 1]"};
 	c::outlet<> out {this, "(list) output the distribution."};
 
-	c::attribute<long> N {
+	c::attribute<long> X {
 		this,
-		"N",
+		"X",
 		10,
 		c::title {"Horizontal Dimension"},
-		c::description {"The size of the distribution across the x-axis. [1, ∞]"},
+		c::description {"The size of the distribution across the x-axis. [1, ∞)"},
 		c::setter {[this](const c::atoms& args, const int inlet) -> c::atoms {
 			return {std::max(c::from_atoms<long>(args), (long)1)};
 		}}
 	};
-	c::attribute<long> M {
+	c::attribute<long> Y {
 		this,
-		"M",
+		"Y",
 		10,
 		c::title {"Vertical Dimension"},
-		c::description {"The size of the distribution across the y-axis. [1, ∞]"},
+		c::description {"The size of the distribution across the y-axis. [1, ∞)"},
 		c::setter {[this](const c::atoms& args, const int inlet) -> c::atoms {
 			return {std::max(c::from_atoms<long>(args), (long)1)};
 		}}
@@ -88,13 +88,12 @@ class raisedCosine2D: public c::object<raisedCosine2D> {
 	T::Point p = T::Point(0., 0.);
 	// methods
 	void _logic() {
-		// calculate the distribution when x is updated
-		c::atoms distribution(N * M);
-		T::Matrix_2D distribution_old = p::raisedCosine2D(p, sigma, N, M);
-		for (long n = 0; n < N; n++) {
-			for (long m = 0; m < M; m++) {
+		c::atoms distribution(X * Y);
+		T::Matrix_2D distribution_old = p::raisedCosine2D(p, sigma, X, Y);
+		for (std::size_t x = 0; x < X; x++) {
+			for (std::size_t y = 0; y < Y; y++) {
 				// flip distribution axes
-				distribution[(M - 1 - m) * N + n] = distribution_old[n][m];
+				distribution[y * X + x] = distribution_old[x][Y - 1 - y];
 			};
 		}
 		out.send(distribution);

@@ -134,7 +134,7 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [30.0, 70.0, 635.0, 74.0],
-					"text": "Calculate a 2-dimensional raised cosine distribution.\nparameters:\n    x, y: The centre of the raised cosine distribution ∈ [0, 1].\n    sigma: The deviation of the distribution ∈ (0, ∞].\n    N, M: The size of the output matrix in the X and Y axes respectively - the output will be a list of length N*M."
+					"text": "Calculate a 2-dimensional raised cosine distribution.\nparameters:\n    x, y: The centre of the raised cosine distribution ∈ [0, 1].\n    sigma: The deviation of the distribution ∈ (0, ∞].\n    X, Y: The size of the output matrix in the X and Y axes respectively - the output will be a list of length X*Y."
 				}
 			},
 			{
@@ -270,7 +270,7 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [374.0, 172.0, 19.0, 21.0],
-					"text": "M"
+					"text": "Y"
 				}
 			},
 			{
@@ -280,7 +280,7 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [268.0, 173.0, 19.0, 21.0],
-					"text": "N"
+					"text": "X"
 				}
 			},
 			{
@@ -290,8 +290,8 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [324.0, 290.0, 37.0, 23.0],
-					"text": "M $1"
+					"patching_rect": [324.0, 290.0, 32.0, 23.0],
+					"text": "Y $1"
 				}
 			},
 			{
@@ -335,8 +335,8 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [214.0, 290.0, 35.0, 23.0],
-					"text": "N $1"
+					"patching_rect": [214.0, 290.0, 33.0, 23.0],
+					"text": "X $1"
 				}
 			}
 		],

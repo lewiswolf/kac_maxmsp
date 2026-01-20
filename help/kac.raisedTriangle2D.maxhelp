@@ -243,7 +243,7 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [389.0, 167.0, 19.0, 21.0],
-					"text": "M"
+					"text": "Y"
 				}
 			},
 			{
@@ -253,7 +253,7 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [283.0, 168.0, 19.0, 21.0],
-					"text": "N"
+					"text": "X"
 				}
 			},
 			{
@@ -263,8 +263,8 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [339.0, 285.0, 37.0, 23.0],
-					"text": "M $1"
+					"patching_rect": [339.0, 285.0, 32.0, 23.0],
+					"text": "Y $1"
 				}
 			},
 			{
@@ -308,8 +308,8 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [229.0, 285.0, 35.0, 23.0],
-					"text": "N $1"
+					"patching_rect": [229.0, 285.0, 33.0, 23.0],
+					"text": "X $1"
 				}
 			},
 			{
@@ -321,7 +321,7 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [30.0, 70.0, 635.0, 74.0],
-					"text": "Calculate a 2-dimensional triangular distribution.\nparameters:\n    x, y: The centre of the raised triangle distribution.\n    sigma: The deviation of the distribution.\n    N, M: The size of the output matrix in the X and Y axes respectively - the output will be a list of length N*M."
+					"text": "Calculate a 2-dimensional triangular distribution.\nparameters:\n    x, y: The centre of the raised triangle distribution.\n    sigma: The deviation of the distribution.\n    X, Y: The size of the output matrix in the X and Y axes respectively - the output will be a list of length X*Y."
 				}
 			},
 			{

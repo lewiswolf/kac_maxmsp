@@ -9,7 +9,7 @@
 			"modernui": 1
 		},
 		"classnamespace": "box",
-		"rect": [59.0, 134.0, 965.0, 672.0],
+		"rect": [179.0, 111.0, 857.0, 755.0],
 		"default_fontname": "Lato Light",
 		"gridsize": [5.0, 5.0],
 		"gridsnaponopen": 2,
@@ -21,6 +21,15 @@
 		"style": "tap",
 		"subpatcher_template": "tap.template",
 		"boxes": [
+			{
+				"box": {
+					"id": "obj-18",
+					"maxclass": "ezdac~",
+					"numinlets": 2,
+					"numoutlets": 0,
+					"patching_rect": [25.0, 775.0, 45.0, 45.0]
+				}
+			},
 			{
 				"box": {
 					"id": "obj-33",
@@ -310,19 +319,8 @@
 					"pointcolor": [1.0, 1.0, 1.0, 1.0],
 					"presentation": 1,
 					"presentation_rect": [429.36170212765956, 162.2000008225441, 100.0, 100.0],
-					"xplace": [0.31],
-					"yplace": [0.53]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-38",
-					"maxclass": "mc.ezdac~",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [25.0, 768.0, 45.0, 45.0],
-					"presentation": 1,
-					"presentation_rect": [25.0, 160.0, 100.2000008225441, 100.2000008225441]
+					"xplace": [0.44],
+					"yplace": [0.61]
 				}
 			},
 			{
@@ -374,7 +372,7 @@
 					"presentation": 1,
 					"presentation_linecount": 5,
 					"presentation_rect": [25.0, 65.0, 645.0, 74.0],
-					"text": "Calculate the modes and their respective amplitudes for a rectangular drum. \nparameters:\n    x, y: The strike location of the drum, such that 0 and 1 always corresponds to a boundary, and thus produces silence. \n    epsilon: The aspect ratio for the drum.\n    N, M: The number of modes - the output of each object will be a list of length N*M."
+					"text": "Calculate the modes and their respective amplitudes for a rectangular drum. \nparameters:\n    x, y: The strike location of the drum, such that 0 and 1 always corresponds to a boundary, and thus produces silence. \n    epsilon: The aspect ratio for the drum.\n    M, N: The number of modes - the output of each object will be a list of length M*N."
 				}
 			},
 			{
@@ -549,8 +547,8 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"outlettype": ["multichannelsignal"],
-					"patching_rect": [25.0, 732.0, 158.0, 23.0],
-					"text": "mc.mixdown~ 2 @autogain 1"
+					"patching_rect": [25.0, 735.0, 158.0, 23.0],
+					"text": "mc.mixdown~ 1 @autogain 1"
 				}
 			},
 			{
@@ -646,7 +644,7 @@
 					"patching_rect": [224.25, 207.0, 19.0, 21.0],
 					"presentation": 1,
 					"presentation_rect": [305.2023407895515, 212.2000008225441, 19.0, 21.0],
-					"text": "M"
+					"text": "N"
 				}
 			},
 			{
@@ -658,7 +656,7 @@
 					"patching_rect": [129.0, 207.0, 19.0, 21.0],
 					"presentation": 1,
 					"presentation_rect": [225.5, 212.2000008225441, 19.0, 21.0],
-					"text": "N"
+					"text": "M"
 				}
 			},
 			{
@@ -668,8 +666,8 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [216.0, 360.0, 37.0, 23.0],
-					"text": "M $1"
+					"patching_rect": [216.0, 360.0, 35.0, 23.0],
+					"text": "N $1"
 				}
 			},
 			{
@@ -715,8 +713,8 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [121.0, 360.0, 35.0, 23.0],
-					"text": "N $1"
+					"patching_rect": [121.0, 360.0, 37.0, 23.0],
+					"text": "M $1"
 				}
 			}
 		],
@@ -942,6 +940,15 @@
 				"patchline": {
 					"destination": ["obj-60", 0],
 					"midpoints": [214.5, 338.0, 34.5, 338.0],
+					"order": 1,
+					"source": ["obj-6", 0]
+				}
+			},
+			{
+				"patchline": {
+					"destination": ["obj-61", 0],
+					"midpoints": [214.5, 349.99237060546875, 424.5, 349.99237060546875],
+					"order": 0,
 					"source": ["obj-6", 0]
 				}
 			},
@@ -1003,7 +1010,16 @@
 			},
 			{
 				"patchline": {
-					"destination": ["obj-38", 0],
+					"destination": ["obj-18", 1],
+					"midpoints": [34.5, 766.5, 60.5, 766.5],
+					"order": 0,
+					"source": ["obj-8", 0]
+				}
+			},
+			{
+				"patchline": {
+					"destination": ["obj-18", 0],
+					"order": 1,
 					"source": ["obj-8", 0]
 				}
 			},
