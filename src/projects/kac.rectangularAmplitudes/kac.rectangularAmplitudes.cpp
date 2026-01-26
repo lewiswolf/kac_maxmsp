@@ -13,23 +13,24 @@ class rectangularAmplitudes: public c::object<rectangularAmplitudes> {
 	public:
 	MIN_DESCRIPTION {
 		"Calculate the spatial eigenfunction of a 2-dimensional rectangular domain relative to a "
-		"strike location in cartesian coordinates."
+		"excitation in cartesian coordinates."
 	};
 	MIN_TAGS {""};
 	MIN_AUTHOR {"Lewis Wolstanholme"};
-	MIN_RELATED {"kac.rectangularSeries"};
-
-	c::inlet<> in1 {this, "(float) the x component of the rectangular strike location. [0, √Є)]"};
-	c::inlet<> in2 {
-		this, "(float) the y component of the rectangular strike location. [0, 1 / √Є]"
+	MIN_RELATED {
+		"kac.rectangularSeries, kac.circularAmplitudes, kac.linearAmplitudes, "
+		"kac.triangularAmplitudes"
 	};
-	c::outlet<> out {this, "(list) output the modal amplitudes."};
+
+	c::inlet<> in1 {this, "(float) the x component of the excitation location. [0, √Є)]"};
+	c::inlet<> in2 {this, "(float) the y component of the excitation location. [0, 1 / √Є]"};
+	c::outlet<> out {this, "(list) output the spatial eigenfunction."};
 
 	c::attribute<long> M {
 		this,
 		"M",
 		10,
-		c::title {"Mth Order"},
+		c::title {"Modes per Mth Order"},
 		c::description {"The number of modes across the Mth axis. [1, ∞)"},
 		c::setter {[this](const c::atoms& args, const int inlet) -> c::atoms {
 			return {std::max(c::from_atoms<long>(args), (long)1)};
@@ -39,7 +40,7 @@ class rectangularAmplitudes: public c::object<rectangularAmplitudes> {
 		this,
 		"N",
 		10,
-		c::title {"Nth Order"},
+		c::title {"Modes per Nth Order"},
 		c::description {"The number of modes across the Nth axis. [1, ∞)"},
 		c::setter {[this](const c::atoms& args, const int inlet) -> c::atoms {
 			return {std::max(c::from_atoms<long>(args), (long)1)};
@@ -59,7 +60,7 @@ class rectangularAmplitudes: public c::object<rectangularAmplitudes> {
 	c::message<> bang {
 		this,
 		"bang",
-		"Calculate the modal amplitudes of an equilateral triangle for a trilinear coordinate.",
+		"Calculate the modal amplitudes of a rectangle for a given cartesian coordinate {x, y}.",
 		[this](const c74::min::atoms& args, const int inlet) -> c74::min::atoms {
 			if (inlet == 0) {
 				_logic();
@@ -71,7 +72,7 @@ class rectangularAmplitudes: public c::object<rectangularAmplitudes> {
 	c::message<> number {
 		this,
 		"number",
-		"Calculate the modal amplitudes.",
+		"Calculate the modal amplitudes of a rectangle for a given cartesian coordinate {x, y}.",
 		[this](const c::atoms& args, const int inlet) -> c::atoms {
 			// update the cartesian coordinate
 			switch (inlet) {
@@ -94,7 +95,6 @@ class rectangularAmplitudes: public c::object<rectangularAmplitudes> {
 	double y;
 	// methods
 	void _logic() {
-		// calculate amplitudes
 		c::atoms amplitudes(M * N);
 		T::Matrix_2D amplitudes_old = p::rectangularAmplitudes(x, y, M, N, epsilon);
 		for (std::size_t m = 0; m < M; m++) {

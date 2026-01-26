@@ -11,30 +11,32 @@ namespace T = kac_core::types;
 
 class circularSeries: public c::object<circularSeries> {
 	public:
-	MIN_DESCRIPTION {"Calculate the eigenmodes of a circle."};
+	MIN_DESCRIPTION {"Calculate the wavenumbers of a 2-dimensional circular domain."};
 	MIN_TAGS {""};
 	MIN_AUTHOR {"Lewis Wolstanholme"};
-	MIN_RELATED {"kac.circularAmplitudes"};
-
-	c::inlet<> in {this, "(bang) calculate the circular eigenmodes."};
-	c::outlet<> out {this, "(list) output the circular eigenmodes."};
-
-	c::attribute<long> N {
-		this,
-		"N",
-		10,
-		c::title {"Nth Order"},
-		c::description {"The maximum Nth order of the modes. [1, ∞]"},
-		c::setter {[this](const c::atoms& args, const int inlet) -> c::atoms {
-			return {std::max(c::from_atoms<long>(args), (long)1)};
-		}}
+	MIN_RELATED {
+		"kac.circularAmplitudes, kac.linearSeries, kac.rectangularSeries, kac.triangularSeries"
 	};
+
+	c::inlet<> in {this, "(bang) calculate the circular wavenumbers."};
+	c::outlet<> out {this, "(list) output the circular wavenumbers."};
+
 	c::attribute<long> M {
 		this,
 		"M",
 		10,
-		c::title {"Modes per Order"},
-		c::description {"The maximum amount of modes per order. [1, ∞]"},
+		c::title {"Modes per Mth Order"},
+		c::description {"The number of modes across the Mth axis. [1, ∞)"},
+		c::setter {[this](const c::atoms& args, const int inlet) -> c::atoms {
+			return {std::max(c::from_atoms<long>(args), (long)1)};
+		}}
+	};
+	c::attribute<long> N {
+		this,
+		"N",
+		10,
+		c::title {"Modes per Nth Order"},
+		c::description {"The number of modes across the Nth axis.. [1, ∞)"},
 		c::setter {[this](const c::atoms& args, const int inlet) -> c::atoms {
 			return {std::max(c::from_atoms<long>(args), (long)1)};
 		}}
@@ -43,13 +45,12 @@ class circularSeries: public c::object<circularSeries> {
 	c::message<> bang {
 		this,
 		"bang",
-		"Calculate the eigenmodes of a circle.",
+		"Calculate the circular wavenumbers.",
 		[this](const c::atoms& args, const int inlet) -> c::atoms {
-			// calculate circular eigenmodes
-			T::Matrix_2D series_old = p::circularSeries(N, M);
-			c::atoms series(N * M);
-			for (long n = 0; n < N; n++) {
-				for (long m = 0; m < M; m++) { series[n * M + m] = series_old[n][m]; };
+			T::Matrix_2D series_old = p::circularSeries(M, N);
+			c::atoms series(M * N);
+			for (std::size_t m = 0; m < M; m++) {
+				for (std::size_t n = 0; n < N; n++) { series[m * N + n] = series_old[m][n]; };
 			};
 			out.send(series);
 			return {};

@@ -386,7 +386,7 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [25.0, 65.0, 701.0, 60.0],
-					"text": "Calculate the modes and their respective amplitudes for an equilateral triangle drum. \nparameters:\n    u, v, w: The trilinear strike location of the drum.\n    N, M: The number of modes - the output of each object will be a list of length N*M."
+					"text": "Calculate the modes and their respective amplitudes for a triangular drum. \nparameters:\n    u, v, w: The trilinear strike location of the drum.\n    N, M: The number of modes - the output of each object will be a list of length N*M."
 				}
 			},
 			{
@@ -397,7 +397,7 @@
 					"numoutlets": 1,
 					"outlettype": [""],
 					"patching_rect": [30.0, 400.0, 152.0, 23.0],
-					"text": "kac.equilateralTriangleSeries"
+					"text": "kac.triangularSeries"
 				}
 			},
 			{
@@ -441,7 +441,7 @@
 					"numoutlets": 1,
 					"outlettype": [""],
 					"patching_rect": [330.0, 400.0, 180.0, 23.0],
-					"text": "kac.equilateralTriangleAmplitudes"
+					"text": "kac.triangularAmplitudes"
 				}
 			},
 			{
@@ -470,7 +470,7 @@
 					"filename": "helpdetails.js",
 					"id": "obj-2",
 					"ignoreclick": 1,
-					"jsarguments": ["kac.equilateralTriangleSeries"],
+					"jsarguments": ["kac.triangularSeries"],
 					"maxclass": "jsui",
 					"numinlets": 1,
 					"numoutlets": 1,

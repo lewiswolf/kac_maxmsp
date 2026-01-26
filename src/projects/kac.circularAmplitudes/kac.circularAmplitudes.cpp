@@ -13,39 +13,42 @@ namespace T = kac_core::types;
 class circularAmplitudes: public c::object<circularAmplitudes> {
 	public:
 	MIN_DESCRIPTION {
-		"Calculate the modal amplitudes of a circle relative to a strike location in polar "
-		"coordinates."
+		"Calculate the spatial eigenfunction of a 2-dimensional circular domain relative to an "
+		"excitation in polar coordinates."
 	};
 	MIN_TAGS {""};
 	MIN_AUTHOR {"Lewis Wolstanholme"};
-	MIN_RELATED {"kac.circularSeries"};
-
-	c::inlet<> in1 {this, "(float) the radial component of the circular strike location. [-1, 1]"};
-	c::inlet<> in2 {this, "(float) the theta component of the circular strike location. [-π, π]"};
-	c::outlet<> out {this, "(list) output the modal amplitudes."};
-
-	c::attribute<long> N {
-		this,
-		"N",
-		10,
-		c::title {"Nth Order"},
-		c::description {"The maximum Nth order of the modes. [1, ∞]"},
-		c::setter {[this](const c::atoms& args, const int inlet) -> c::atoms {
-			long _N = std::max(c::from_atoms<long>(args), (long)1);
-			series = p::circularSeries(_N, M);
-			return {_N};
-		}}
+	MIN_RELATED {
+		"kac.circularSeries, kac.linearAmplitudes, kac.rectangularAmplitudes, "
+		"kac.triangularAmplitudes"
 	};
+
+	c::inlet<> in1 {this, "(float) the radial component of the circular excitation. [-1, 1]"};
+	c::inlet<> in2 {this, "(float) the theta component of the circular excitation. [-π, π]"};
+	c::outlet<> out {this, "(list) output the spatial eigenfunction."};
+
 	c::attribute<long> M {
 		this,
 		"M",
 		10,
-		c::title {"Modes per Order"},
-		c::description {"The maximum amount of modes per order. [1, ∞]"},
+		c::title {"Modes per Mth Order"},
+		c::description {"The number of modes across the Mth axis. [1, ∞)"},
 		c::setter {[this](const c::atoms& args, const int inlet) -> c::atoms {
 			long _M = std::max(c::from_atoms<long>(args), (long)1);
-			series = p::circularSeries(N, _M);
+			series = p::circularSeries(_M, N);
 			return {_M};
+		}}
+	};
+	c::attribute<long> N {
+		this,
+		"N",
+		10,
+		c::title {"Modes per Nth Order"},
+		c::description {"The number of modes across the Nth axis. [1, ∞)"},
+		c::setter {[this](const c::atoms& args, const int inlet) -> c::atoms {
+			long _N = std::max(c::from_atoms<long>(args), (long)1);
+			series = p::circularSeries(M, _N);
+			return {_N};
 		}}
 	};
 
@@ -83,16 +86,15 @@ class circularAmplitudes: public c::object<circularAmplitudes> {
 
 	private:
 	// variables
-	T::Matrix_2D series = p::circularSeries(N, M);
+	T::Matrix_2D series = p::circularSeries(M, N);
 	double r = 0.;
 	double theta = 0.;
 	// methods
 	void _logic() {
-		// calculate amplitudes when r is updated
-		c::atoms amplitudes(N * M);
+		c::atoms amplitudes(M * N);
 		T::Matrix_2D amplitudes_old = p::circularAmplitudes(r, theta, series);
-		for (long n = 0; n < N; n++) {
-			for (long m = 0; m < M; m++) { amplitudes[n * M + m] = amplitudes_old[n][m]; }
+		for (std::size_t m = 0; m < M; m++) {
+			for (std::size_t n = 0; n < N; n++) { amplitudes[m * N + n] = amplitudes_old[m][n]; }
 		}
 		out.send(amplitudes);
 	}

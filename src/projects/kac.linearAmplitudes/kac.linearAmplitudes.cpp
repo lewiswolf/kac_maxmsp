@@ -11,20 +11,26 @@ namespace p = kac_core::physics;
 
 class linearAmplitudes: public c::object<linearAmplitudes> {
 	public:
-	MIN_DESCRIPTION {"Calculate the 1-dimensional modal amplitudes relative to a strike location."};
+	MIN_DESCRIPTION {
+		"Calculate the spatial eigenfunction of a 1-dimensional domain relative to an excitation "
+		"in cartesian coordinates."
+	};
 	MIN_TAGS {""};
 	MIN_AUTHOR {"Lewis Wolstanholme"};
-	MIN_RELATED {""};
+	MIN_RELATED {
+		"kac.linearSeries, kac.circularAmplitudes, kac.rectangularAmplitudes, "
+		"kac.triangularAmplitudes"
+	};
 
-	c::inlet<> in1 {this, "(float) the linear strike location. [0, 1]"};
-	c::outlet<> out {this, "(list) output the modal amplitudes."};
+	c::inlet<> in1 {this, "(float) the x component of the excitation location. [0, 1]"};
+	c::outlet<> out {this, "(list) output the spatial eigenfunction."};
 
 	c::attribute<long> N {
 		this,
 		"N",
 		10,
-		c::title {"Number of Modes"},
-		c::description {"The maximum amount of modes. [1, ∞]"},
+		c::title {"Modes per Nth Order"},
+		c::description {"The number of modes across the Nth axis. [1, ∞)"},
 		c::setter {[this](const c::atoms& args, const int inlet) -> c::atoms {
 			return {std::max(c::from_atoms<long>(args), (long)1)};
 		}}
@@ -33,7 +39,7 @@ class linearAmplitudes: public c::object<linearAmplitudes> {
 	c::message<> bang {
 		this,
 		"bang",
-		"Calculate the modal amplitudes.",
+		"Calculate the modal amplitudes of a line for a given cartesian coordinate {x}.",
 		[this](const c::atoms& args, const int inlet) -> c::atoms {
 			if (inlet == 0) {
 				_logic();
@@ -45,7 +51,7 @@ class linearAmplitudes: public c::object<linearAmplitudes> {
 	c::message<> number {
 		this,
 		"number",
-		"Calculate the modal amplitudes.",
+		"Calculate the modal amplitudes of a line for a given cartesian coordinate {x}.",
 		[this](const c::atoms& args, const int inlet) -> c::atoms {
 			// update cartesian coordinate
 			switch (inlet) {
