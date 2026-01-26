@@ -56,6 +56,23 @@ class rectangularAmplitudes: public c::object<rectangularAmplitudes> {
 			return {std::max(c::from_atoms<double>(args), (double)0.)};
 		}}
 	};
+	c::attribute<long> boundary_conditions {
+		this,
+		"boundary_conditions",
+		0,
+		c::title {"Boundary Conditions"},
+		c::description {"Define the boundary conditions: 0 = Dirichlet, 1 = Neumann"},
+		c::setter {[this](const c::atoms& args, const int inlet) -> c::atoms {
+			switch (c::from_atoms<long>(args)) {
+				case 1:
+					BC = {false, false, false, false};
+					return {1};
+				default:
+					BC = {true, true, true, true};
+					return {0};
+			}
+		}}
+	};
 
 	c::message<> bang {
 		this,
@@ -93,10 +110,11 @@ class rectangularAmplitudes: public c::object<rectangularAmplitudes> {
 	// variables
 	double x;
 	double y;
+	std::array<bool, 4> BC = {true, true, true, true};
 	// methods
 	void _logic() {
 		c::atoms amplitudes(M * N);
-		T::Matrix_2D amplitudes_old = p::rectangularAmplitudes(x, y, M, N, epsilon);
+		T::Matrix_2D amplitudes_old = p::rectangularAmplitudes(x, y, M, N, epsilon, BC);
 		for (std::size_t m = 0; m < M; m++) {
 			for (std::size_t n = 0; n < N; n++) { amplitudes[m * N + n] = amplitudes_old[m][n]; };
 		}

@@ -41,13 +41,30 @@ class circularSeries: public c::object<circularSeries> {
 			return {std::max(c::from_atoms<long>(args), (long)1)};
 		}}
 	};
+	c::attribute<long> boundary_conditions {
+		this,
+		"boundary_conditions",
+		0,
+		c::title {"Boundary Conditions"},
+		c::description {"Define the boundary conditions: 0 = Dirichlet, 1 = Neumann"},
+		c::setter {[this](const c::atoms& args, const int inlet) -> c::atoms {
+			switch (c::from_atoms<long>(args)) {
+				case 1:
+					BC = false;
+					return {1};
+				default:
+					BC = true;
+					return {0};
+			}
+		}}
+	};
 
 	c::message<> bang {
 		this,
 		"bang",
 		"Calculate the circular wavenumbers.",
 		[this](const c::atoms& args, const int inlet) -> c::atoms {
-			T::Matrix_2D series_old = p::circularSeries(M, N);
+			T::Matrix_2D series_old = p::circularSeries(M, N, BC);
 			c::atoms series(M * N);
 			for (std::size_t m = 0; m < M; m++) {
 				for (std::size_t n = 0; n < N; n++) { series[m * N + n] = series_old[m][n]; };
@@ -56,6 +73,10 @@ class circularSeries: public c::object<circularSeries> {
 			return {};
 		}
 	};
+
+	private:
+	// variables
+	bool BC = true;
 };
 
 MIN_EXTERNAL(circularSeries);

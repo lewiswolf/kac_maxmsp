@@ -35,7 +35,7 @@ class circularAmplitudes: public c::object<circularAmplitudes> {
 		c::description {"The number of modes across the Mth axis. [1, ∞)"},
 		c::setter {[this](const c::atoms& args, const int inlet) -> c::atoms {
 			long _M = std::max(c::from_atoms<long>(args), (long)1);
-			series = p::circularSeries(_M, N);
+			series = p::circularSeries(_M, N, BC);
 			return {_M};
 		}}
 	};
@@ -47,8 +47,27 @@ class circularAmplitudes: public c::object<circularAmplitudes> {
 		c::description {"The number of modes across the Nth axis. [1, ∞)"},
 		c::setter {[this](const c::atoms& args, const int inlet) -> c::atoms {
 			long _N = std::max(c::from_atoms<long>(args), (long)1);
-			series = p::circularSeries(M, _N);
+			series = p::circularSeries(M, _N, BC);
 			return {_N};
+		}}
+	};
+	c::attribute<long> boundary_conditions {
+		this,
+		"boundary_conditions",
+		0,
+		c::title {"Boundary Conditions"},
+		c::description {"Define the boundary conditions: 0 = Dirichlet, 1 = Neumann"},
+		c::setter {[this](const c::atoms& args, const int inlet) -> c::atoms {
+			switch (c::from_atoms<long>(args)) {
+				case 1:
+					BC = false;
+					series = p::circularSeries(M, N, false);
+					return {1};
+				default:
+					BC = true;
+					series = p::circularSeries(M, N, true);
+					return {0};
+			}
 		}}
 	};
 
@@ -86,9 +105,10 @@ class circularAmplitudes: public c::object<circularAmplitudes> {
 
 	private:
 	// variables
-	T::Matrix_2D series = p::circularSeries(M, N);
+	bool BC = true;
 	double r = 0.;
 	double theta = 0.;
+	T::Matrix_2D series = p::circularSeries(M, N, BC);
 	// methods
 	void _logic() {
 		c::atoms amplitudes(M * N);

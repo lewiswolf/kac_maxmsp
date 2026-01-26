@@ -35,6 +35,26 @@ class linearAmplitudes: public c::object<linearAmplitudes> {
 			return {std::max(c::from_atoms<long>(args), (long)1)};
 		}}
 	};
+	c::attribute<long> boundary_conditions {
+		this,
+		"boundary_conditions",
+		0,
+		c::title {"Boundary Conditions"},
+		c::description {"Define the boundary conditions: 0 = Dirichlet, 1 = Neumann, 2 = Mixed"},
+		c::setter {[this](const c::atoms& args, const int inlet) -> c::atoms {
+			switch (c::from_atoms<long>(args)) {
+				case 1:
+					BC = {false, false};
+					return {1};
+				case 2:
+					BC = {true, false};
+					return {2};
+				default:
+					BC = {true, true};
+					return {0};
+			}
+		}}
+	};
 
 	c::message<> bang {
 		this,
@@ -68,8 +88,9 @@ class linearAmplitudes: public c::object<linearAmplitudes> {
 	private:
 	// variables
 	double x = 0.;
+	std::array<bool, 2> BC = {true, true};
 	// methods
-	void _logic() { out.send(c::to_atoms(p::linearAmplitudes(x, N))); }
+	void _logic() { out.send(c::to_atoms(p::linearAmplitudes(x, N, BC))); }
 };
 
 MIN_EXTERNAL(linearAmplitudes);

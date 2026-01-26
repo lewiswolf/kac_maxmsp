@@ -51,13 +51,30 @@ class rectangularSeries: public c::object<rectangularSeries> {
 			return {std::max(c::from_atoms<double>(args), (double)0.)};
 		}}
 	};
+	c::attribute<long> boundary_conditions {
+		this,
+		"boundary_conditions",
+		0,
+		c::title {"Boundary Conditions"},
+		c::description {"Define the boundary conditions: 0 = Dirichlet, 1 = Neumann"},
+		c::setter {[this](const c::atoms& args, const int inlet) -> c::atoms {
+			switch (c::from_atoms<long>(args)) {
+				case 1:
+					BC = {false, false, false, false};
+					return {1};
+				default:
+					BC = {true, true, true, true};
+					return {0};
+			}
+		}}
+	};
 
 	c::message<> bang {
 		this,
 		"bang",
 		"Calculate the rectangular wavenumbers.",
 		[this](const c::atoms& args, const int inlet) -> c::atoms {
-			T::Matrix_2D series_old = p::rectangularSeries(M, N, epsilon);
+			T::Matrix_2D series_old = p::rectangularSeries(M, N, epsilon, BC);
 			c::atoms series(M * N);
 			for (std::size_t m = 0; m < M; m++) {
 				for (std::size_t n = 0; n < N; n++) { series[m * N + n] = series_old[m][n]; };
@@ -66,6 +83,10 @@ class rectangularSeries: public c::object<rectangularSeries> {
 			return {};
 		}
 	};
+
+	private:
+	// variables
+	std::array<bool, 4> BC = {true, true, true, true};
 };
 
 MIN_EXTERNAL(rectangularSeries);
