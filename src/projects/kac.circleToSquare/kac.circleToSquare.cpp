@@ -10,15 +10,15 @@ namespace g = kac_core::geometry;
 
 class circleToSquare: public c::object<circleToSquare> {
 	public:
-	MIN_DESCRIPTION {"Map coordinates from a circle to a sqaure."};
+	MIN_DESCRIPTION {"Map cartesian coordinates from a circle to a sqaure."};
 	MIN_TAGS {""};
 	MIN_AUTHOR {"Lewis Wolstanholme"};
-	MIN_RELATED {""};
+	MIN_RELATED {"kac.squareToCircle"};
 
-	c::inlet<> in1 {this, "(float) the x component of the cartesian coordinate. [-1, 1]"};
-	c::inlet<> in2 {this, "(float) the y component of the cartesian coordinate. [-1, 1]"};
-	c::outlet<> out1 {this, "(float) the x component output the mapped coordinates."};
-	c::outlet<> out2 {this, "(float) the y component output the mapped coordinates."};
+	c::inlet<> in1 {this, "(float) the x component of the input coordinate. [-1, 1]"};
+	c::inlet<> in2 {this, "(float) the y component of the input coordinate. [-1, 1]"};
+	c::outlet<> out1 {this, "(float) the x component of the mapped coordinates."};
+	c::outlet<> out2 {this, "(float) the y component of the mapped coordinates."};
 
 	c::message<> bang {
 		this,
@@ -57,7 +57,6 @@ class circleToSquare: public c::object<circleToSquare> {
 	T::Point p = T::Point(0., 0.);
 	// methods
 	void _logic() {
-		// calculate new coordinate when x is updated
 		T::Point p_prime = g::simpleElliptic_Circle2Square(p);
 		out2.send(p_prime.y);
 		out1.send(p_prime.x);

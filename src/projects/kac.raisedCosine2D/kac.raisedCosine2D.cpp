@@ -48,7 +48,7 @@ class raisedCosine2D: public c::object<raisedCosine2D> {
 		"sigma",
 		0.1,
 		c::title {"Sigma"},
-		c::description {"The deviation of the distribution."}
+		c::description {"The half-width of the distribution."}
 	};
 
 	c::message<> bang {
