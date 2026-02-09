@@ -9,7 +9,7 @@
 			"modernui": 1
 		},
 		"classnamespace": "box",
-		"rect": [34.0, 143.0, 1372.0, 723.0],
+		"rect": [34.0, 199.0, 1002.0, 667.0],
 		"boxes": [
 			{
 				"box": {
@@ -27,7 +27,7 @@
 							"modernui": 1
 						},
 						"classnamespace": "box",
-						"rect": [34.0, 143.0, 1372.0, 723.0],
+						"rect": [34.0, 199.0, 1002.0, 667.0],
 						"boxes": [
 							{
 								"box": {
@@ -124,8 +124,8 @@
 									"numinlets": 1,
 									"numoutlets": 2,
 									"outlettype": ["", ""],
-									"patching_rect": [428.0, 257.0, 441.0, 22.0],
-									"text": "jit.gl.sketch @drawto unit-rectangle-helpfile-2 @gl_color 0. 0. 0. 0. @line_width 1."
+									"patching_rect": [428.0, 257.0, 448.0, 22.0],
+									"text": "jit.gl.sketch @drawto unit-rectangle-helpfile-2 @gl_color 0. 0. 0. 0. @line_width 1.5"
 								}
 							},
 							{
@@ -365,7 +365,7 @@
 					"numoutlets": 1,
 					"outlettype": [""],
 					"patching_rect": [141.0, 250.0, 196.80000293254852, 22.0],
-					"text": "-0.5 -0.5 -0.5 0.5 0.5 0.5 0.5 -0.5"
+					"text": "0.5 0.5 -0.5 0.5 -0.5 -0.5 0.5 -0.5"
 				}
 			},
 			{

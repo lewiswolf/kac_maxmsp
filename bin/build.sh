@@ -6,8 +6,8 @@ if [ ! -d ./build ]; then
 fi
 
 # build
-cmake -S . -B build
-cmake --build build --config Release -j4
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build -j4
 
 # codesign
 if [[ "$OSTYPE" == "darwin"* ]]; then

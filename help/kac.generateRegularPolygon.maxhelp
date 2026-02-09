@@ -9,7 +9,7 @@
 			"modernui": 1
 		},
 		"classnamespace": "box",
-		"rect": [34.0, 171.0, 1002.0, 695.0],
+		"rect": [-1483.0, 239.0, 1005.0, 639.0],
 		"boxes": [
 			{
 				"box": {
@@ -27,7 +27,7 @@
 							"modernui": 1
 						},
 						"classnamespace": "box",
-						"rect": [34.0, 171.0, 1372.0, 695.0],
+						"rect": [-1483.0, 239.0, 1332.0, 639.0],
 						"boxes": [
 							{
 								"box": {
@@ -146,8 +146,8 @@
 									"numinlets": 1,
 									"numoutlets": 2,
 									"outlettype": ["", ""],
-									"patching_rect": [50.0, 342.0, 567.0, 22.0],
-									"text": "jit.gl.sketch @drawto convex-polygon-helpfile-1 @gl_color 0. 0. 0. 0. @line_width 1.5 @position 0. 0. -0.5"
+									"patching_rect": [50.0, 342.0, 566.0, 22.0],
+									"text": "jit.gl.sketch @drawto regular-polygon-helpfile-1 @gl_color 0. 0. 0. 0. @line_width 1.5 @position 0. 0. -0.5"
 								}
 							},
 							{
@@ -276,7 +276,7 @@
 					"gizmos": 0,
 					"id": "obj-15",
 					"maxclass": "jit.pworld",
-					"name": "convex-polygon-helpfile-1",
+					"name": "regular-polygon-helpfile-1",
 					"numinlets": 1,
 					"numoutlets": 2,
 					"outlettype": ["jit_matrix", ""],

@@ -9,8 +9,20 @@
 			"modernui": 1
 		},
 		"classnamespace": "box",
-		"rect": [62.0, 120.0, 970.0, 580.0],
+		"rect": [34.0, 199.0, 1002.0, 667.0],
 		"boxes": [
+			{
+				"box": {
+					"id": "obj-4",
+					"linecount": 2,
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"outlettype": [""],
+					"patching_rect": [128.0, 433.0, 170.0, 35.0],
+					"text": "kac.normaliseConvexPolygon @signed_norm 1"
+				}
+			},
 			{
 				"box": {
 					"id": "obj-38",
@@ -148,7 +160,7 @@
 							}
 						]
 					},
-					"patching_rect": [66.0, 261.0, 142.0, 22.0],
+					"patching_rect": [66.0, 266.42857142857144, 142.0, 22.0],
 					"text": "p extract coordinates"
 				}
 			},
@@ -163,7 +175,7 @@
 					"numoutlets": 2,
 					"outlettype": ["", "bang"],
 					"parameter_enable": 0,
-					"patching_rect": [189.0, 358.0, 50.0, 22.0]
+					"patching_rect": [189.0, 363.0, 50.0, 22.0]
 				}
 			},
 			{
@@ -177,7 +189,7 @@
 					"numoutlets": 2,
 					"outlettype": ["", "bang"],
 					"parameter_enable": 0,
-					"patching_rect": [66.0, 358.0, 50.0, 22.0]
+					"patching_rect": [66.0, 363.0714285714286, 50.0, 22.0]
 				}
 			},
 			{
@@ -187,7 +199,7 @@
 					"numinlets": 2,
 					"numoutlets": 2,
 					"outlettype": ["float", "float"],
-					"patching_rect": [66.0, 325.0, 142.0, 22.0],
+					"patching_rect": [66.0, 330.8571428571429, 142.0, 22.0],
 					"text": "cartopol"
 				}
 			},
@@ -212,7 +224,7 @@
 					"numoutlets": 3,
 					"outlettype": ["", "", ""],
 					"parameter_enable": 0,
-					"patching_rect": [25.0, 154.0, 100.0, 100.0],
+					"patching_rect": [25.0, 156.21428571428572, 100.0, 100.0],
 					"pointcolor": [0.929411764705882, 0.929411764705882, 0.352941176470588, 1.0],
 					"xplace": [0.5],
 					"yplace": [0.0]
@@ -225,7 +237,7 @@
 					"numinlets": 2,
 					"numoutlets": 2,
 					"outlettype": ["", ""],
-					"patching_rect": [66.0, 295.0, 142.0, 22.0],
+					"patching_rect": [66.0, 298.64285714285717, 142.0, 22.0],
 					"text": "kac.squareToCircle"
 				}
 			},
@@ -233,7 +245,7 @@
 				"box": {
 					"id": "obj-19",
 					"maxclass": "newobj",
-					"numinlets": 1,
+					"numinlets": 2,
 					"numoutlets": 0,
 					"patcher": {
 						"fileversion": 1,
@@ -245,8 +257,31 @@
 							"modernui": 1
 						},
 						"classnamespace": "box",
-						"rect": [62.0, 148.0, 1340.0, 552.0],
+						"rect": [34.0, 199.0, 1002.0, 667.0],
 						"boxes": [
+							{
+								"box": {
+									"comment": "",
+									"id": "obj-10",
+									"index": 2,
+									"maxclass": "inlet",
+									"numinlets": 0,
+									"numoutlets": 1,
+									"outlettype": [""],
+									"patching_rect": [428.0, 11.0, 30.0, 30.0]
+								}
+							},
+							{
+								"box": {
+									"id": "obj-9",
+									"maxclass": "newobj",
+									"numinlets": 1,
+									"numoutlets": 1,
+									"outlettype": [""],
+									"patching_rect": [428.0, 55.0, 86.0, 22.0],
+									"text": "vexpr $f1 * 0.5"
+								}
+							},
 							{
 								"box": {
 									"id": "obj-1",
@@ -353,8 +388,8 @@
 									"numinlets": 1,
 									"numoutlets": 2,
 									"outlettype": ["", ""],
-									"patching_rect": [428.0, 257.0, 431.0, 22.0],
-									"text": "jit.gl.sketch @drawto unit-triangle-helpfile-2 @gl_color 0. 0. 0. 0. @line_width 1."
+									"patching_rect": [428.0, 257.0, 438.0, 22.0],
+									"text": "jit.gl.sketch @drawto unit-triangle-helpfile-2 @gl_color 0. 0. 0. 0. @line_width 1.5"
 								}
 							},
 							{
@@ -407,16 +442,13 @@
 							{
 								"patchline": {
 									"destination": ["obj-22", 0],
-									"order": 1,
 									"source": ["obj-1", 0]
 								}
 							},
 							{
 								"patchline": {
-									"destination": ["obj-6", 0],
-									"midpoints": [59.5, 85.0, 437.5, 85.0],
-									"order": 0,
-									"source": ["obj-1", 0]
+									"destination": ["obj-9", 0],
+									"source": ["obj-10", 0]
 								}
 							},
 							{
@@ -512,10 +544,16 @@
 									"destination": ["obj-4", 0],
 									"source": ["obj-8", 0]
 								}
+							},
+							{
+								"patchline": {
+									"destination": ["obj-6", 0],
+									"source": ["obj-9", 0]
+								}
 							}
 						]
 					},
-					"patching_rect": [66.0, 427.5, 81.0, 22.0],
+					"patching_rect": [66.0, 475.0, 81.0, 22.0],
 					"text": "p plot triangle"
 				}
 			},
@@ -588,7 +626,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [177.0, 427.5, 150.0, 35.0],
+					"patching_rect": [166.0, 475.0, 150.0, 35.0],
 					"text": "-0.759836 0. 0.759836 0. 0. 1.316074"
 				}
 			},
@@ -599,7 +637,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"outlettype": [""],
-					"patching_rect": [66.0, 388.0, 142.0, 22.0],
+					"patching_rect": [66.0, 395.28571428571433, 142.0, 22.0],
 					"text": "kac.generateUnitTriangle"
 				}
 			}
@@ -608,6 +646,14 @@
 			{
 				"patchline": {
 					"destination": ["obj-19", 0],
+					"order": 2,
+					"source": ["obj-1", 0]
+				}
+			},
+			{
+				"patchline": {
+					"destination": ["obj-4", 0],
+					"midpoints": [75.5, 425.14285714285717, 137.5, 425.14285714285717],
 					"order": 1,
 					"source": ["obj-1", 0]
 				}
@@ -615,7 +661,7 @@
 			{
 				"patchline": {
 					"destination": ["obj-86", 1],
-					"midpoints": [75.5, 418.75, 317.5, 418.75],
+					"midpoints": [75.5, 425.14285714285717, 306.5, 425.14285714285717],
 					"order": 0,
 					"source": ["obj-1", 0]
 				}
@@ -642,6 +688,12 @@
 				"patchline": {
 					"destination": ["obj-61", 0],
 					"source": ["obj-38", 0]
+				}
+			},
+			{
+				"patchline": {
+					"destination": ["obj-19", 1],
+					"source": ["obj-4", 0]
 				}
 			},
 			{
