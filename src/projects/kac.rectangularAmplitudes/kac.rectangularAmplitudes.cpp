@@ -46,16 +46,6 @@ class rectangularAmplitudes: public c::object<rectangularAmplitudes> {
 			return {std::max(c::from_atoms<long>(args), (long)1)};
 		}}
 	};
-	c::attribute<double> epsilon {
-		this,
-		"epsilon",
-		1.0,
-		c::title {"Aspect Ratio"},
-		c::description {"The aspect ratio of the rectangle."},
-		c::setter {[this](const c::atoms& args, const int inlet) -> c::atoms {
-			return {std::max(c::from_atoms<double>(args), (double)0.)};
-		}}
-	};
 	c::attribute<long> boundary_conditions {
 		this,
 		"boundary_conditions",
@@ -114,7 +104,7 @@ class rectangularAmplitudes: public c::object<rectangularAmplitudes> {
 	// methods
 	void _logic() {
 		c::atoms amplitudes(M * N);
-		T::Matrix_2D amplitudes_old = p::rectangularAmplitudes(x, y, M, N, epsilon, BC);
+		T::Matrix_2D amplitudes_old = p::rectangularAmplitudes(x, y, M, N, BC);
 		for (std::size_t m = 0; m < M; m++) {
 			for (std::size_t n = 0; n < N; n++) { amplitudes[m * N + n] = amplitudes_old[m][n]; };
 		}

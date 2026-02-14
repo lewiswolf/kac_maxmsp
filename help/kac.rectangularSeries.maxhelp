@@ -9,7 +9,7 @@
 			"modernui": 1
 		},
 		"classnamespace": "box",
-		"rect": [59.0, 162.0, 1013.0, 644.0],
+		"rect": [59.0, 139.0, 1000.0, 752.0],
 		"default_fontname": "Lato Light",
 		"gridsize": [5.0, 5.0],
 		"gridsnaponopen": 2,
@@ -373,12 +373,12 @@
 					"numoutlets": 3,
 					"outlettype": ["", "", ""],
 					"parameter_enable": 0,
-					"patching_rect": [530.0, 171.0, 100.0, 100.0],
+					"patching_rect": [530.5, 247.0, 100.0, 100.0],
 					"pointcolor": [1.0, 1.0, 1.0, 1.0],
 					"presentation": 1,
 					"presentation_rect": [429.36170212765956, 162.2000008225441, 100.0, 100.0],
-					"xplace": [0.5488370001316071],
-					"yplace": [0.40627899408340457]
+					"xplace": [0.445],
+					"yplace": [0.51]
 				}
 			},
 			{
@@ -414,7 +414,7 @@
 					"numinlets": 1,
 					"numoutlets": 4,
 					"outlettype": ["", "int", "float", "float"],
-					"patching_rect": [571.0, 275.0, 118.0, 23.0],
+					"patching_rect": [571.0, 375.0, 118.0, 23.0],
 					"text": "unpack node 1 0. 0."
 				}
 			},
@@ -431,28 +431,6 @@
 					"presentation_linecount": 6,
 					"presentation_rect": [25.0, 65.0, 645.0, 87.0],
 					"text": "Calculate the modes and their respective amplitudes for a rectangular drum. \nparameters:\n    x, y: The strike location of the drum, such that 0 and 1 always corresponds to a boundary, and thus produces silence. \n    epsilon: The aspect ratio for the drum.\n    M, N: The number of modes - the output of each object will be a list of length M*N.\n    boundary_conditions: false if the boundary are fixed (Dirichlet), true if the boundary is free (Neumann)"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-41",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [""],
-					"patching_rect": [530.0, 318.0, 133.0, 23.0],
-					"text": "expr $f1 * pow($f2\\, 0.5)"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-23",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [""],
-					"patching_rect": [670.0, 318.0, 133.0, 23.0],
-					"text": "expr $f1 / pow($f2\\, 0.5)"
 				}
 			},
 			{
@@ -834,7 +812,7 @@
 					"destination": ["obj-15", 0],
 					"midpoints": [
 						284.5, 353.5112515091896, 520.1812047958374, 353.5112515091896, 520.1812047958374,
-						168.39999836683273, 539.5, 168.39999836683273
+						237.34140461683273, 540.0, 237.34140461683273
 					],
 					"order": 0,
 					"source": ["obj-22", 0]
@@ -856,30 +834,7 @@
 			},
 			{
 				"patchline": {
-					"destination": ["obj-61", 1],
-					"source": ["obj-23", 0]
-				}
-			},
-			{
-				"patchline": {
 					"destination": ["obj-22", 0],
-					"order": 2,
-					"source": ["obj-24", 0]
-				}
-			},
-			{
-				"patchline": {
-					"destination": ["obj-23", 1],
-					"midpoints": [284.4999910593033, 311.7970299720764, 793.5, 311.7970299720764],
-					"order": 0,
-					"source": ["obj-24", 0]
-				}
-			},
-			{
-				"patchline": {
-					"destination": ["obj-41", 1],
-					"midpoints": [284.4999910593033, 311.999361101065, 653.5, 311.999361101065],
-					"order": 1,
 					"source": ["obj-24", 0]
 				}
 			},
@@ -893,15 +848,6 @@
 				"patchline": {
 					"destination": ["obj-60", 0],
 					"midpoints": [295.5, 416.0, 34.5, 416.0],
-					"order": 1,
-					"source": ["obj-26", 0]
-				}
-			},
-			{
-				"patchline": {
-					"destination": ["obj-61", 0],
-					"midpoints": [295.5, 415.0, 539.5, 415.0],
-					"order": 0,
 					"source": ["obj-26", 0]
 				}
 			},
@@ -953,14 +899,14 @@
 			},
 			{
 				"patchline": {
-					"destination": ["obj-23", 0],
+					"destination": ["obj-61", 1],
 					"source": ["obj-35", 3]
 				}
 			},
 			{
 				"patchline": {
-					"destination": ["obj-41", 0],
-					"midpoints": [646.5, 303.5, 539.5, 303.5],
+					"destination": ["obj-61", 0],
+					"midpoints": [646.5, 429.375, 539.5, 429.375],
 					"source": ["obj-35", 2]
 				}
 			},
@@ -980,12 +926,6 @@
 				"patchline": {
 					"destination": ["obj-37", 0],
 					"source": ["obj-40", 0]
-				}
-			},
-			{
-				"patchline": {
-					"destination": ["obj-61", 0],
-					"source": ["obj-41", 0]
 				}
 			},
 			{
@@ -1140,6 +1080,14 @@
 		],
 		"parameters": {
 			"obj-17": ["mc.live.gain~[1]", "mc.live.gain~", 0],
+			"parameterbanks": {
+				"0": {
+					"index": 0,
+					"name": "",
+					"parameters": ["-", "-", "-", "-", "-", "-", "-", "-"],
+					"buttons": ["-", "-", "-", "-", "-", "-", "-", "-"]
+				}
+			},
 			"inherited_shortname": 1
 		},
 		"autosave": 0,
