@@ -57,7 +57,7 @@ class circleToSquare: public c::object<circleToSquare> {
 	T::Point p = T::Point(0., 0.);
 	// methods
 	void _logic() {
-		T::Point p_prime = g::simpleElliptic_Circle2Square(p);
+		T::Point p_prime = g::circleToSquare(p, g::SquareToCircleMethod::Elliptic);
 		out2.send(p_prime.y);
 		out1.send(p_prime.x);
 	}
