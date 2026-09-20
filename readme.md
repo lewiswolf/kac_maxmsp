@@ -9,7 +9,7 @@ This package was created using the Min-DevKit for Max, an API and supporting too
 You will need [cmake](https://formulae.brew.sh/formula/cmake) installed. Then, to build and use the project, run:
 
 ```bash
-cd ~/Documents/Max\ 8/Packages
+cd ~/Documents/Max\ 9/Packages
 git clone --recursive ...
 cd kac_maxmsp
 sh ./bin/build.sh
